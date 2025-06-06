@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutPersonalProfile"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/historyType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/yellow_round_corner"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:visibility="visible"
+        android:backgroundTint="@color/_E79D46"
+        android:paddingBottom="@dimen/_5sdp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTypeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/typeColon"
+            android:textColor="@color/_FFEBD3"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTypeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toEndOf="@+id/textTypeTxt"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textRegistrationDateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_dateColon"
+            android:textColor="@color/_FFEBD3"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTypeTxt"
+            android:layout_marginStart="@dimen/_10sdp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textRegistrationDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 May 2023"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_medium"
+            tools:ignore="HardcodedText"
+            app:layout_constraintStart_toEndOf="@+id/textRegistrationDateTxt"
+            app:layout_constraintTop_toBottomOf="@+id/textTypeTxt"
+            android:layout_marginStart="@dimen/_5sdp"
+           />
+
+
+        <View
+            android:id="@+id/view11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRegistrationDateTxt"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+        </View>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSubjectTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subjectColon"
+            android:textColor="@color/_FFEBD3"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view11"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSubjectValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11sdp"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toEndOf="@+id/textSubjectTxt"
+            app:layout_constraintTop_toBottomOf="@+id/view11"
+            android:layout_marginTop="@dimen/_5sdp"
+            tools:ignore="HardcodedText"
+            android:layout_marginStart="@dimen/_5sdp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

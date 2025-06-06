@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutDocuments"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutImageUploadCOV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/white_round_corner"
+       >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberImageUploadCOV"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewImageUploadCOV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberImageUploadCOV"
+            app:layout_constraintEnd_toStartOf="@+id/imageImageUploadCOV"
+            android:singleLine="true"
+            android:text="@string/upload_cov"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="@dimen/_12sdp"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageImageUploadCOV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutImageUploadLOR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layoutImageUploadCOV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/white_round_corner"
+       >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberImageUploadLOR"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewImageUploadLOR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberImageUploadLOR"
+            app:layout_constraintEnd_toStartOf="@+id/imageImageUploadLOR"
+            android:singleLine="true"
+            android:text="@string/upload_lor"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="@dimen/_12sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageImageUploadLOR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutUploadSurveyReceipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layoutImageUploadLOR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/white_round_corner"
+        >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberUploadSurveyReceipt"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUploadSurveyReceipt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberUploadSurveyReceipt"
+            app:layout_constraintEnd_toStartOf="@+id/imageUploadSurveyReceipt"
+            android:singleLine="true"
+            android:text="@string/upload_survey_receipt"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="@dimen/_12sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageUploadSurveyReceipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutUploadChallan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layoutUploadSurveyReceipt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/white_round_corner"
+        >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberUploadChallan"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingStart="@dimen/_10sdp"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUploadChallan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="@dimen/_12sdp"
+            android:singleLine="true"
+            android:text="@string/upload_challan"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageUploadChallan"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberUploadChallan"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageUploadChallan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutUploadApprovalLetter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/layoutUploadChallan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/white_round_corner"
+        >
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberUploadApprovalLetter"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUploadApprovalLetter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberUploadApprovalLetter"
+            app:layout_constraintEnd_toStartOf="@+id/imageUploadApprovalLetter"
+            android:singleLine="true"
+            android:text="@string/upload_approval_letter_from_municipality"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_424041"
+            android:textColor="@color/_424041"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingVertical="@dimen/_12sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageUploadApprovalLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

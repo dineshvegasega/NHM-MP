@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">http://167.71.235.192/</domain>
+        <domain includeSubdomains="true">http://167.71.235.192:8081/</domain>
+        <domain includeSubdomains="true">https://translate.googleapis.com</domain>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="true"/>
+</network-security-config>

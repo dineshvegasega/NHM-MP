@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSno"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/s_no"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_9"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:lines="1"
+                   />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_E79D46"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textOrder_Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/order_id"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_9"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:lines="2"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_E79D46"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/date"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_9"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"
+                    android:lines="2"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_E79D46"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTransactionId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/transaction_id"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_9"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"
+                    android:lines="2"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_E79D46"
+                    >
+                </View>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintDimensionRatio="H,1:1.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_remove_red_eye_24"
+                    android:scaleType="centerInside"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/duration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutMain"
+                android:background="@color/_f6dbbb"
+                >
+            </View>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

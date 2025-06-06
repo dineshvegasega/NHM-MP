@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@color/_ffffffff"
+    android:scrollbars="vertical"
+    android:scrollbarSize="@dimen/_3sdp"
+    android:scrollbarThumbVertical="@color/_E79D46"
+    android:fadeScrollbars="false"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitleMain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_medium"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/createPassword"
+        android:visibility="visible"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCreatePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textTitleMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCreatePassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            style="@style/PrimaryEditText"
+            android:hint="@string/createPasswordStar"
+            android:text=""
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:imeOptions="actionNext"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxLength="15"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCreatePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_10sdp"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_eye_closed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:focusable="false"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textCreatePasswrordMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/_F02A2A"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutCreatePassword"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            app:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/InvalidPassword"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutReEnterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textCreatePasswrordMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextReEnterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            style="@style/PrimaryEditText"
+            android:hint="@string/reEnterPasswordStar"
+            android:text=""
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            android:imeOptions="actionDone"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxLength="15"/>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgReEnterPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_10sdp"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_eye_closed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textReEnterPasswrordMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/_F02A2A"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            app:layout_constraintTop_toBottomOf="@+id/layoutReEnterPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            app:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/InvalidPassword"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cbRememberMeCon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textReEnterPasswrordMsg"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/click_here_to_agree_to_the"
+            android:paddingStart="@dimen/_5sdp"
+            android:checked="false"
+            android:button="@drawable/check_box_button"
+            android:buttonTint="@color/_363438"
+            android:textColor="@color/_363438"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/roboto_regular"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/_363438"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cbRememberMe"
+            tools:ignore="MissingConstraints"
+            app:fontFamily="@font/roboto_medium"
+            android:text="@string/terms_amp_conditions"
+            android:padding="@dimen/_5sdp"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

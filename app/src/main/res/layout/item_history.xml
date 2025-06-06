@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardUseCompatPadding="true"
+    android:background="@color/_79747E"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:focusable="true"
+    android:clickable="true"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_7sdp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_85sdp"
+                app:layout_constraintDimensionRatio="H,1:1.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/main_logo"
+                android:background="@color/white"
+                android:theme="@style/RoundCorner5"
+                android:scaleType="centerInside"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_7sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layoutLeft"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feedback"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/roboto_bold"
+                tools:ignore="HardcodedText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTrackTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tracking_id"
+                android:textColor="@color/_79747E"
+                android:textSize="@dimen/_10sdp"
+                app:fontFamily="@font/roboto_regular"
+                tools:ignore="HardcodedText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textTrackValue"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTrackValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                app:fontFamily="@font/roboto_bold"
+                tools:ignore="HardcodedText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_2sdp"
+                />
+
+
+
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                android:background="@color/_A5A5A5"
+                android:layout_marginTop="@dimen/_5sdp"
+                >
+            </View>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur "
+                android:textColor="@color/_484848"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/roboto_regular"
+                tools:ignore="HardcodedText"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textDesc"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textValidDateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valid_date"
+                    android:textColor="@color/_79747E"
+                    android:textSize="@dimen/_9sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    tools:ignore="HardcodedText"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textValidDateValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 Sept"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    app:fontFamily="@font/roboto_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textDesc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginHorizontal="@dimen/_5sdp"/>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_A5A5A5"
+
+                    >
+                </View>
+
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textStatusTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:textColor="@color/_79747E"
+                    android:textSize="@dimen/_9sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textValidDateValue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginHorizontal="@dimen/_5sdp"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textStatusValueTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Applied"
+                    android:textColor="@color/_138808"
+                    android:textSize="@dimen/_9sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textStatusTxt"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+</layout>
+
+
+

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="vertical"
+        android:scrollbarSize="@dimen/_3sdp"
+        android:scrollbarThumbVertical="@color/_E79D46"
+        android:fadeScrollbars="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/_10sdp"
+            >
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textSelectMonthYearTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/select_month_year"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextSelectMonthYear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/select_month_year"
+                android:text=""
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/textSelectMonthYearTxt"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLength="25"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textChooseNumberTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextSelectMonthYear"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/choose_number"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextChooseNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/choose_number"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text=""
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/textChooseNumberTxt"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLength="25"
+                />
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btCalculatePrice"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:textColor="@color/_E79D46"
+                android:text="@string/calculate_price"
+                android:textSize="@dimen/_12sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextChooseNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:strokeColor="@color/_E79D46"
+                />
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btCalculatePrice"
+                android:background="@color/_DDDDDD"
+                android:layout_marginTop="@dimen/_10sdp"
+                >
+            </View>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPriceBreakupTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/price_breakup"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMembershipCostTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textPriceBreakupTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/membership_cost"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMembershipCostValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textPriceBreakupTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="XX"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textValidityTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textMembershipCostTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/validity"
+                android:visibility="gone"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textValidityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textMembershipCostValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="XX"
+                android:visibility="gone"
+                />
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCouponDiscountTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textValidityTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/discount"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCouponDiscountValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textValidityTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="XX"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textGSTTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textCouponDiscountTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/gst"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textGSTValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textCouponDiscountTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="XX"
+                android:visibility="visible"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTotalCostTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_E79D46"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textGSTTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/total_cost"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTotalCostValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_E79D46"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textGSTTxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="XX"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTotalCostTxt"
+                android:background="@color/_DDDDDD"
+                android:layout_marginTop="@dimen/_10sdp"
+                >
+            </View>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btPurchaseSubscription"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/_E79D46"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/purchase_subscription"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                />
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="textPriceBreakupTxt,textMembershipCostTxt, textGSTTxt, textTotalCostTxt, textMembershipCostValue, textGSTValue, textTotalCostValue, view2, btPurchaseSubscription"
+                android:id="@+id/group_visibility"
+                android:visibility="gone"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="textCouponDiscountTxt,textCouponDiscountValue"
+                android:id="@+id/groupCouponDiscount_visibility"
+                android:visibility="gone"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

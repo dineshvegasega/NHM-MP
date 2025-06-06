@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textMarketPlaceTxt22"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:text="Welcome to Nikshay Patra - Hypro Saarthi Welcome to Street Saaaa Saarthi Welcome Saaaa Saarthi Welcome Saaaa  Saarthi Welcome Saaaa Saarthi Welcome Saaaa Saarthi Welcome Saarthi Welcome Saaaa Saarthi Welcome Saaaa Saarthi WelcomeSaarthi Welcome Saaaa Saarthi Welcome Saaaa Saarthi Welcome Saarthi Welcome Saaaa Saarthi Welcome Saaaa Saarthi Welcome Saarthi Welcome Saaaa Saarthi Welcome Saaaa Saarthi Welcome"
+        android:autoSizeTextType="uniform"
+        android:autoSizePresetSizes="@array/autosize_4_5_35"
+        android:autoSizeStepGranularity="@dimen/_1sdp"
+        android:gravity="center_vertical"
+        android:background="@color/teal_700"
+        android:textColor="@color/_262626"
+        app:fontFamily="@font/roboto_bold"
+        tools:ignore="MissingConstraints"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

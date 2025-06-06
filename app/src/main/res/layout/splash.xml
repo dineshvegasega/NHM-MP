@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_130sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:text="@string/app_name_twoLines"
+        android:textColor="@color/white"
+        app:srcCompat="@drawable/street_txt"
+        android:textSize="@dimen/_35sdp"
+        app:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+       />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHeaderadfdsfTxt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13sdp"
+        android:gravity="center"
+        android:background="@color/_E79D46"
+        android:paddingVertical="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/ConnectingStreetVendorsAllOverIndia"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHeaderadfdsfTxt3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@+id/imageLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="@string/AnInitiativeBy"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textHeaderTxt2"
+            app:srcCompat="@drawable/main_logo"
+        android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHeaderTxt2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11sdp"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        app:layout_constraintBottom_toTopOf="@+id/textHeaderTxt1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="@string/NationalAssociation"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHeaderTxt1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:text="@string/PoweredbyVegaSegaSolutions"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

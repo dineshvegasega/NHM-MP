@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scrollbars="vertical"
+            android:scrollbarSize="@dimen/_3sdp"
+            android:scrollbarThumbVertical="@color/_E79D46"
+            android:fadeScrollbars="false"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                >
+
+            <include
+                    android:id="@+id/nbpa_detail1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/nbpa_detail1"
+                    android:visibility="visible"/>
+
+
+            <include
+                    android:id="@+id/nbpa_detail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/nbpa_detail2"
+                    app:layout_constraintTop_toBottomOf="@+id/nbpa_detail1"
+                    android:visibility="visible"/>
+
+
+            <include
+                    android:id="@+id/nbpa_detail3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/nbpa_detail3"
+                    app:layout_constraintTop_toBottomOf="@+id/nbpa_detail2"
+                    android:visibility="visible"/>
+
+
+            <include
+                    android:id="@+id/nbpa_detail4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/nbpa_detail4"
+                    app:layout_constraintTop_toBottomOf="@+id/nbpa_detail3"
+                    android:visibility="gone"/>
+
+
+            <include
+                    android:id="@+id/nbpa_detail5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/nbpa_detail5"
+                    app:layout_constraintTop_toBottomOf="@+id/nbpa_detail4"
+                    android:visibility="gone"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8"
+                >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/_2C2C2C"
+                        android:textSize="@dimen/_20sdp"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/roboto_medium"
+                        android:gravity="center_horizontal"
+                        android:text="@string/enter_aadhaar_number_to_verify_the_patient"
+                        android:visibility="visible"
+                        />
+                <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchGeoLocation"
+                        android:theme="@style/PrimarySwitchCompat"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/geoLocation"
+                        android:textSize="@dimen/_11sdp"
+                        android:textColor="@color/_1D1B20"
+                        android:fontFamily="@font/roboto_medium"
+                        android:focusable="false"
+                        android:visibility="visible"
+                        android:checked="false"
+                        app:layout_constraintTop_toBottomOf="@+id/textTxt" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextLatitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/latitude"
+                        android:inputType="numberDecimal"
+                        android:digits="0123456789."
+                        android:maxLength="12"
+                        android:text=""
+                        android:imeOptions="flagNoExtractUi"
+                        app:layout_constraintTop_toBottomOf="@+id/switchGeoLocation"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextLongitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/longitude"
+                        android:inputType="numberDecimal"
+                        android:digits="0123456789."
+                        android:maxLength="12"
+                        android:text=""
+                        android:imeOptions="flagNoExtractUi"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextLatitude"
+                        app:layout_constraintBottom_toTopOf="@+id/btSignIn"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        />
+
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btSignIn"
+                        style="@style/PrimaryButtonYellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/submit"
+                        android:backgroundTint="@color/_E79D46"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextLongitude"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1.2"
+                >
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

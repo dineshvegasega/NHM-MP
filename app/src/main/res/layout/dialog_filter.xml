@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:background="@color/_00000000"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_top_round_corner"
+
+            android:paddingVertical="@dimen/_12sdp"
+            android:orientation="vertical"
+            android:backgroundTint="@color/_FFEBD3"
+            android:paddingHorizontal="@dimen/_15sdp">
+
+
+        <View
+                android:id="@+id/tvView1"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:includeFontPadding="false"
+                android:background="@drawable/gray_fill_round"
+                android:gravity="center_horizontal"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="visible"/>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:paddingTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_by"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+
+
+            <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/_A5A5A5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                     android:checked="true"
+                    android:text="@string/first_name"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/first_name"
+                    android:text=""
+                    app:layout_constraintTop_toBottomOf="@+id/radioButtonName"
+                    android:drawableTint="@color/_868686"
+                    android:layout_marginHorizontal="@dimen/_6sdp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text|textNoSuggestions"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginTop="0dp"
+                    android:visibility="visible"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    />
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextName"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/mobile_filter"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/mobile_filter"
+                    android:text=""
+                    app:layout_constraintTop_toBottomOf="@+id/radioButtonMobile"
+                    android:drawableTint="@color/_868686"
+                    android:layout_marginHorizontal="@dimen/_6sdp"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginTop="0dp"
+                    />
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonAadhaar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMobile"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:text="@string/aadhaar_filter"/>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextAadhaar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/aadhaar_filter"
+                    android:text=""
+                    app:layout_constraintTop_toBottomOf="@+id/radioButtonAadhaar"
+                    android:drawableTint="@color/_868686"
+                    android:layout_marginHorizontal="@dimen/_6sdp"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginTop="0dp"
+                    android:visibility="visible"
+                    />
+
+
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/radioButtonDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextAadhaar"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="visible"
+                    android:text="@string/date_filter"/>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/_6sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/radioButtonDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:visibility="visible"
+                    >
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextStartDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/start_date_filter"
+                        android:text=""
+                        android:focusable="false"
+                        android:drawableEnd="@drawable/ic_calender"
+                        android:drawableTint="@color/_272727"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="0dp"
+                        />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextEndDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/end_date_filter"
+                        android:text=""
+                        android:focusable="false"
+                        android:drawableEnd="@drawable/ic_calender"
+                        android:drawableTint="@color/_272727"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="0dp"
+                        />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <View
+                    android:id="@+id/view11"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/_A5A5A5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearDate">
+
+            </View>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btClose"
+                    style="@style/PrimaryButtonYellow"
+                    app:backgroundTint="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:text="@string/clear"
+                    android:textSize="@dimen/_11sdp"
+                    app:cornerRadius="@dimen/_4sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/btApply"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view11"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:strokeColor="@color/_E79D46"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btApply"
+                    style="@style/PrimaryButtonYellow"
+                    app:backgroundTint="@color/_E79D46"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/apply"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:cornerRadius="@dimen/_4sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btClose"
+                    app:layout_constraintTop_toBottomOf="@+id/view11"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

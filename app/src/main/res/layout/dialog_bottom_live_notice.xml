@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@color/_00000000"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top_round_corner"
+
+        android:paddingVertical="@dimen/_12sdp"
+        android:orientation="vertical"
+        android:backgroundTint="@color/_FFEBD3"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+
+        <View
+            android:id="@+id/tvView1"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:background="@drawable/gray_fill_round"
+            android:gravity="center_horizontal"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMap"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvView1"
+            android:visibility="visible"
+            android:theme="@style/RoundCorner5"
+            app:srcCompat="@drawable/main_logo_land"
+            android:scaleType="fitXY"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@color/white"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textHeaderTxt4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@color/_E79D46"
+            android:paddingVertical="@dimen/_1sdp"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            app:fontFamily="@font/roboto_regular"
+            android:backgroundTint="@color/_138808"
+            android:text="@string/live"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivMap">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Training Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/roboto_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/_A5A5A5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Lorem ipsum dolor sit amet consectetur. Tellus quis mauris in gravida. Congue quis varius tristique ut semper aliquam. Consectetur quisque nisl maecenas convallis volutpat. Integer turpis varius a mauris odio posuere felis et quis. In pellentesque ornare ipsum nunc. In nam nulla tincidunt."
+                android:textColor="@color/_484848"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                tools:ignore="HardcodedText" />
+
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/_A5A5A5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDesc">
+
+            </View>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/timeDate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textDesc">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date 14 May"
+                    android:textColor="@color/_000000"
+                    android:textSize="@dimen/_10sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText"
+                    android:visibility="gone"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date 14 May"
+                    android:textColor="@color/_000000"
+                    android:textSize="@dimen/_10sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btClose"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:text="@string/close"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@+id/btApply"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeDate"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:strokeColor="@color/_E79D46"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btApply"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/_E79D46"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/apply"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btClose"
+                app:layout_constraintTop_toBottomOf="@+id/timeDate"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:layout_marginStart="@dimen/_15sdp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

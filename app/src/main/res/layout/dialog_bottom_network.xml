@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@color/_00000000"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top_round_corner"
+
+        android:paddingVertical="@dimen/_12sdp"
+        android:orientation="vertical"
+        android:backgroundTint="@color/_FFEBD3"
+        android:paddingHorizontal="@dimen/_15sdp">
+
+
+        <View
+            android:id="@+id/tvView1"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:background="@drawable/gray_fill_round"
+            android:gravity="center_horizontal"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"/>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/network_failed_please_try_again"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/roboto_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+              />
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btClose"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/black"
+                android:text="@string/cancel"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@+id/btApply"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:strokeColor="@color/_E79D46"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btApply"
+                style="@style/PrimaryButtonYellow"
+                app:backgroundTint="@color/_E79D46"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/try_again"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btClose"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                android:layout_marginStart="@dimen/_15sdp"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

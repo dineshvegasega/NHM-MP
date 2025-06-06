@@ -1,0 +1,1004 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="app_name" translatable="false">Nikshay Patra - Hypro</string>
+    <string name="app_name_twoLines" translatable="false">Nikshay\nPatra - Hypro</string>
+
+    <string name="no_image_found" translatable="false">No image found</string>
+    <string name="street_vendor_system" translatable="false">Street\nSaarthi</string>
+    <string name="street_vendor_management_system" translatable="false">STREET VENDOR\nMANAGEMENT\nSYSTEM</string>
+    <string name="street_vendor_management_system_under" translatable="false"><u>STREET VENDOR MANAGEMENT\nSYSTEM</u></string>
+
+    <string name="PoweredbyVegaSegaSolutions" translatable="false">Powered by VegaSega Solutions</string>
+    <string name="NationalAssociation" translatable="false">VegaSega Solutions</string>
+    <string name="AnInitiativeBy" translatable="false">An Initiative By</string>
+    <string name="ConnectingStreetVendorsAllOverIndia" translatable="false">Connecting Nikshay Patra - Hypro All Over India</string>
+    <string name="StreetVendorSystem" translatable="false">Street Vendor System</string>
+    <string name="powered_by_national_association_of_street_vendors_of_india" translatable="false">Powered by <b><u>VegaSega Solutions</u></b></string>
+
+
+    <string name="street_saarthi" translatable="false">Nikshay Patra - Hypro</string>
+
+
+    <string name="google_place_key" tools:ignore="MissingTranslation">AIzaSyC-XOLXCRYfqfdzFNOPCVObSKhTeP--Kn8</string>
+
+    <string name="click_here_to_agree_to_the"><![CDATA[Click Here to agree on the]]></string>
+    <string name="terms_amp_conditions"><u>Terms &amp; Conditions</u></string>
+
+    <string name="Pleaseselectagree">Please select agree on the Terms &amp; Conditions</string>
+
+    <string name="title">Title</string>
+    <string name="submit" translatable="false">Submit</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+
+
+    <string name="quick_registation">Quick Register</string>
+    <string name="loginWithPassword">Login</string>
+    <string name="loginWithMobileOTP">Login With Mobile OTP</string>
+    <string name="enterOtp">Enter OTP</string>
+
+    <string name="completeProfileRegistration">Complete Profile Registration</string>
+    <string name="fast_process">Fast Process</string>
+    <string name="login_here">Login Here</string>
+    <string name="enter_your_login_details_here">Enter Your Login Details Here</string>
+    <string name="login_with_otp">Login With OTP</string>
+    <string name="quick_registration">Registration</string>
+    <string name="enter_your_details_for_quick_register">Enter Your Details For Quick Register</string>
+    <string name="first_name">First Name</string>
+
+    <string name="last_name">Last Name</string>
+
+    <string name="createPassword">Create Password</string>
+
+    <string name="EnterPassword">Enter Password</string>
+    <string name="reEnterPassword">Re-Enter Password</string>
+
+
+
+    <string name="enterMobileNumber">Enter Valid Mobile Number</string>
+
+
+    <string name="login">Login</string>
+
+
+    <string name="explore_app">Explore App</string>
+
+    <string name="register">Register</string>
+
+    <string name="LearnAboutSchemes">Learn About Schemes</string>
+    <string name="ComplaintRedressal">Complaint Redressal</string>
+    <string name="KnowYourRights">Know Your Rights</string>
+
+    <string name="desc1">Know about the latest schemes that are applicable to you.</string>
+    <string name="desc2">Quick filing, monitoring and timely resolution of all your complaints.</string>
+    <string name="desc3">Learn here about what your legal and civil rights are, how to exercise them.</string>
+
+    <string name="SelectLanguage">Select Language</string>
+
+    <string name="english" translatable="false">English</string>
+    <string name="bengali" translatable="false">বাংলা</string>
+    <string name="gujarati" translatable="false">ગુજરાતી</string>
+    <string name="hindi" translatable="false">हिन्दी</string>
+    <string name="kannada" translatable="false">ಕನ್ನಡ</string>
+    <string name="malayalam" translatable="false">മലയാളം</string>
+    <string name="marathi" translatable="false">मराठी</string>
+    <string name="punjabi" translatable="false">ਪੰਜਾਬੀ</string>
+    <string name="tamil" translatable="false">தமிழ்</string>
+    <string name="telugu" translatable="false">తెలుగు</string>
+    <string name="assamese" translatable="false">অসমীয়া</string>
+    <string name="urdu" translatable="false">اردو</string>
+
+    <string name="englishVal" translatable="false">en</string>
+    <string name="bengaliVal" translatable="false">bn</string>
+    <string name="gujaratiVal" translatable="false">gu</string>
+    <string name="hindiVal" translatable="false">hi</string>
+    <string name="kannadaVal" translatable="false">kn</string>
+    <string name="malayalamVal" translatable="false">ml</string>
+    <string name="marathiVal" translatable="false">mr</string>
+    <string name="punjabiVal" translatable="false">pa</string>
+    <string name="tamilVal" translatable="false">ta</string>
+    <string name="teluguVal" translatable="false">te</string>
+    <string name="assameseVal" translatable="false">as</string>
+    <string name="urduVal" translatable="false">ur</string>
+
+
+    <string name="RegisterHere">Register Here</string>
+    <string name="SelectYourchoiceofregistration">Select Your choice of registration</string>
+    <string name="continues">Continue</string>
+
+
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="YourPassword">Your Password</string>
+    <string name="register_for_new_account">Register For New Account?</string>
+    <string name="Forgot">Forgot</string>
+    <string name="ForgotPassword">Forgot Password</string>
+    <string name="EnterDetailstoSetpassword">Enter Details to Set password</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="set_password">Set Password</string>
+    <string name="back_to_login">Back To Login</string>
+    <string name="back">Back</string>
+    <string name="enter_details_to_register_with_us">Enter Details To Register With Us</string>
+    <string name="profile_details">Profile Details</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="someone_from_our_team_will_contact_you_within_48hrs_to_verify_your_registration">Someone from our team will contact you within 48 Hrs to verify your registration.</string>
+    <string name="RegisterNow">Register Now</string>
+    <string name="resendOtp">Re-send OTP</string>
+    <string name="OTPnotverified">OTP Not Verified</string>
+    <string name="YourNewPassword">Your New Password</string>
+    <string name="back_to_home">Back To Home</string>
+    <string name="back_to_home_u"><u>Back To Home</u></string>
+    <string name="CreatePasswordReEnterPasswordisnotsame">*Password Not Match</string>
+
+    <string name="InvalidPassword">*Minimum 8 characters containing 1 Uppercase, 1 Lowercase, 1 Number &amp; 1 Special Character</string>
+    <string name="father_s_first_name">Father\'s First Name</string>
+    <string name="father_s_last_name">Father\'s Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="social_category">Category</string>
+    <string name="education_qualifacation">Education Qualification</string>
+    <string name="select_state">State</string>
+    <string name="select_district">District</string>
+    <string name="municipality_panchayat">Municipality/Panchayat</string>
+    <string name="select_pincode">Pincode</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="spouse_s_name">Spouse\'s Name</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="current_residential_address">Current Residential Address</string>
+    <string name="age_minimum">Your age should be minimum 14 years</string>
+    <string name="type_of_market_place">Type of Market Place</string>
+    <string name="type_of_vending">Type of Vending</string>
+    <string name="total_years_of_vending">Total Years of Vending</string>
+    <string name="current_location_of_business">Current Location of Business</string>
+    <string name="upload_shop_image">Upload Shop Image</string>
+    <string name="upload_cov">Upload COV</string>
+    <string name="upload_lor">Upload LOR</string>
+    <string name="camera">Camera</string>
+    <string name="open_camera_to_capture_image">Open Camera to Capture Image</string>
+    <string name="photos">Photos</string>
+    <string name="browse_images_from_gallery">Browse Images From Gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_your_preference">Choose Your Preference</string>
+    <string name="complete_profile_registration">Complete Profile Registration</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="current_vending_address">Current Vending Address</string>
+    <string name="vending_time">Vending Time</string>
+    <string name="to">to</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="open_time">Open Time</string>
+    <string name="close_time">Close Time</string>
+    <string name="document_details">Document Details</string>
+    <string name="do_you_have_vending_documents">Do you have vending documents?</string>
+    <string name="do_you_have_government_scheme">Have you availed any government scheme?</string>
+    <string name="cov_lor_survey_receipt_challan_approval_letter_from_municipal_body">(COV/LOR/Survey Receipt/Challan/Approval Letter from Municipal Body)</string>
+    <string name="government_scheme">Government Scheme</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="upload_survey_receipt">Upload Survey Receipt</string>
+    <string name="upload_challan">Upload Challan</string>
+    <string name="upload_approval_letter_from_municipality">Upload Approval Letter From Municipality</string>
+    <string name="pm_swanidhi_scheme">PM Swanidhi Scheme</string>
+    <string name="pm_swanidhi_schemeSingle" translatable="false">PM_Swanidhi_Scheme</string>
+    <string name="others_please_name">Others, Please Name</string>
+    <string name="scheme_name">Scheme Name</string>
+    <string name="professional_details">Professional Details</string>
+    <string name="personal_details">Personal\nDetails</string>
+    <string name="professional_details_2">Professional\nDetails</string>
+    <string name="SetPassword_details">Set\nPassword</string>
+    <string name="passport_size_image">Passport Size Image</string>
+    <string name="upload_media">Upload Media</string>
+    <string name="aadhar_voter_id_pan_card_driving_license">(Aadhar / Voter ID / PAN Card / Driving License)</string>
+    <string name="address_mention_village">Address (Mention Village)</string>
+    <string name="upload_shop">Upload Shop Image</string>
+    <string name="identification_image">Identification Image</string>
+
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="maleGender">Male</string>
+    <string name="femaleGender">Female</string>
+    <string name="otherGender">Other</string>
+
+    <string-array name="years_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+    </string-array>
+
+
+    <string-array name="socialCategory_array">
+        <item>ST</item>
+        <item>SC</item>
+        <item>GEN</item>
+        <item>OBC</item>
+        <item>PWD</item>
+    </string-array>
+
+
+
+    <string-array name="socialEducation_array">
+        <item>No Education</item>
+        <item>Primary Education(1st To 5th)</item>
+        <item>Middle Education(6th To 9th)</item>
+        <item>Higher Education(10th To 12th)</item>
+        <item>Graduation</item>
+        <item>Post Graduation</item>
+    </string-array>
+
+    <string name="married">Married</string>
+    <string-array name="maritalStatus_array">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Widowed</item>
+        <item>Divorced</item>
+        <item>Separated</item>
+    </string-array>
+
+
+    <string name="COVText" translatable="false">COV</string>
+    <string name="LORText" translatable="false">LOR</string>
+    <string name="Survery_ReceiptText" translatable="false">Survery_Receipt</string>
+    <string name="ChallanText" translatable="false">Challan</string>
+    <string name="Approval_LetterText" translatable="false">Approval_Letter</string>
+
+    <string name="or">OR</string>
+    <string name="enterOtpHere">Enter OTP Here</string>
+    <string name="img_description">This is an image</string>
+    <string name="logout">Logout</string>
+    <string name="are_your_sure_want_to_logout">Are you sure, You want to Logout?</string>
+    <string name="enter_market_place">Enter Market Place</string>
+    <string name="enter_vending">Enter Vending</string>
+    <string name="select_scheme">Select Scheme</string>
+    <string name="VEGASEGA_Street_Vendor_Dashboard" translatable="false">Welcome to Nikshay Patra - Hypro Dashboard</string>
+
+    <string name="profiles">Profile</string>
+    <string name="live_schemes">Live Schemes</string>
+    <string name="all_schemes">All Schemes</string>
+    <string name="live_notices">Live Notices</string>
+    <string name="all_notices">All Notices</string>
+    <string name="live_training">Live Training</string>
+    <string name="all_training">All Training</string>
+    <string name="complaints_feedback">Complaints &amp;\nFeedback</string>
+    <string name="recent_activites">Recent Activities</string>
+    <string name="viewMore">View More</string>
+    <string name="search">Search</string>
+
+    <string name="complaintsSlashfeedback">Complaints/Feedback</string>
+    <string name="AllComplaintsFeedback">All Complaints/Feedback</string>
+
+    <string name="localOrganisation">Select Organisation</string>
+    <string name="do_you_have_localOrgnaization">Are you Affiliated with any Organization?</string>
+
+    <string name="apply">Apply</string>
+
+
+    <string name="first_nameStar">First Name*</string>
+    <string name="last_nameStar">Last Name*</string>
+    <string name="mobileNumberStar">Mobile Number*</string>
+    <string name="YourPasswordStar">Your Password*</string>
+    <string name="enterOtpStar">Enter OTP*</string>
+
+    <string name="createPasswordStar">Create Password*</string>
+    <string name="reEnterPasswordStar">Re-Enter Password*</string>
+
+    <string name="father_s_first_nameStar">Father\'s First Name*</string>
+    <string name="father_s_last_nameStar">Father\'s Last Name*</string>
+    <string name="genderStar">Gender*</string>
+    <string name="date_of_birthStar">Date of Birth*</string>
+    <string name="social_categoryStar">Category*</string>
+    <string name="education_qualifacationStar">Education Qualification*</string>
+    <string name="select_stateStar">State*</string>
+    <string name="select_districtStar">District*</string>
+    <string name="municipality_panchayatStar">Municipality/Panchayat*</string>
+    <string name="select_pincodeStar">Pincode*</string>
+    <string name="marital_statusStar">Marital Status*</string>
+    <string name="spouse_s_nameStar">Spouse\'s Name*</string>
+    <string name="address_mention_villageStar">Address (Mention Village)*</string>
+    <string name="upload_mediaStar">Upload Media*</string>
+
+    <string name="type_of_market_placeStar">Type of Market Place*</string>
+    <string name="type_of_vendingStar">Type of Vending*</string>
+    <string name="total_years_of_vendingStar">Total Years of Vending*</string>
+    <string name="enter_market_placeStar">Enter Market Place*</string>
+    <string name="enter_vendingStar">Enter Vending*</string>
+
+    <string name="openStar">Open*</string>
+    <string name="closeStar">Close*</string>
+
+    <string name="localOrganisationStar">Select Organisation*</string>
+
+    <string name="the_verify_code_will_expire_in_00_59">%s</string>
+    <string name="your_Profile">Your Profile</string>
+    <string name="personal_detailsFull">Personal Details</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="other_details">Other Details</string>
+
+
+    <string name="x_close">X Close</string>
+    <string name="close_x">CLOSE X</string>
+    <string name="app_version_1_0">App Version %s</string>
+    <string name="notices">Notices</string>
+    <string name="training">Training</string>
+    <string name="information_center">Information Center</string>
+    <string name="membership_details">Membership Details</string>
+    <string name="current_addressStar">Current Address*</string>
+    <string name="is_your_permanent_residence_same_as_current_residenceStar">Is your permanent residence same as current residence?*</string>
+    <string name="current_location_of_businessStar">Current Location of Business*</string>
+    <string name="trackingId">Tracking Id: %s</string>
+    <string name="settings">Settings</string>
+
+
+    <string name="app_settings">App Settings</string>
+    <string name="select_language">Select Language</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile_settings">Profile Settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout_account">Logout Account</string>
+    <string name="delete_your_account">Delete Your Account</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="select_your_choice">Select Your Choice</string>
+    <string name="register_complaint">Register Complaint</string>
+    <string name="subject_of_complaint">Subject Of Complaint</string>
+    <string name="type_here">Type Here</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="your_mobile_number">Your Mobile Number</string>
+    <string name="description">Description</string>
+    <string name="are_you_sure_you_want_to_logout_your_account">Are you sure you want to logout your account ?</string>
+    <string name="write_something">Write Something</string>
+    <string name="active">Active</string>
+    <string name="live">LIVE</string>
+    <string name="download_membership_card">Download</string>
+    <string name="venderDetails"><b>Vender Details:</b> %s</string>
+    <string name="current_vending_addressStar">Current Vending Address*</string>
+
+    <string name="membership_Id">Membership Id:</string>
+    <string name="valid_Upto">Valid Upto:</string>
+    <string name="passport_size_imageStar">Passport Size Image*</string>
+    <string name="shop_imageStar">Shop image*</string>
+    <string name="identity_imageStar">Identity Image*</string>
+    <string name="membership_id">Membership Id</string>
+    <string name="schemes_like_pm_swanidhi_yojna_etc">Schemes like PM Swanidhi Yojna etc</string>
+
+    <string name="otp_sent">OTP is sent to your Mobile Number +91-%s</string>
+    <string name="user_already_exist">User Already Exist</string>
+    <string name="otp_Verified_successfully">OTP Verified Successfully</string>
+    <string name="invalid_OTP">Invalid OTP</string>
+
+
+    <string name="survey_receipt">Survey Receipt</string>
+    <string name="challan">Challan</string>
+    <string name="approval_letter_from_municipality">Approval Letter From Municipality</string>
+    <string name="select_state_">Select State</string>
+    <string name="select_district_">Select District</string>
+    <string name="municipality_panchayat_">Select Municipality/Panchayat</string>
+
+    <string name="not_state">You have no State</string>
+    <string name="not_district">You have no District</string>
+    <string name="not_municipality_panchayat">You have not Municipality/Panchayat</string>
+    <string name="not_pincode">You have no Pincode</string>
+    <string name="not_Organisation">You have no Organisation</string>
+    <string name="saveUpdate">Save &amp; Update</string>
+
+    <string name="current_Vending_Address_underline"><u>Current Vending Address:</u></string>
+    <string name="associated_organizationSemi">Associated Organization:</string>
+    <string name="firstNameSemi">First Name:</string>
+    <string name="lastNameSemi">Last Name:</string>
+    <string name="genderSemi">Gender:</string>
+    <string name="dobSemi">D.O.B:</string>
+    <string name="mobileSemi">Mobile:</string>
+    <string name="typeofVendingSemi">Type of Vending:</string>
+    <string name="typeofMarketPlaceSemi">Type of Market Place:</string>
+    <string name="stateSemi">State:</string>
+    <string name="districtSemi">District:</string>
+    <string name="municipalitySemi">Municipality:</string>
+    <string name="addressSemi">Address:</string>
+    <string name="membershipIDSemi">Membership ID: %s</string>
+    <string name="validUptoSemi">Valid Upto: %s</string>
+    <string name="successfully_downloaded">Successfully Downloaded</string>
+    <string name="logged_in_successfully">Logged In Successfully</string>
+    <string name="please_provide_valid_password">Please Provide Valid Password</string>
+    <string name="user_does_not_exist">User Does Not Exist</string>
+
+    <string name="tap_to_reload">Tap to reload</string>
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <string name="registration_processed">Thank Your for registering on Nikshay Patra - Hypro. Your verification is UNDER PROCESS. Your registration will be processed within 2 to 3 working days.</string>
+    <string name="view">View</string>
+    <string name="watch">Watch</string>
+    <string name="applied">Applied</string>
+    <string name="not_applied">Not Applied</string>
+    <string name="not_live">NOT LIVE</string>
+    <string name="expired">Expired</string>
+    <string name="start_date">Start Date %s</string>
+    <string name="end_date">End Date %s</string>
+    <string name="clear_all">Clear All</string>
+    <string name="all_information">All Information</string>
+    <string name="view_details">View Details</string>
+    <string name="valid_date">Valid Date</string>
+    <string name="status">Status</string>
+
+    <string name="nothing_here_right_now">Nothing Here Right Now</string>
+    <string name="currently_no_schemes">Currently, No data are found here.</string>
+    <string name="currently_no_notice">Currently, No Notice are found here. You can apply for notice when they are available.</string>
+    <string name="currently_no_training">Currently, No Training are found here. You can apply for training when they are available.</string>
+    <string name="currently_no_notifications">Currently, No Notifications are found here.</string>
+    <string name="currently_no_information">Currently, No Information are found here.</string>
+    <string name="currently_no_complaints">Currently, No Complaints/Feedbacks are found here.</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string-array name="type_array">
+        <item>Register Complaint</item>
+        <item>Submit Feedback</item>
+    </string-array>
+    <string name="type">Type</string>
+    <string name="select_complaint_type">Select Complaint Type</string>
+    <string name="subject_of_feedback">Subject Of Feedback</string>
+    <string name="not_complaint_type">You Have No Complaint Type</string>
+    <string name="tracking_id">Tracking ID</string>
+    <string name="feedback">Feedback</string>
+    <string name="complaint">Complaint</string>
+    <string name="Pleaseentertextormedia">Please Enter Text or Media</string>
+    <string name="re_open">Re-Open</string>
+    <string name="pending">Pending</string>
+    <string name="resolved">Resolved</string>
+    <string name="in_progress" tools:ignore="PrivateResource">In-Progress</string>
+    <string name="close_conversation">Are you sure you want to close this conversation?</string>
+    <string name="open_conversation">Are you sure you want to open this conversation?</string>
+    <string name="are_your_sure_want_to_delete">Are you sure, You want to Delete Your Account?</string>
+    <string name="are_your_sure_want_to_turn_Off">Are you sure you want to turn Off Notification?</string>
+    <string name="are_your_sure_want_to_turn_On">Are you sure you want to turn On Notification?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_new_password_for_login">Enter new password for login</string>
+    <string name="newPasswordStar">New Password*</string>
+    <string name="reEnterNewPasswordStar">Re-Enter New Password*</string>
+
+    <string name="typeColon">Type:</string>
+    <string name="registration_dateColon">Registration Date:</string>
+    <string name="subjectColon">Subject:</string>
+    <string name="complaint_typeColon">Complaint Type:</string>
+
+    <string name="message_by_admin">Message By Admin</string>
+    <string name="message_by_member">Message By Member</string>
+    <string name="admin_txt">Admin</string>
+    <string name="member_txt">Member</string>
+
+    <string name="conversation_marked_Close">This Conversation was marked Close by member on</string>
+    <string name="conversation_marked_reOpen">This Conversation was marked Re-Open by member on</string>
+    <string name="are_your_sure_want_to_delete_all_notifications">Are you sure, You want to Delete all Notifications?</string>
+    <string name="required_permissions">Please allow all required permissions?</string>
+    <string name="notification_not_enabled">Your Notification is not enabled</string>
+    <string name="request_delete">Thank you for your request. Your account will be deleted within 2 – 3 working days.</string>
+    <string name="profile_updated_successfully">Profile Updated Successfully</string>
+    <string name="change_mobile_number">Change Mobile Number</string>
+    <string name="enter_new_mobile_number_for_login">Enter new mobile number for login</string>
+    <string name="mobile_number_updated_successfully">Mobile Number Updated Successfully</string>
+    <string name="mobile_does_not_exist">Mobile No Does Not Exist</string>
+
+    <string name="training_type">Training</string>
+    <string name="notice_type">Notice</string>
+    <string name="scheme_type">Scheme</string>
+    <string name="vendor_details_type">Vendor Details</string>
+    <string name="information_type">Information</string>
+    <string name="feedback_type">Feedback</string>
+    <string name="complaint_type">Complaint</string>
+    <string name="training_title">You have One New Training</string>
+    <string name="notice_title">You have One New Notice</string>
+    <string name="scheme_title">You have One New Scheme</string>
+    <string name="vendor_details_title">Congratulations! Your profile has been approved, please logout and login again.</string>
+    <string name="feedback_title">You have a Reply on Your Feedback</string>
+    <string name="complaint_title">You have a Reply on Your Complaint</string>
+    <string name="information_title">You have One New Information</string>
+    <string name="network_failed_please_try_again">Network Failed, Please Try Again!</string>
+    <string name="try_again">Try Again</string>
+    <string name="back_to_login_u"><u>Back To Login</u></string>
+    <string name="complaint_added_successfully">Complaint added successfully</string>
+    <string name="feedback_added_successfully">Feedback added successfully</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="your_initial_registration_is_complete">your registration has been completed.</string>
+    <string name="need_to_add_complete_profile">You need to complete your profile before submitting a complaint/feedback.</string>
+    <string name="conversation_marked_admin">This Conversation was marked %s by %s on</string>
+    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="nominee_details">Nominee Details</string>
+    <string name="list_of_nominee">List of Nominee</string>
+    <string name="relationship_TypeStar">Relationship Type*</string>
+    <string name="nameStar">Name*</string>
+    <string-array name="relation_array" tools:ignore="InconsistentArrays">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Husband</item>
+        <item>Wife</item>
+    </string-array>
+    <string name="select_nominee_type">Select Nominee Type</string>
+    <string name="enter_nominee_name">Enter Nominee Detials</string>
+    <string name="nominee_added_updated_successfully">Nominee Added/Updated Successfully</string>
+    <string name="add_edit">Add/Edit</string>
+    <string name='re_open_info'>Re-open</string>
+    <string name="close_info">Close</string>
+    <string name='conversation_marked_admin_open_hi'>This Conversation was marked %s by %s on</string>
+    <string name='conversation_marked_admin_close_hi'>This Conversation was marked %s by %s on</string>
+    <string name="ok">OK</string>
+
+
+
+    <string name='notice_title_bn' translatable="false">আপনার কাছে একটি নতুন বিজ্ঞপ্তি আছে</string>
+    <string name='notice_title_gu' translatable="false">તમારી પાસે એક નવી સૂચના છે</string>
+    <string name='notice_title_hi' translatable="false">आपके पास एक नया नोटिस है</string>
+    <string name='notice_title_kn' translatable="false">ನೀವು ಒಂದು ಹೊಸ ಸೂಚನೆಯನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="notice_title_ml" translatable="false">നിങ്ങൾക്ക് ഒരു പുതിയ അറിയിപ്പുണ്ട്</string>
+    <string name="notice_title_mr" translatable="false">तुमच्याकडे एक नवीन सूचना आहे</string>
+    <string name="notice_title_pa" translatable="false">ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਨਵਾਂ ਨੋਟਿਸ ਹੈ</string>
+    <string name="notice_title_ta" translatable="false">உங்களிடம் ஒரு புதிய அறிவிப்பு உள்ளது</string>
+    <string name="notice_title_te" translatable="false">మీకు ఒక కొత్త నోటీసు ఉంది</string>
+    <string name="notice_title_as" translatable="false">আপোনাৰ এটা নতুন জাননী আছে</string>
+    <string name="notice_title_ur" translatable="false">آپ کے پاس ایک نیا نوٹس ہے</string>
+
+
+    <string name="scheme_title_bn" translatable="false">আপনার একটি নতুন স্কিম আছে</string>৷
+    <string name="scheme_title_gu" translatable="false">તમારી પાસે એક નવી યોજના છે</string>
+    <string name='scheme_title_hi' translatable="false">आपके पास एक नई योजना है</string>
+    <string name="scheme_title_kn" translatable="false">ನೀವು ಒಂದು ಹೊಸ ಯೋಜನೆಯನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="scheme_title_ml" translatable="false">നിങ്ങൾക്ക് ഒരു പുതിയ സ്കീം ഉണ്ട്</string>
+    <string name="scheme_title_mr" translatable="false">तुमच्याकडे एक नवीन योजना आहे</string>
+    <string name="scheme_title_pa" translatable="false">ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਨਵੀਂ ਸਕੀਮ ਹੈ</string>
+    <string name="scheme_title_ta" translatable="false">உங்களிடம் ஒரு புதிய திட்டம் உள்ளது</string>
+    <string name="scheme_title_te" translatable="false">మీకు ఒక కొత్త పథకం ఉంది</string>
+    <string name="scheme_title_as" translatable="false">আপোনাৰ এটা নতুন আঁচনি আছে</string>
+    <string name="scheme_title_ur" translatable="false">آپ کے پاس ایک نئی اسکیم ہے</string>
+
+
+    <string name="training_title_bn" translatable="false">আপনার একটি নতুন প্রশিক্ষণ আছে</string>
+    <string name="training_title_gu" translatable="false">તમારી પાસે એક નવી તાલીમ છે</string>
+    <string name='training_title_hi' translatable="false">आपके पास एक नया प्रशिक्षण है</string>
+    <string name="training_title_kn" translatable="false">ನೀವು ಒಂದು ಹೊಸ ತರಬೇತಿಯನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="training_title_ml" translatable="false">നിങ്ങൾക്ക് ഒരു പുതിയ പരിശീലനം ഉണ്ട്</string>
+    <string name = "training_title_mr" translatable="false"> तुमच्याकडे एक नवीन प्रशिक्षण आहे</string>
+    <string name="training_title_pa" translatable="false">ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਨਵੀਂ ਸਿਖਲਾਈ ਹੈ</string>
+    <string name="training_title_ta" translatable="false">உங்களுக்கு ஒரு புதிய பயிற்சி உள்ளது</string>
+    <string name="training_title_te" translatable="false">మీకు ఒక కొత్త శిక్షణ ఉంది</string>
+    <string name="training_title_as" translatable="false">আপোনাৰ এটা নতুন প্ৰশিক্ষণ আছে</string>
+    <string name = "training_title_ur" translatable="false"> آپ کے پاس ایک نئی تربیت ہے</string>
+
+
+    <string name="vendor_details_title_bn" translatable="false">অভিনন্দন! আপনার প্রোফাইল অনুমোদিত হয়েছে, অনুগ্রহ করে লগআউট করুন এবং আবার লগইন করুন।</string>
+    <string name="vendor_details_title_gu" translatable="false">અભિનંદન! તમારી પ્રોફાઇલ મંજૂર કરવામાં આવી છે, કૃપા કરીને લોગઆઉટ કરો અને ફરીથી લોગિન કરો.</string>
+    <string name='vendor_details_title_hi' translatable="false">बधाई हो! आपकी प्रोफ़ाइल स्वीकृत हो गई है, कृपया लॉगआउट करें और फिर से लॉगिन करें।</string>
+    <string name="vendor_details_title_kn" translatable="false">ಅಭಿನಂದನೆಗಳು! ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಅನುಮೋದಿಸಲಾಗಿದೆ, ದಯವಿಟ್ಟು ಲಾಗ್‌ಔಟ್ ಮಾಡಿ ಮತ್ತು ಮತ್ತೆ ಲಾಗಿನ್ ಮಾಡಿ.</string>
+    <string name="vendor_details_title_ml" translatable="false">അഭിനന്ദനങ്ങൾ! നിങ്ങളുടെ പ്രൊഫൈൽ അംഗീകരിച്ചു, ദയവായി ലോഗ് ഔട്ട് ചെയ്‌ത് വീണ്ടും ലോഗിൻ ചെയ്യുക.</string>
+    <string name="vendor_details_title_mr" translatable="false">अभिनंदन! तुमचे प्रोफाइल मंजूर झाले आहे, कृपया लॉगआउट करा आणि पुन्हा लॉग इन करा.</string>
+    <string name="vendor_details_title_pa" translatable="false">ਵਧਾਈਆਂ! ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਮਨਜ਼ੂਰ ਹੋ ਗਈ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਲੌਗਆਉਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਲੌਗਇਨ ਕਰੋ।</string>
+    <string name="vendor_details_title_ta" translatable="false">வாழ்த்துகள்! உங்கள் சுயவிவரம் அங்கீகரிக்கப்பட்டது, வெளியேறி மீண்டும் உள்நுழையவும்.</string>
+    <string name="vendor_details_title_te" translatable="false">అభినందనలు! మీ ప్రొఫైల్ ఆమోదించబడింది, దయచేసి లాగ్ అవుట్ చేసి మళ్లీ లాగిన్ చేయండి.</string>
+    <string name="vendor_details_title_as" translatable="false">অভিনন্দন! আপোনাৰ আলেখ্যন অনুমোদিত হৈছে, অনুগ্ৰহ কৰি লগআউট কৰক আৰু পুনৰ প্ৰৱেশ কৰক।</string>
+    <string name="vendor_details_title_ur" translatable="false">مبارک ہو! آپ کا پروفائل منظور ہو گیا ہے، براہ کرم لاگ آؤٹ کریں اور دوبارہ لاگ ان کریں۔</string>
+
+
+    <string name="vendor_details_title_reject" translatable="false">Your profile has been rejected. Please contact admin.</string>
+    <string name="vendor_details_title_reject_bn" translatable="false">আপনার প্রোফাইল প্রত্যাখ্যান করা হয়েছে. অ্যাডমিনের সাথে যোগাযোগ করুন.</string>
+    <string name="vendor_details_title_reject_gu" translatable="false">તમારી પ્રોફાઇલ નકારવામાં આવી છે. કૃપા કરીને એડમિનનો સંપર્ક કરો.</string>
+    <string name='vendor_details_title_reject_hi' translatable="false">आपकी प्रोफ़ाइल अस्वीकार कर दी गई है. कृपया व्यवस्थापक से संपर्क करें.</string>
+    <string name="vendor_details_title_reject_kn" translatable="false">ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ತಿರಸ್ಕರಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</string>
+    <string name="vendor_details_title_reject_ml" translatable="false">നിങ്ങളുടെ പ്രൊഫൈൽ നിരസിക്കപ്പെട്ടു. ദയവായി അഡ്മിനെ ബന്ധപ്പെടുക.</string>
+    <string name="vendor_details_title_reject_mr" translatable="false">तुमचे प्रोफाइल नाकारले गेले आहे. कृपया प्रशासकाशी संपर्क साधा.</string>
+    <string name="vendor_details_title_reject_pa" translatable="false">ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਅਸਵੀਕਾਰ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਐਡਮਿਨ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
+    <string name="vendor_details_title_reject_ta" translatable="false">உங்கள் சுயவிவரம் நிராகரிக்கப்பட்டது. நிர்வாகியை தொடர்பு கொள்ளவும்.</string>
+    <string name="vendor_details_title_reject_te" translatable="false">మీ ప్రొఫైల్ తిరస్కరించబడింది. దయచేసి నిర్వాహకుడిని సంప్రదించండి.</string>
+    <string name="vendor_details_title_reject_as" translatable="false">আপোনাৰ আলেখ্যন নাকচ কৰা হৈছে। অনুগ্ৰহ কৰি প্ৰশাসকৰ সৈতে যোগাযোগ কৰক।</string>
+    <string name="vendor_details_title_reject_ur" translatable="false">آپ کا پروفائل مسترد کر دیا گیا ہے۔ براہ کرم ایڈمن سے رابطہ کریں۔</string>
+
+    <string name="information_title_bn" translatable="false">আপনার কাছে একটি নতুন তথ্য আছে</string>
+    <string name="information_title_gu" translatable="false">તમારી પાસે એક નવી માહિતી છે</string>
+    <string name='information_title_hi' translatable="false">आपके पास एक नई जानकारी है</string>
+    <string name="information_title_kn" translatable="false">ನೀವು ಒಂದು ಹೊಸ ಮಾಹಿತಿಯನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="information_title_ml" translatable="false">നിങ്ങൾക്ക് ഒരു പുതിയ വിവരമുണ്ട്</string>
+    <string name="information_title_mr" translatable="false">तुमच्याकडे एक नवीन माहिती आहे</string>
+    <string name="information_title_pa" translatable="false">ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਨਵੀਂ ਜਾਣਕਾਰੀ ਹੈ</string>
+    <string name="information_title_ta" translatable="false">உங்களிடம் ஒரு புதிய தகவல் உள்ளது</string>
+    <string name="information_title_te" translatable="false">మీకు ఒక కొత్త సమాచారం ఉంది</string>
+    <string name="information_title_as" translatable="false">আপোনাৰ এটা নতুন তথ্য আছে</string>
+    <string name="information_title_ur" translatable="false">آپ کے پاس ایک نئی معلومات ہے</string>
+
+
+
+    <string name="feedback_title_bn" translatable="false">আপনার প্রতিক্রিয়ার উপর আপনার একটি উত্তর আছে</string>
+    <string name="feedback_title_gu" translatable="false">તમારી પાસે તમારા પ્રતિસાદ પર જવાબ છે</string>
+    <string name='feedback_title_hi' translatable="false">आपके पास आपके प्रतिक्रिया पर एक उत्तर है</string>
+    <string name="feedback_title_kn" translatable="false">ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಯಲ್ಲಿ ನೀವು ಪ್ರತ್ಯುತ್ತರವನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="feedback_title_ml" translatable="false">നിങ്ങളുടെ ഫീഡ്‌ബാക്കിൽ നിങ്ങൾക്ക് ഒരു മറുപടിയുണ്ട്</string>
+    <string name="feedback_title_mr" translatable="false">तुमच्या फीडबॅकवर तुमच्याकडे प्रत्युत्तर आहे</string>
+    <string name="feedback_title_pa" translatable="false">ਤੁਹਾਡੇ ਫੀਡਬੈਕ \'ਤੇ ਇੱਕ ਜਵਾਬ ਹੈ</string>
+    <string name="feedback_title_ta" translatable="false">உங்கள் பின்னூட்டத்தில் பதில் உள்ளது</string>
+    <string name="feedback_title_te" translatable="false">మీ అభిప్రాయంపై మీకు ప్రత్యుత్తరం ఉంది</string>
+    <string name="feedback_title_as" translatable="false">আপোনাৰ মতামতত আপোনাৰ এটা উত্তৰ আছে</string>
+    <string name="feedback_title_ur" translatable="false">آپ کے تاثرات پر آپ کے پاس ایک جواب ہے</string>
+
+
+    <string name="complaint_title_bn" translatable="false">আপনার অভিযোগের একটি উত্তর আছে</string>
+    <string name="complaint_title_gu" translatable="false">તમારી ફરિયાદ પર તમારી પાસે જવાબ છે</string>
+    <string name='complaint_title_hi' translatable="false">आपके पास आपकी शिकायत का उत्तर है</string>
+    <string name="complaint_title_kn" translatable="false">ನಿಮ್ಮ ದೂರಿಗೆ ನೀವು ಪ್ರತ್ಯುತ್ತರವನ್ನು ಹೊಂದಿರುವಿರಿ</string>
+    <string name="complaint_title_ml" translatable="false">നിങ്ങളുടെ പരാതിയിൽ നിങ്ങൾക്ക് ഒരു മറുപടിയുണ്ട്</string>
+    <string name="complaint_title_mr" translatable="false">तुमच्या तक्रारीवर तुमच्याकडे उत्तर आहे</string>
+    <string name="complaint_title_pa" translatable="false">ਤੁਹਾਡੇ ਕੋਲ ਤੁਹਾਡੀ ਸ਼ਿਕਾਇਤ ਦਾ ਜਵਾਬ ਹੈ</string>
+    <string name="complaint_title_ta" translatable="false">உங்கள் புகாருக்கு உங்களிடம் பதில் உள்ளது</string>
+    <string name="complaint_title_te" translatable="false">మీ ఫిర్యాదుపై మీకు ప్రత్యుత్తరం ఉంది</string>
+    <string name="complaint_title_as" translatable="false">আপোনাৰ অভিযোগত আপোনাৰ এটা উত্তৰ আছে</string>
+    <string name="complaint_title_ur" translatable="false">آپ کے پاس آپ کی شکایت کا جواب ہے</string>
+
+    <string name="pending_title_en" translatable="false">Your profile has been still pending. Please contact admin.</string>
+    <string name="pending_title_bn" translatable="false">আপনার প্রোফাইল এখনও মুলতুবি রয়েছে৷ অনুগ্রহ করে প্রশাসকের সাথে যোগাযোগ করুন৷</string>
+    <string name="pending_title_gu" translatable="false">તમારી પ્રોફાઇલ હજુ બાકી છે. કૃપા કરીને એડમિનનો સંપર્ક કરો.</string>
+    <string name="pending_title_hi" translatable="false">आपकी प्रोफ़ाइल अभी भी लंबित है। कृपया व्यवस्थापक से संपर्क करें.</string>
+    <string name="pending_title_kn" translatable="false">ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಇನ್ನೂ ಬಾಕಿ ಉಳಿದಿದೆ. ದಯವಿಟ್ಟು ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</string>
+    <string name="pending_title_ml" translatable="false">നിങ്ങളുടെ പ്രൊഫൈൽ ഇപ്പോഴും തീർച്ചപ്പെടുത്തിയിട്ടില്ല. അഡ്മിനെ ബന്ധപ്പെടുക.</string>
+    <string name="pending_title_mr" translatable="false">तुमची प्रोफाइल अद्याप प्रलंबित आहे. कृपया प्रशासकाशी संपर्क साधा.</string>
+    <string name="pending_title_pa" translatable="false">ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਅਜੇ ਵੀ ਲੰਬਿਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
+    <string name="pending_title_ta" translatable="false">உங்கள் சுயவிவரம் இன்னும் நிலுவையில் உள்ளது. நிர்வாகியைத் தொடர்பு கொள்ளவும்.</string>
+    <string name="pending_title_te" translatable="false">మీ ప్రొఫైల్ ఇంకా పెండింగ్‌లో ఉంది. దయచేసి నిర్వాహకుడిని సంప్రదించండి.</string>
+    <string name="pending_title_as" translatable="false">আপোনাৰ আলেখ্যন এতিয়াও বাকী আছে। অনুগ্ৰহ কৰি প্ৰশাসকৰ সৈতে যোগাযোগ কৰক।</string>
+    <string name="pending_title_ur" translatable="false">آپ کا پروفائل ابھی تک زیر التواء ہے۔ براہ کرم منتظم سے رابطہ کریں۔</string>
+
+
+
+    <string name="membership_title">Your subscription has expired. Please renew today to continue using our services.</string>
+    <string name="membership_title_bn" translatable="false">আপনার সদস্যতা মেয়াদ শেষ হয়েছে. আমাদের পরিষেবাগুলি ব্যবহার চালিয়ে যেতে দয়া করে আজই পুনর্নবীকরণ করুন৷</string>
+    <string name="membership_title_gu" translatable="false">તમારું સબ્સ્ક્રિપ્શન સમાપ્ત થઈ ગયું છે. અમારી સેવાઓનો ઉપયોગ ચાલુ રાખવા માટે કૃપા કરીને આજે જ રિન્યૂ કરો.</string>
+    <string name='membership_title_hi' translatable="false">आपकी सदस्यता समाप्त हो गई है. हमारी सेवाओं का उपयोग जारी रखने के लिए कृपया आज ही नवीनीकरण करें।</string>
+    <string name="membership_title_kn" translatable="false">ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆ ಅವಧಿ ಮೀರಿದೆ. ನಮ್ಮ ಸೇವೆಗಳನ್ನು ಬಳಸುವುದನ್ನು ಮುಂದುವರಿಸಲು ದಯವಿಟ್ಟು ಇಂದೇ ನವೀಕರಿಸಿ.</string>
+    <string name="membership_title_ml" translatable="false">നിങ്ങളുടെ സബ്‌സ്‌ക്രിപ്‌ഷൻ കാലഹരണപ്പെട്ടു. ഞങ്ങളുടെ സേവനങ്ങൾ ഉപയോഗിക്കുന്നത് തുടരാൻ ദയവായി ഇന്നുതന്നെ പുതുക്കുക.</string>
+    <string name="membership_title_mr" translatable="false">तुमची सदस्यता कालबाह्य झाली आहे. आमच्या सेवा वापरणे सुरू ठेवण्यासाठी कृपया आजच नूतनीकरण करा.</string>
+    <string name="membership_title_pa" translatable="false">ਤੁਹਾਡੀ ਗਾਹਕੀ ਦੀ ਮਿਆਦ ਸਮਾਪਤ ਹੋ ਗਈ ਹੈ। ਸਾਡੀਆਂ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਜਾਰੀ ਰੱਖਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਅੱਜ ਹੀ ਰੀਨਿਊ ਕਰੋ।</string>
+    <string name="membership_title_ta" translatable="false">உங்கள் சந்தா காலாவதியானது. எங்கள் சேவைகளை தொடர்ந்து பயன்படுத்த, இன்றே புதுப்பிக்கவும்.</string>
+    <string name="membership_title_te" translatable="false">మీ సభ్యత్వం గడువు ముగిసింది. దయచేసి మా సేవలను ఉపయోగించడం కొనసాగించడానికి ఈరోజే పునరుద్ధరించండి.</string>
+    <string name="membership_title_as" translatable="false">আপোনাৰ চাবস্ক্ৰিপচনৰ ম্যাদ উকলি গৈছে। আমাৰ সেৱাসমূহ ব্যৱহাৰ কৰি যাবলৈ আজিয়েই নবীকৰণ কৰক।</string>
+    <string name="membership_title_ur" translatable="false">آپ کی رکنیت ختم ہو گئی ہے۔ ہماری خدمات کا استعمال جاری رکھنے کے لیے براہ کرم آج ہی تجدید کریں۔</string>
+
+
+
+    <string name="closed">Closed</string>
+
+
+    <string name="subscription">Subscription</string>
+    <string name="view_manage">View/Manage</string>
+    <string name="history">History</string>
+
+    <string name="select_month_year">Select Month/Year</string>
+    <string name="choose_number">Choose Duration</string>
+    <string name="month">Month*</string>
+    <string name="year">Year</string>
+    <string name="calculate_price">Calculate Price</string>
+    <string name="price_breakup">Price Breakup</string>
+    <string name="membership_cost">Membership Cost</string>
+    <string name="validity">Validity</string>
+    <string name="gst">GST (%s)</string>
+    <string name="gst_pdf" translatable="false">GST (%s)</string>
+    <string name="coupon_discount">Coupon Discount (%s)</string>
+    <string name="total_cost">Total Cost</string>
+    <string name="purchase_subscription">Purchase Subscription</string>
+    <string name="months">Months</string>
+    <string name="years">Years</string>
+    <string name="s_no">S.No.</string>
+    <string name="date">Date &amp; Time</string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="duration">Duration</string>
+
+    <string-array name="month_year_array">
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+
+
+    <string-array name="numbers_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
+    <string name="subscription_details">Subscription Details</string>
+    <string name="please_select_month_year_and_number">Please select Month/Year and Duration</string>
+
+    <string name="rupees" translatable="false">\u20B9%s</string>
+    <string name="percent" translatable="false">%s &#37;</string>
+    <string name="days" translatable="false">%s Days</string>
+    <string name="more_information">More Information</string>
+    <string name="about_us">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="rate_our_app">Rate Our App</string>
+    <string name="share_our_app">Share Our App</string>
+    <string name="app_update">App Update</string>
+    <string name="new_version_available_1_0">New Version Available %s</string>
+    <string name="expired_account_message">Your Subscription has expired. Please Subscribe your account for entire services.</string>
+    <string name="subscribe_now">Subscribe Now</string>
+
+    <string name="subscription_type">Subscription</string>
+    <string name="need_to_add_complete_subscription">You need to complete your profile before Subscription.</string>
+    <string name="order_id">Order Id</string>
+    <string name="please_calculate_price">Please Calculate Price</string>
+    <string name="user_id">User Id</string>
+    <string name="plan_type">Plan Type</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="net_amount">Net Amount</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="currently_no_transaction_history">Currently, No Transaction History are found here.</string>
+    <string name="download_invoice">Download Invoice</string>
+    <string name="duration_indays">Duration (Days)</string>
+    <string name="subscription_added_successfully">Subscription Added Successfully</string>
+    <string name="share_content">🌟 Hey fellow street vendors! 🌟 Just shared the Nikshay Patra - Hypro app with you all. It\'s a game-changer for our businesses, providing essential tools and resources to thrive. Let\'s empower each other and make our voices heard! 💼🛒 #StreetSaarthi #EmpoweringStreetVendors #UnityInBusiness</string>
+    <string name="discount">Discount (%s)</string>
+    <string name="discount_pdf" translatable="false">Discount (%s)</string>
+
+    <string name="_amount_in_words" translatable="false">Amount In Words:</string>
+    <string name="_rupees">Rupees</string>
+    <string name="_and">And</string>
+    <string name="_paise">Paise</string>
+    <string name="_only">Only</string>
+
+    <string name="_year">Year</string>
+    <string name="_years">Years</string>
+    <string name="_month">Month</string>
+    <string name="_months">Months</string>
+    <string name="_week">Week</string>
+    <string name="_weeks">Weeks</string>
+    <string name="_day">Day</string>
+    <string name="_days">Days</string>
+
+    <string name="controller">Controller</string>
+    <string name="distributor">Distributor</string>
+    <string name="aadhaar_number">Aadhaar Number*</string>
+    <string name="address">Address*</string>
+
+    <string name="form1">Form1</string>
+    <string name="form2">Form2</string>
+    <string name="form3">Form3</string>
+    <string name="form4">Form4</string>
+    <string name="form5">Form5</string>
+    <string name="form6">Form6</string>
+    <string name="form7">Form7</string>
+    <string name="father_name_husband_nameStar">Father Name / Husband Name*</string>
+    <string name="father">Father</string>
+    <string name="husband">Husband</string>
+    <string name="mother_nameStar">Mother Name</string>
+    <string name="ageStar">Age(Y)*</string>
+    <string name="height">Height(CM)</string>
+    <string name="heightStar">Height(CM)*</string>
+    <string name="weightStar">Weight(KG)*</string>
+    <string name="weight">Weight(KG)</string>
+    <string name="number_of_membersStar">Total Family Members*</string>
+    <string name="number_of_childrensStar">Number of Childrens(Age 0 - 6)*</string>
+    <string name="DMCNameStar">DMC Name*</string>
+    <string name="district_StateStar">District / State*</string>
+    <string name="card">Card*</string>
+    <string name="apl">APL</string>
+    <string name="bpl">BPL</string>
+    <string name="blockStar">Block*</string>
+
+    <string name="type_of_patientStar">Type of Patient*</string>
+    <string name="pulmonary">Pulmonary</string>
+    <string name="extra_Pulmonary">Extra Pulmonary</string>
+    <string name="other">Other</string>
+    <string name="treatment_Date">Checkup Date</string>
+    <string name="treatment_DateStar">Checkup Date*</string>
+    <string name="hemoglobin_level">Hemoglobin Level</string>
+
+    <string name="muktiID">Mukti ID</string>
+    <string name="nakshayID">Nikshay ID*</string>
+
+    <string name="business">Business*</string>
+
+    <string name="Bank_Account">Bank Account</string>
+    <string name="Bank_IFSC">Bank IFSC</string>
+    <string name="TreatmentDetails">Treatment Details</string>
+    <string name="Treatment_Supporter_Name">Treatment Supporter Name</string>
+    <string name="Treatment_Supporter_Post">Treatment Supporter Post</string>
+    <string name="Treatment_Supporter_Mobile_Number">Treatment Supporter Mobile Number</string>
+
+    <string name="TreatmentEndDate">Treatment End Date</string>
+    <string name="TreatmentResult">Treatment Result</string>
+
+    <string name="description_of_food_items">Description of Food Items</string>
+    <string name="signature">Signature (Service Provider)*</string>
+    <string name="dateSingle">Date*</string>
+    <string name="HomeVisitFollowUp">Home Visit Follow Up</string>
+
+    <string name="beneficiary_card">Beneficiary Card</string>
+    <string name="checkup">Checkup</string>
+    <string name="food_items">Food Items</string>
+    <string name="government_under_scheme">Government Scheme</string>
+    <string name="diet_chart">Diet Chart</string>
+
+    <string name="clear">Clear</string>
+    <string name="complete">Complete</string>
+    <string name="tryAgain">Try Again</string>
+
+    <string name="food_item_image">Food Item Image*</string>
+    <string name="aadhar_image">Aadhar Image*</string>
+    <string name="nbpa">NBPA</string>">
+    <string name="Nikshay_Beneficiary_Program_Activities_Form">Nikshay Beneficiary Program Activities Form</string>">
+
+
+
+    <string name="enterName">Enter Name</string>
+    <string name="enterFatherName">Enter Father Name</string>
+    <string name="enterHusbandName">Enter Husband Name</string>
+    <string name="enterMotherName">Enter Mother Name</string>
+    <string name="selectGender">Select Gender</string>
+    <string name="enterAge">Select Age</string>
+    <string name="enterHeight">Enter Height</string>
+    <string name="enterWeight">Enter Weight</string>
+    <string name="enterNumbersOfMembers">Enter Total Family Members</string>
+    <string name="enterNumbersOfChildrens">Enter Number Of Childrens(Age 0 - 6)</string>
+    <string name="enterAddress">Enter Address</string>
+    <string name="enterDMCName">Enter DMC Name</string>
+    <string name="enterBlock">Enter Block</string>
+    <string name="enterMobileNumberForm">Enter Mobile Number</string>
+    <string name="enterDistrictState">Enter District / State</string>
+
+
+    <string name="selectCheckupDate">Select Checkup Date*</string>
+    <string name="enterMuktiID">Enter Mukti ID</string>
+    <string name="enterNakshayID">Enter Nikshay ID</string>
+    <string name="enterAadhaarNumber">Enter Aadhaar Number</string>
+    <string name="enterBusiness">Enter Business</string>
+    <string name="enterBankAccount">Enter Bank Account</string>
+    <string name="enterBankIFSC">Enter Bank IFSC</string>
+
+    <string name="enter_Treatment_Supporter_Name">Enter Treatment Supporter Name</string>
+    <string name="enter_Treatment_Supporter_Post">Enter Treatment Supporter Post</string>
+    <string name="enter_Treatment_Supporter_Mobile_Number">Enter Treatment Supporter Mobile Number</string>
+    <string name="enter_TreatmentEndDate">Select Treatment End Date</string>
+    <string name="enter_TreatmentResult">Enter Treatment Result</string>
+    <string name="profiler_image">Profile Image*</string>">
+    <string name="aadhaar_image">Aadhaar Image*</string>
+
+
+    <string name="select_month">Select Month</string>
+    <string name="select_date">Select Date</string>
+    <string name="add_signature">Add Signature</string>
+    <string name="Nikshay_Beneficiary_Program_Activities">Nikshay Beneficiary Program Activities</string>">
+    <string name="are_your_sure_want_to_submit">Are you sure, You want to Submit?</string>
+    <string name="back_to_login_">Back To Login</string>
+
+
+
+    <string name="are_your_sure_want_to_exit">Are you want to Exit?</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="address_">Address: </string>
+    <string name="date_">Date:</string>
+    <string name="mobile_no_per">Mobile No: </string>
+    <string name="password_changed_successfully">Your password has been changed successfully</string>
+    <string name="filter_by">Filter By</string>
+    <string name="name_filter">Name</string>
+    <string name="mobile_filter">Mobile</string>
+    <string name="aadhaar_filter">Aadhaar</string>
+    <string name="date_filter">Date</string>
+    <string name="start_date_filter">Start Date</string>
+    <string name="end_date_filter">End Date</string>
+
+    <string name="total_distributors_added">Total Distributors added</string>
+    <string name="nbpa_forms_added">Total NBPA forms added</string>
+    <string name="nbpa_forms_added_in_last_7_days">NBPA forms added in Last 7 days</string>
+    <string name="distributors_added_in_last_7_days">Distributors added in Last 7 days</string>
+    <string name="EndDateshouldbegreaterthanStartDate">End Date should be greater than Start Date</string>
+    <string name="SelectValidStartDateandEndDate">Select Valid Start Date and End Date</string>
+
+    <string name="aadhaar_no">Aadhaar No: </string>
+    <string name="all_distributors">All Distributors</string>
+
+    <string name="forms_added_successfully">Form added successfully</string>
+
+    <string name="geoClickby">Click By: </string>
+    <string name="geAddress">Address: </string>
+    <string name="geoLatLng">LatLong: </string>
+    <string name="geoDateTime">Date Time: </string>
+
+
+    <string name="beneficiary_s_diet_chart_link">Diet chart evaluation of Beneficiery</string>
+    <string name="date_form4">Date</string>
+    <string name="diet_chart_mulyakan">Diet chart evaluation of details</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="service_provider">Service provider</string>
+    <string name="home_visit_follow_up">Home Visit Follow Up</string>
+    <string name="signatureWithoutStar">Signature (Patient)</string>
+    <string name="comment">Remark</string>
+    <string name="assistance_received_under_government_scheme">Assistance received under government scheme</string>
+    <string name="name_of_help">Name of help</string>
+    <string name="dbt_amount_by_health_department">DBT amount by Health Department</string>
+    <string name="total_amount_received">Total Amount Received</string>
+    <string name="additional_ration_received_from_pds">Extra grocery  Obtained from PDS</string>
+    <string name="appropriate_multi_vitamin_distribution">Useful multivitamin distribution</string>
+    <string name="total_number_obtained">Total Number Obtained</string>
+    <string name="other_received_help">Other Received Help</string>
+    <string name="project_coordinator_signature">Project Coordinator Signature</string>
+    <string name="project_manager_signature">Project Manager Signature</string>
+    <string name="details">Details</string>
+
+    <string name="selectDate">Select Date</string>
+    <string name="check_detail">Check Detail</string>
+    <string name="enter_valid_aadhaar_number">Enter Valid Aadhaar Number</string>
+    <string name="enter_aadhaar_number_to_verify_the_patient_new">Select Aadhaar number/Nikshay id to verify the patient.</string>
+    <string name="please_fill_required_entries">Please fill required* entries!</string>
+    <string name="already_exists_aadhaar">The entered Aadhaar number already exists with another distributor.</string>
+    <string name="already_exists_nakshay_id">The entered nikshay id already exists with another distributor.</string>
+
+
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="geoLocation">Geo Location</string>
+    <string name="please_enter_valid_latitude_longitude">Please enter valid latitude and longitude</string>
+    <string name="location_saved_successfully">Location saved successfully</string>
+    <string name="nakshay_id">Nikshay Id</string>
+    <string name="aadhaar_number_without_star">Aadhaar Number</string>
+    <string name="enter_nakshay_id">Enter Nikshay Id</string>
+    <string name="food_already_taken">The patient is not eligible for food services this month. Please try again next month.</string>
+    <string name="enter_aadhaar_number_to_verify_the_patient">Select Aadhaar number to verify the patient.</string>
+
+    <string name="nakshay_id_taken">The entered Nikshay ID has already been taken.</string>
+
+    <string name="enable_gps">Enable GPS</string>
+    <string name="required_for_this_app">Required for this app</string>
+    <string name="enable_now">Enable Now</string>
+    <string name="location_permission_not_granted">Location Permission not granted</string>
+
+
+</resources>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="autosize_4_5_9">
+        <item>@dimen/_1sdp</item>
+        <item>@dimen/_2sdp</item>
+        <item>@dimen/_3sdp</item>
+        <item>@dimen/_4sdp</item>
+        <item>@dimen/_5sdp</item>
+        <item>@dimen/_6sdp</item>
+        <item>@dimen/_7sdp</item>
+        <item>@dimen/_8sdp</item>
+        <item>@dimen/_9sdp</item>
+    </array>
+
+    <array name="autosize_4_5_10">
+        <item>@dimen/_1sdp</item>
+        <item>@dimen/_2sdp</item>
+        <item>@dimen/_3sdp</item>
+        <item>@dimen/_4sdp</item>
+        <item>@dimen/_5sdp</item>
+        <item>@dimen/_6sdp</item>
+        <item>@dimen/_7sdp</item>
+        <item>@dimen/_8sdp</item>
+        <item>@dimen/_9sdp</item>
+        <item>@dimen/_10sdp</item>
+    </array>
+
+    <array name="autosize_4_5_12">
+        <item>@dimen/_1sdp</item>
+        <item>@dimen/_2sdp</item>
+        <item>@dimen/_3sdp</item>
+        <item>@dimen/_4sdp</item>
+        <item>@dimen/_5sdp</item>
+        <item>@dimen/_6sdp</item>
+        <item>@dimen/_7sdp</item>
+        <item>@dimen/_8sdp</item>
+        <item>@dimen/_9sdp</item>
+        <item>@dimen/_10sdp</item>
+        <item>@dimen/_11sdp</item>
+        <item>@dimen/_12sdp</item>
+    </array>
+
+
+    <array name="autosize_4_5_35">
+        <item>@dimen/_1sdp</item>
+        <item>@dimen/_2sdp</item>
+        <item>@dimen/_3sdp</item>
+        <item>@dimen/_4sdp</item>
+        <item>@dimen/_5sdp</item>
+        <item>@dimen/_6sdp</item>
+        <item>@dimen/_7sdp</item>
+        <item>@dimen/_8sdp</item>
+        <item>@dimen/_9sdp</item>
+        <item>@dimen/_10sdp</item>
+        <item>@dimen/_11sdp</item>
+        <item>@dimen/_12sdp</item>
+        <item>@dimen/_13sdp</item>
+        <item>@dimen/_14sdp</item>
+        <item>@dimen/_15sdp</item>
+        <item>@dimen/_16sdp</item>
+        <item>@dimen/_17sdp</item>
+        <item>@dimen/_18sdp</item>
+        <item>@dimen/_19sdp</item>
+        <item>@dimen/_20sdp</item>
+        <item>@dimen/_21sdp</item>
+        <item>@dimen/_22sdp</item>
+        <item>@dimen/_23sdp</item>
+        <item>@dimen/_24sdp</item>
+        <item>@dimen/_25sdp</item>
+        <item>@dimen/_26sdp</item>
+        <item>@dimen/_27sdp</item>
+        <item>@dimen/_28sdp</item>
+        <item>@dimen/_29sdp</item>
+        <item>@dimen/_30sdp</item>
+        <item>@dimen/_31sdp</item>
+        <item>@dimen/_32sdp</item>
+        <item>@dimen/_33sdp</item>
+        <item>@dimen/_34sdp</item>
+        <item>@dimen/_35sdp</item>
+        <item>@dimen/_36sdp</item>
+        <item>@dimen/_37sdp</item>
+        <item>@dimen/_38sdp</item>
+        <item>@dimen/_39sdp</item>
+        <item>@dimen/_40sdp</item>
+    </array>
+
+
+    <array name="autosize_5_2_8">
+        <item>@dimen/_2ssp</item>
+        <item>@dimen/_3ssp</item>
+        <item>@dimen/_4ssp</item>
+        <item>@dimen/_5ssp</item>
+        <item>@dimen/_6ssp</item>
+        <item>@dimen/_7ssp</item>
+        <item>@dimen/_8ssp</item>
+    </array>
+
+    <array name="autosize_6_3_9">
+        <item>@dimen/_3ssp</item>
+        <item>@dimen/_4ssp</item>
+        <item>@dimen/_5ssp</item>
+        <item>@dimen/_6ssp</item>
+        <item>@dimen/_7ssp</item>
+        <item>@dimen/_8ssp</item>
+        <item>@dimen/_9ssp</item>
+    </array>
+
+    <array name="autosize_7_4_10">
+        <item>@dimen/_4ssp</item>
+        <item>@dimen/_5ssp</item>
+        <item>@dimen/_6ssp</item>
+        <item>@dimen/_7ssp</item>
+        <item>@dimen/_8ssp</item>
+        <item>@dimen/_9ssp</item>
+        <item>@dimen/_10ssp</item>
+    </array>
+
+    <array name="autosize_8_5_11">
+        <item>@dimen/_5ssp</item>
+        <item>@dimen/_6ssp</item>
+        <item>@dimen/_7ssp</item>
+        <item>@dimen/_8ssp</item>
+        <item>@dimen/_9ssp</item>
+        <item>@dimen/_10ssp</item>
+        <item>@dimen/_11ssp</item>
+    </array>
+
+    <array name="autosize_9_6_12">
+        <item>@dimen/_6ssp</item>
+        <item>@dimen/_7ssp</item>
+        <item>@dimen/_8ssp</item>
+        <item>@dimen/_9ssp</item>
+        <item>@dimen/_10ssp</item>
+        <item>@dimen/_11ssp</item>
+        <item>@dimen/_12ssp</item>
+    </array>
+
+    <array name="autosize_10_7_13">
+        <item>@dimen/_7sdp</item>
+        <item>@dimen/_8sdp</item>
+        <item>@dimen/_9sdp</item>
+        <item>@dimen/_10sdp</item>
+        <item>@dimen/_11sdp</item>
+        <item>@dimen/_12sdp</item>
+        <item>@dimen/_13sdp</item>
+    </array>
+
+    <array name="autosize_11_8_14">
+        <item>@dimen/_8ssp</item>
+        <item>@dimen/_9ssp</item>
+        <item>@dimen/_10ssp</item>
+        <item>@dimen/_11ssp</item>
+        <item>@dimen/_12ssp</item>
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+    </array>
+
+    <array name="autosize_12_9_15">
+        <item>@dimen/_9ssp</item>
+        <item>@dimen/_10ssp</item>
+        <item>@dimen/_11ssp</item>
+        <item>@dimen/_12ssp</item>
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+    </array>
+
+    <array name="autosize_13_10_16">
+        <item>@dimen/_10ssp</item>
+        <item>@dimen/_11ssp</item>
+        <item>@dimen/_12ssp</item>
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+    </array>
+
+    <array name="autosize_14_11_17">
+        <item>@dimen/_11ssp</item>
+        <item>@dimen/_12ssp</item>
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+    </array>
+
+    <array name="autosize_15_12_18">
+        <item>@dimen/_12ssp</item>
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+    </array>
+
+    <array name="autosize_16_13_19">
+        <item>@dimen/_13ssp</item>
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+    </array>
+
+    <array name="autosize_17_14_20">
+        <item>@dimen/_14ssp</item>
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+    </array>
+
+    <array name="autosize_18_15_21">
+        <item>@dimen/_15ssp</item>
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+        <item>@dimen/_21ssp</item>
+    </array>
+
+    <array name="autosize_19_16_22">
+        <item>@dimen/_16ssp</item>
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+        <item>@dimen/_21ssp</item>
+        <item>@dimen/_22ssp</item>
+    </array>
+
+    <array name="autosize_20_17_23">
+        <item>@dimen/_17ssp</item>
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+        <item>@dimen/_21ssp</item>
+        <item>@dimen/_22ssp</item>
+        <item>@dimen/_23ssp</item>
+    </array>
+
+    <array name="autosize_21_18_24">
+        <item>@dimen/_18ssp</item>
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+        <item>@dimen/_21ssp</item>
+        <item>@dimen/_22ssp</item>
+        <item>@dimen/_23ssp</item>
+        <item>@dimen/_24ssp</item>
+    </array>
+
+    <array name="autosize_22_19_25">
+        <item>@dimen/_19ssp</item>
+        <item>@dimen/_20ssp</item>
+        <item>@dimen/_21ssp</item>
+        <item>@dimen/_22ssp</item>
+        <item>@dimen/_23ssp</item>
+        <item>@dimen/_24ssp</item>
+        <item>@dimen/_25ssp</item>
+    </array>
+    
+    <string-array name="short_months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+</resources>

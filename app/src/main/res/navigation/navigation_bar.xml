@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_bar"
+    app:startDestination="@id/splash"
+    >
+
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.NBPAList"
+            android:label="NBPAList"
+            android:id="@+id/nbpaList"
+            tools:layout="@layout/nbpa_list">
+        <action
+                android:id="@+id/action_nbpaList_to_nbpaView"
+                app:destination="@id/nbpaView"
+                app:launchSingleTop="true"
+                />
+        <action
+                android:id="@+id/action_nbpaList_to_nbpaEdit"
+                app:destination="@id/nbpaEdit"
+                app:launchSingleTop="true"
+                />
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.editForms.NBPAEdit"
+            android:label="NBPAEdit"
+            android:id="@+id/nbpaEdit"
+            tools:layout="@layout/nbpa">
+
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.viewForms.NBPAView"
+            android:label="NBPAView"
+            android:id="@+id/nbpaView"
+            tools:layout="@layout/nbpa">
+
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.members.MemberList"
+            android:label="MemberList"
+            android:id="@+id/memberList"
+            tools:layout="@layout/member_list">
+        <action
+                android:id="@+id/action_memberList_to_memberDetail"
+                app:destination="@id/memberDetail"
+                app:launchSingleTop="true"
+                />
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.members.MemberDetail"
+            android:label="MemberDetail"
+            android:id="@+id/memberDetail"
+            tools:layout="@layout/member_detail">
+    </fragment>
+
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.addForms.NBPA_Form4"
+            android:label="NBPA_Form4"
+            android:id="@+id/nBPA_Form4"
+            tools:layout="@layout/form4">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.splash.Splash"
+        android:label="Splash"
+        android:id="@+id/splash"
+        tools:layout="@layout/splash">
+
+        <action
+            android:id="@+id/action_splash_to_start"
+            app:destination="@id/start"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_splash_to_dashboard"
+            app:destination="@id/dashboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.start.Start"
+        android:label="Start"
+        android:id="@+id/start"
+        tools:layout="@layout/start">
+        <action
+            android:id="@+id/action_start_to_walkThrough"
+            app:destination="@id/walkThrough"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/start"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_onboarding_to_onBoard"
+            app:destination="@id/onboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/start"
+            app:popUpToInclusive="false"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.walkThrough.WalkThrough"
+        android:label="WalkThrough"
+        android:id="@+id/walkThrough"
+        tools:layout="@layout/walk_through">
+
+        <action
+            android:id="@+id/action_walkThrough_to_onBoard"
+            app:destination="@id/onboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/walkThrough"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.onboard.Onboard"
+        android:label="Onboard"
+        android:id="@+id/onboard"
+        tools:layout="@layout/onboard">
+        <action
+            android:id="@+id/action_onboard_to_loginPassword"
+            app:destination="@id/loginPassword"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_onboard_to_loginOtp"
+            app:destination="@id/loginOtp"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_onboard_to_quickRegistration"
+            app:destination="@id/quickRegistration"
+            app:launchSingleTop="true"
+            />
+
+
+
+        <action
+            android:id="@+id/action_onboard_to_register"
+            app:destination="@id/register"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_onboard_to_webPage"
+            app:destination="@id/webpage"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.loginOtp.LoginOtp"
+        android:label="LoginOtp"
+        android:id="@+id/loginOtp"
+        tools:layout="@layout/login_otp">
+
+        <action
+            android:id="@+id/action_loginOtp_to_loginPassword"
+            app:destination="@id/loginPassword"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginOtp"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_loginOtp_to_quickRegistration"
+            app:destination="@id/quickRegistration"
+            app:launchSingleTop="true"
+            />
+
+
+
+        <action
+            android:id="@+id/action_loginOtp_to_registar"
+            app:destination="@id/register"
+            app:launchSingleTop="true"
+            />
+
+
+        <action
+            android:id="@+id/action_loginOtp_to_dashboard"
+            app:destination="@id/dashboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.quickRegistration.QuickRegistration"
+        android:label="QuickRegistration"
+        android:id="@+id/quickRegistration"
+        tools:layout="@layout/quick_registration">
+
+        <action
+            android:id="@+id/action_quickRegistration_to_registerSuccessful"
+            app:destination="@id/registerSuccessful"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/quickRegistration"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_quickRegistration_to_quickRegistration1"
+            app:destination="@id/quickRegistration1"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_quickRegistration_to_quickRegistration2"
+            app:destination="@id/quickRegistration2"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.quickRegistration.QuickRegistration1"
+        android:label="QuickRegistration1"
+        android:id="@+id/quickRegistration1"
+        tools:layout="@layout/quick_registration1">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.quickRegistration.QuickRegistration2"
+        android:label="QuickRegistration2"
+        android:id="@+id/quickRegistration2"
+        tools:layout="@layout/quick_registration2">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.loginPassword.LoginPassword"
+        android:label="LoginPassword"
+        android:id="@+id/loginPassword"
+        tools:layout="@layout/login_password">
+
+
+        <action
+            android:id="@+id/action_loginPassword_to_forgetPassword"
+            app:destination="@id/forgetPassword"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_loginPassword_to_loginOtp"
+            app:destination="@id/loginOtp"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginPassword"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_loginPassword_to_dashboard"
+            app:destination="@id/dashboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.forgetPassword.ForgetPassword"
+        android:label="ForgetPassword"
+        android:id="@+id/forgetPassword"
+        tools:layout="@layout/forget_password">
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.register.Register"
+        android:label="Register"
+        android:id="@+id/register"
+        tools:layout="@layout/register">
+        <action
+            android:id="@+id/action_register_to_register1"
+            app:destination="@id/register1"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_register_to_register2"
+            app:destination="@id/register2"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_register_to_register3"
+            app:destination="@id/register3"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_register_to_registerSuccessful"
+            app:destination="@id/registerSuccessful"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/register"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.register.Register1"
+        android:label="Register1"
+        android:id="@+id/register1"
+        tools:layout="@layout/register1">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.register.Register2"
+        android:label="Register2"
+        android:id="@+id/register2"
+        tools:layout="@layout/register2">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.register.Register3"
+        android:label="Register3"
+        android:id="@+id/register3"
+        tools:layout="@layout/register3">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.onboarding.registerSuccessful.RegisterSuccessful"
+        android:label="RegisterSuccessful"
+        android:id="@+id/registerSuccessful"
+        tools:layout="@layout/register_successful">
+        <action
+            android:id="@+id/action_registerSuccessful_to_loginPassword"
+            app:destination="@id/onboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/registerSuccessful"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.webPage.WebPage"
+        android:label="WebPage"
+        android:id="@+id/webpage"
+        tools:layout="@layout/webpage">
+
+        <action
+            android:id="@+id/action_webPage_to_onboard"
+            app:destination="@id/onboard"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/webpage"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_webPage_to_QuickRegister"
+            app:destination="@id/quickRegistration"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/webpage"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/action_webPage_to_register"
+            app:destination="@id/register"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/webpage"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.dashboard.Dashboard"
+        android:label="Dashboard"
+        android:id="@+id/dashboard"
+        tools:layout="@layout/dashboard">
+        <action
+            android:id="@+id/action_dashboard_to_dashboard"
+            app:destination="@id/dashboard"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@id/profiles"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_notifications"
+            app:destination="@id/notifications"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_membershipDetails"
+            app:destination="@id/membershipDetails"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_dashboard_to_membershipDetailsXX"
+            app:destination="@id/membershipDetailsXX"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_createDistribution"
+            app:destination="@id/nbpa"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_nbpaList"
+            app:destination="@id/nbpaList"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_allSchemes"
+            app:destination="@id/allSchemes"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_liveNotices"
+            app:destination="@id/liveNotices"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_allNotices"
+            app:destination="@id/allNotices"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_liveTraining"
+            app:destination="@id/liveTraining"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_allTraining"
+            app:destination="@id/allTraining"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/history"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_createNew"
+            app:destination="@id/createNew"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_informationCenter"
+            app:destination="@id/informationCenter"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_subscription"
+            app:destination="@id/subscription"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_dashboard_to_settings"
+            app:destination="@id/settings"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.profiles.Profiles"
+        android:label="Profiles"
+        android:id="@+id/profiles"
+        tools:layout="@layout/profiles">
+        <action
+            android:id="@+id/action_profiles_to_nomineeDetails"
+            app:destination="@id/nomineeDetails"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.notifications.Notifications"
+        android:label="Notifications"
+        android:id="@+id/notifications"
+        tools:layout="@layout/notifications">
+        <action
+            android:id="@+id/action_notifications_to_profile"
+            app:destination="@id/profiles"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_liveSchemes"
+            app:destination="@id/liveSchemes"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_liveNotices"
+            app:destination="@id/liveNotices"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_liveTraining"
+            app:destination="@id/liveTraining"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_informationCenter"
+            app:destination="@id/informationCenter"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_historyDetail"
+            app:destination="@id/historyDetail"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_notifications_to_subscription"
+            app:destination="@id/subscription"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.informationCenter.InformationCenter"
+        android:label="InformationCenter"
+        android:id="@+id/informationCenter"
+        tools:layout="@layout/information_center">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.subscription.Subscription"
+        android:label="Subscription"
+        android:id="@+id/subscription"
+        tools:layout="@layout/subscription">
+        <action
+            android:id="@+id/action_subscription_to_viewManage"
+            app:destination="@id/viewManage"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_subscription_to_subscriptionHistory"
+            app:destination="@id/subscriptionHistory"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.subscription.ViewManage"
+        android:label="ViewManage"
+        android:id="@+id/viewManage"
+        tools:layout="@layout/view_manage">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.subscription.SubscriptionHistory"
+        android:label="SubscriptionHistory"
+        android:id="@+id/subscriptionHistory"
+        tools:layout="@layout/subscription_history">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.settings.Settings"
+        android:label="Settings"
+        android:id="@+id/settings"
+        tools:layout="@layout/settings">
+        <action
+                android:id="@+id/action_settings_to_setLocation"
+                app:destination="@id/setLocation"
+                app:launchSingleTop="true"
+                />
+
+        <action
+            android:id="@+id/action_settings_to_changePassword"
+            app:destination="@id/changePassword"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_settings_to_changeMobile"
+            app:destination="@id/changeMobile"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.changeMobile.ChangeMobile"
+        android:label="ChangeMobile"
+        android:id="@+id/changeMobile"
+        tools:layout="@layout/change_mobile">
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.setLocation.SetLocation"
+            android:label="SetLocation"
+            android:id="@+id/setLocation"
+            tools:layout="@layout/set_location">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.changePassword.ChangePassword"
+        android:label="ChangePassword"
+        android:id="@+id/changePassword"
+        tools:layout="@layout/change_password">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.NBPA.addForms.NBPA"
+        android:label="NBPA"
+        android:id="@+id/nbpa"
+        tools:layout="@layout/create_distribution">
+        <action
+            android:id="@+id/action_nbpa_to_nbpaList"
+            app:destination="@id/nbpaList"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nbpa"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.checkDetails.CheckDetails"
+            android:label="CheckDetails"
+            android:id="@+id/checkDetails"
+            tools:layout="@layout/check_details">
+
+        <action
+                android:id="@+id/action_checkDetails_to_nbpa"
+                app:destination="@id/nbpa"
+                app:launchSingleTop="true"
+                />
+    </fragment>
+
+
+    <fragment
+            android:name="com.nhm.distributor.screens.main.NBPA.NBPADetail"
+            android:label="NBPADetail"
+            android:id="@+id/nbpaDetail"
+            tools:layout="@layout/nbpa_detail"
+            >
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.NBPA.addForms.NBPA_Form3"
+        android:label="Form3"
+        android:id="@+id/form3"
+        tools:layout="@layout/form3">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.schemes.liveSchemes.LiveSchemes"
+        android:label="LiveSchemes"
+        android:id="@+id/liveSchemes"
+        tools:layout="@layout/live_schemes">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.schemes.allSchemes.AllSchemes"
+        android:label="AllSchemes"
+        android:id="@+id/allSchemes"
+        tools:layout="@layout/all_schemes">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.notices.liveNotices.LiveNotices"
+        android:label="LiveNotices"
+        android:id="@+id/liveNotices"
+        tools:layout="@layout/live_notices">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.notices.allNotices.AllNotices"
+        android:label="AllNotices"
+        android:id="@+id/allNotices"
+        tools:layout="@layout/all_notices">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.training.liveTraining.LiveTraining"
+        android:label="LiveTraining"
+        android:id="@+id/liveTraining"
+        tools:layout="@layout/live_training">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.training.allTraining.AllTraining"
+        android:label="AllTraining"
+        android:id="@+id/allTraining"
+        tools:layout="@layout/all_training">
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.complaintsFeedback.createNew.CreateNew"
+        android:label="CreateNew"
+        android:id="@+id/createNew"
+        tools:layout="@layout/create_new">
+        <action
+            android:id="@+id/action_createNew_to_history"
+            app:destination="@id/history"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/createNew"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.complaintsFeedback.history.History"
+        android:label="History"
+        android:id="@+id/history"
+        tools:layout="@layout/history">
+        <action
+            android:id="@+id/action_history_to_historyDetail"
+            app:destination="@id/historyDetail"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.complaintsFeedback.historyDetail.HistoryDetail"
+        android:label="HistoryDetail"
+        android:id="@+id/historyDetail"
+        tools:layout="@layout/history_detail">
+    </fragment>
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.membershipDetails.MembershipDetails"
+        android:label="MembershipDetails"
+        android:id="@+id/membershipDetails"
+        tools:layout="@layout/membership_details">
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.membershipDetails.MembershipDetailsXX"
+        android:label="MembershipDetailsXX"
+        android:id="@+id/membershipDetailsXX"
+        tools:layout="@layout/membership_detailsxx">
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.nhm.distributor.screens.main.profiles.nomineeDetails.NomineeDetails"
+        android:label="NomineeDetails"
+        android:id="@+id/nomineeDetails"
+        tools:layout="@layout/nominee_details">
+    </fragment>
+
+
+
+<!--    <fragment-->
+<!--        android:name="com.nhm.distributor.test.scheme.Scheme"-->
+<!--        android:label="Scheme"-->
+<!--        android:id="@+id/scheme"-->
+<!--        tools:layout="@layout/live_schemes">-->
+<!--    </fragment>-->
+
+
+</navigation>

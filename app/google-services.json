@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "339330017426",
+    "project_id": "nhm-mp",
+    "storage_bucket": "nhm-mp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339330017426:android:dfff489636fde19f7dde4b",
+        "android_client_info": {
+          "package_name": "com.nhm.distribution"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-XOLXCRYfqfdzFNOPCVObSKhTeP--Kn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339330017426:android:00c5c3b9f73785547dde4b",
+        "android_client_info": {
+          "package_name": "com.nhm.distributor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-XOLXCRYfqfdzFNOPCVObSKhTeP--Kn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

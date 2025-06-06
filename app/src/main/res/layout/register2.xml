@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:background="@color/_ffffffff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scrollbars="vertical"
+        android:scrollbarSize="@dimen/_3sdp"
+        android:scrollbarThumbVertical="@color/_E79D46"
+        android:fadeScrollbars="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/professional_details"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textTitleMain"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTypeofMarketPlace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/type_of_market_placeStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textTitleMain"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTypeofMarketPlaceEnter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/enter_market_placeStar"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/editTextTypeofMarketPlace"
+                android:visibility="gone"
+                android:maxLength="25"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTypeofVending"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/type_of_vendingStar"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/editTextTypeofMarketPlaceEnter"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTypeofVendingEnter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/enter_vendingStar"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/editTextTypeofVending"
+                android:visibility="gone"
+                android:maxLength="25"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTotalYearsofVending"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/total_years_of_vendingStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/editTextTypeofVendingEnter"
+                android:focusable="false"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                />
+
+
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextVendingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:background="@null"
+                android:hint="@string/vending_time"
+                android:layout_marginHorizontal="0dp"
+                android:text="@string/vending_time"
+                android:focusable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTotalYearsofVending"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearVendingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTotalYearsofVending">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextVendingTimeOpen"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/openStar"
+                    android:text=""
+                    android:gravity="center"
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitlePermanentAddress"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextVendingTime"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_medium"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/to"
+                    android:visibility="visible"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextVendingTimeClose"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/closeStar"
+                    android:text=""
+                    android:gravity="center"
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextSelectState"
+                    android:layout_weight="1"
+
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitlePermanentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextVendingTime"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/current_vending_address"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextVendingTime"
+                app:layout_constraintStart_toEndOf="@+id/textTitlePermanentAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+
+                />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearStateDistrict"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textTitlePermanentAddress">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextSelectState"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/select_stateStar"
+                    android:text=""
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitlePermanentAddress"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:layout_weight="1.1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextSelectDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/select_districtStar"
+                    android:text=""
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextSelectState"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:layout_weight="0.9"
+
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearPanchayatPincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/linearStateDistrict">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextMunicipalityPanchayat"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/municipality_panchayatStar"
+                    android:text=""
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/linearStateDistrict"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:layout_weight="0.7"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextSelectPincode"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/select_pincode"
+                    android:text=""
+                    android:focusable="false"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextMunicipalityPanchayat"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:layout_weight="1.3"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/_80sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/address_mention_villageStar"
+                android:gravity="top"
+                android:maxLines="4"
+                android:paddingVertical="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/linearPanchayatPincode"
+                android:maxLength="100"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleLocalOrgnaization"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/do_you_have_localOrgnaization"
+                android:visibility="visible"
+                />
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupLocalOrgnaization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleLocalOrgnaization"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdLocalOrgnaizationYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/yes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdLocalOrgnaizationNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2"
+                    android:checked="true"/>
+            </RadioGroup>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextLocalOrganisation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/localOrganisationStar"
+                android:text=""
+                android:focusable="false"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupLocalOrgnaization"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                android:layout_weight="1.1"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:visibility="gone"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleShopImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextLocalOrganisation"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/upload_shop"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView2666"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextLocalOrganisation"
+                app:layout_constraintStart_toEndOf="@+id/textTitleShopImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+
+                />
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutShopImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleShopImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/white_round_corner"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewlayoutShopImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imagelayoutShopImage"
+                    android:singleLine="true"
+                    android:text="@string/upload_mediaStar"
+                    android:checked="false"
+                    android:button="@drawable/check_box_button"
+                    android:buttonTint="@color/_999999"
+                    android:textColor="@color/_999999"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_12sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagelayoutShopImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/upload"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:padding="@dimen/_10sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleDocumentDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutShopImage"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/document_details"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView22"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutShopImage"
+                app:layout_constraintStart_toEndOf="@+id/textTitleDocumentDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleDoyouhavevendingdocuments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleDocumentDetails"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/do_you_have_vending_documents"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitledocumentsLike"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_9A9A9A"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleDoyouhavevendingdocuments"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/cov_lor_survey_receipt_challan_approval_letter_from_municipal_body"
+                android:visibility="visible"
+                />
+
+
+
+            <RadioGroup
+                android:id="@+id/radioGroupDocuments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdDocumentYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/yes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdDocumentNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2"
+                    android:checked="true"/>
+            </RadioGroup>
+
+
+            <include layout="@layout/register2_documents"
+                android:id="@+id/inclide_documents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupDocuments"
+                android:visibility="gone"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleGovernmentScheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/inclide_documents"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/government_scheme"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView222"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/inclide_documents"
+                app:layout_constraintStart_toEndOf="@+id/textTitleGovernmentScheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleDoyouhavevendingdocuments2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleGovernmentScheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/do_you_have_government_scheme"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitledocumentsLike2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_9A9A9A"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleDoyouhavevendingdocuments2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/schemes_like_pm_swanidhi_yojna_etc"
+                android:visibility="visible"
+                />
+
+            <RadioGroup
+                android:id="@+id/radioGroupGovernment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdGovernmentYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/yes"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/ivRdGovernmentNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:buttonTint="@color/black"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:text="@string/no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitledocumentsLike2"
+                    android:checked="true"/>
+            </RadioGroup>
+
+
+
+
+            <include layout="@layout/register2_government"
+                android:id="@+id/inclide_government"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupGovernment"
+                android:visibility="visible"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btSignIn"
+                style="@style/PrimaryButtonYellow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_8sdp"
+                android:text="@string/continues"
+                android:backgroundTint="@color/_E79D46"
+                android:layout_weight="1"
+                app:layout_constraintTop_toBottomOf="@+id/inclide_government"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:visibility="gone"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

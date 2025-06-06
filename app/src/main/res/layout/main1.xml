@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_minus11sdp"
+    android:background="@color/white">
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textMarketPlaceTxt22"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:text="tf bx bxbxbxbdiribd"
+        android:autoSizeTextType="uniform"
+        android:autoSizePresetSizes="@array/autosize_14_11_17"
+        android:autoSizeStepGranularity="@dimen/_1sdp"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:background="@color/teal_700"
+        android:textColor="@color/_262626"
+        app:fontFamily="@font/roboto_bold"
+        tools:ignore="MissingConstraints"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textHeaderTxt4"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        android:textColor="@color/white"
+        android:autoSizePresetSizes="@array/autosize_13_10_16"
+        android:autoSizeMinTextSize="@dimen/_10sdp"
+        android:autoSizeMaxTextSize="@dimen/_15sdp"
+        android:maxLines="2"
+        android:gravity="center"
+        android:background="@color/_E79D46"
+        android:paddingVertical="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textMarketPlaceTxt22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        app:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:text="@string/ConnectingStreetVendorsAllOverIndia"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

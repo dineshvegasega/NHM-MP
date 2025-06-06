@@ -1,0 +1,33 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "Profile",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "NBPA",
+      "headlines": [
+        {
+          "title": "NBPA Form"
+        },
+        {
+          "title": "NBPA List"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "headlines": [
+
+      ]
+    }
+  ]
+}

@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="@dimen/_30sdp"
+
+                app:layout_constraintTop_toTopOf="parent"
+              >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageLogo"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/main_logo"
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textHeaderadfdsfTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_bold"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:textAllCaps="true"
+                    android:text="@string/street_saarthi"
+                    />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:layout_weight="0.9">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeaderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:layout_marginHorizontal="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:textAllCaps="true"
+                android:text="INVOICE"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_invoice_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textHeaderName"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleInvoiceNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Invoice No:"
+                    android:layout_weight="1.2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleInvoiceNoVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="true"
+                    android:text="4324215143"
+                    android:layout_weight="0.8"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_invoice_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/layout_invoice_no"
+                android:layout_marginTop="@dimen/_1sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleInvoiceDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Invoice Date:"
+                    android:layout_weight="1.2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleInvoiceDateVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="true"
+                    android:text="4324215143"
+                    android:layout_weight="0.8"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_membership_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/layout_invoice_date"
+                android:layout_marginTop="@dimen/_1sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleMembershipId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Membership Id:"
+                    android:layout_weight="1.2"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitleMembershipIdVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="true"
+                    android:text="4324215143"
+                    android:layout_weight="0.8"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:layout_weight="1.1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeaderBilloTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:textAllCaps="false"
+                android:text="Bill To:"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle_customer_nameVal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dinesh Kumar"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintTop_toBottomOf="@+id/textHeaderBilloTo"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:textAllCaps="false"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle_customer_addressVal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sector 20 A, House no 122, Ward No 20, 123012"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                app:fontFamily="@font/roboto_regular"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle_customer_nameVal"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:textAllCaps="false"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_weight="0.9">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeaderPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                android:gravity="center"
+                android:layout_marginHorizontal="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_1sdp"
+                app:textAllCaps="false"
+                android:text="Payment Details:"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_plan_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textHeaderPayment"
+                android:layout_marginTop="@dimen/_5sdp"
+
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitlePlanType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Plan Type:"
+                    android:layout_weight="1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitlePlanTypeVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Subscription"
+                    android:layout_weight="1"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_PlanType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/layout_plan_type"
+                android:layout_marginTop="@dimen/_1sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitlePaymentMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Payment Method:"
+                    android:layout_weight="1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitlePaymentMethodVal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_regular"
+                    app:textAllCaps="false"
+                    android:text="Card"
+                    android:layout_weight="1"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_122sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout2"
+        android:background="@drawable/background_square_white"
+        >
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:background="@drawable/background_square"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/s_no"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_marginEnd="@dimen/_minus1sdp"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/background_square"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Item"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="1.3"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="@dimen/_minus1sdp"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textItemType"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_marginEnd="@dimen/_minus1sdp"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Item"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="@dimen/_minus1sdp"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Ten Lakhs Seventy Eight Thousands Nine Rupees"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="@dimen/_minus1sdp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDurationTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/duration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/duration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_minus1sdp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="@dimen/_minus1sdp"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDiscountRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/coupon_discount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_minus1sdp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textDiscountPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_minus1sdp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textGstRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/gst"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_minus1sdp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textGstPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_square_white"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    android:layout_marginTop="@dimen/_minus1sdp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTotalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_sqaure_orange"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="@string/total_cost"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTotalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_minus1sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_sqaure_orange"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_3sdp"
+                    android:text="Price"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/roboto_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:textAllCaps="false"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

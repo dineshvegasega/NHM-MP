@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_200sdp"
+        app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+        android:gravity="center_vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textValidDateTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"
+                android:autoSizePresetSizes="@array/autosize_4_5_10"
+                android:autoSizeStepGranularity="@dimen/_1sdp"
+                app:layout_constraintRight_toLeftOf="@id/textValidDateValue"
+                app:layout_constraintHorizontal_weight="2.1"
+                android:text="@string/valid_date"
+                app:fontFamily="@font/roboto_regular"
+                android:textColor="@color/_79747E"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textValidDateValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="12 Sept"
+                android:textColor="@color/black"
+                app:fontFamily="@font/roboto_bold"
+                android:autoSizeTextType="uniform"
+                android:autoSizePresetSizes="@array/autosize_4_5_10"
+                android:autoSizeStepGranularity="@dimen/_1sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_weight="2.1"
+                app:layout_constraintLeft_toRightOf="@id/textValidDateTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textStatusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/status"
+                app:fontFamily="@font/roboto_regular"
+                android:textColor="@color/_79747E"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"
+                android:autoSizePresetSizes="@array/autosize_4_5_10"
+                android:autoSizeStepGranularity="@dimen/_1sdp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textStatusValueTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="tap_to_reload tap_to_reload tap_to_reload tap_to_reload"
+                android:textColor="@color/_138808"
+                app:fontFamily="@font/roboto_medium"
+                android:autoSizeTextType="uniform"
+                android:autoSizePresetSizes="@array/autosize_4_5_10"
+                android:autoSizeStepGranularity="@dimen/_1sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/textStatusTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            style="@style/PrimaryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="top"
+            android:hint="@string/address"
+            android:minHeight="@dimen/_80sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:singleLine="false"
+            android:text=""
+            android:maxLength="100"
+            app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"            app:layout_constraintTop_toTopOf="parent"
+           >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

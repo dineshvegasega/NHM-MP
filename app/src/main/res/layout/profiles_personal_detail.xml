@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutPersonalProfile"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profilePersonal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/yellow_round_corner"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:visibility="visible"
+        android:backgroundTint="@color/_E79D46"
+
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/profileLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="@dimen/_10sdp"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivImageProfile"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/user_icon"
+                android:theme="@style/RoundCorner50"
+                android:scaleType="centerCrop"
+                android:layout_marginVertical="@dimen/_5sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHeaderPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="HardcodedText"
+                android:visibility="gone"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileLogo"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:paddingVertical="@dimen/_5sdp"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textNameOfMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name of Member"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/roboto_medium"
+                tools:ignore="HardcodedText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91-864332153"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/roboto_medium"
+                tools:ignore="HardcodedText"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textNameOfMember"/>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/white"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textMobileNumber"
+                android:layout_marginVertical="@dimen/_5sdp"
+                >
+            </View>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                android:layout_marginVertical="@dimen/_5sdp"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1.1"
+                    android:gravity="center_vertical"
+                    >
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textMembershipIdTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/membership_Id"
+                        android:textColor="@color/_FFEBD3"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/roboto_regular"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textMembershipIdValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#1235468"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/roboto_medium"
+                        tools:ignore="HardcodedText"
+                        android:layout_marginTop="@dimen/_2sdp"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    >
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textValidUptoTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/valid_Upto"
+                        android:textColor="@color/_FFEBD3"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/roboto_regular"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textValidUptoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18 May 2023"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/roboto_medium"
+                        tools:ignore="HardcodedText"
+                        android:layout_marginTop="@dimen/_2sdp"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

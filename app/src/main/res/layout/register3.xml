@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:background="@color/_ffffffff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scrollbars="vertical"
+        android:scrollbarSize="@dimen/_3sdp"
+        android:scrollbarThumbVertical="@color/_E79D46"
+        android:fadeScrollbars="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitleMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/set_password"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textTitleMain"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+                />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCreatePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textTitleMain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextCreatePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/createPasswordStar"
+                    android:text=""
+                    android:inputType="textPassword"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="0dp"
+                    android:imeOptions="actionNext"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:maxLength="15"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgCreatePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_10sdp"
+                    android:tint="@android:color/darker_gray"
+                    app:srcCompat="@drawable/ic_eye_closed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:focusable="false"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCreatePasswrordMsg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_F02A2A"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCreatePassword"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/InvalidPassword"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutReEnterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textCreatePasswrordMsg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextReEnterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/reEnterPasswordStar"
+                    android:text=""
+                    android:inputType="textPassword"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="0dp"
+                    android:imeOptions="actionNext"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:maxLength="15"/>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgReEnterPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_10sdp"
+                    android:tint="@android:color/darker_gray"
+                    app:srcCompat="@drawable/ic_eye_closed"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:focusable="false"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textReEnterPasswrordMsg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_F02A2A"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutReEnterPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/InvalidPassword"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitlePermanentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textReEnterPasswrordMsg"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/otp_verification"
+                android:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textReEnterPasswrordMsg"
+                app:layout_constraintStart_toEndOf="@+id/textTitlePermanentAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_details"
+                android:visibility="visible"
+                android:background="@color/black"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextMobileNumber"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/mobileNumberStar"
+                android:text=""
+                android:inputType="number"
+                android:maxLength="10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/editTextSendOtp"
+                app:layout_constraintTop_toBottomOf="@+id/textTitlePermanentAddress"
+                android:imeOptions="actionNext"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editTextSendOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryButtonYellow"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:hint="@string/Forgot"
+                android:inputType="number"
+                android:text="@string/send_otp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitlePermanentAddress"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:backgroundTint="@color/_E79D46"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                android:textSize="@dimen/_11sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:includeFontPadding="false"
+                android:text="00:27"
+                android:textColor="@color/_B3261E"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMobileNumber"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"/>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextOtp"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/enterOtpStar"
+                android:text=""
+                android:inputType="number"
+                android:maxLength="6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/editTextVeryfyOtp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTime"
+                android:imeOptions="actionDone"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editTextVeryfyOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryButtonYellow"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:hint="@string/Forgot"
+                android:inputType="number"
+                android:text="@string/verify_otp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTime"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:backgroundTint="@color/_999999"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:cornerRadius="@dimen/_5sdp"
+                android:textSize="@dimen/_11sdp"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cbRememberMeCon"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextOtp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                >
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cbRememberMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/click_here_to_agree_to_the"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:checked="false"
+                    android:button="@drawable/check_box_button"
+                    android:buttonTint="@color/_363438"
+                    android:textColor="@color/_363438"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/roboto_regular"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_363438"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cbRememberMe"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_medium"
+                    android:text="@string/terms_amp_conditions"
+                    android:padding="@dimen/_5sdp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

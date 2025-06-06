@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="vertical"
+        android:scrollbarSize="@dimen/_3sdp"
+        android:scrollbarThumbVertical="@color/_E79D46"
+        android:fadeScrollbars="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/_10sdp"
+            >
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/nameStar"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_10sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/nameStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textNameTxt"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLength="25"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textFatherHusbandTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextName"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/father_name_husband_nameStar"
+                android:visibility="visible"
+                />
+
+            <RadioGroup
+                android:id="@+id/radioGroupFatherHusbandRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textFatherHusbandTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radioButtonFather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:checked="true"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="@string/father"/>
+                <RadioButton
+                    android:id="@+id/radioButtonHusband"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="@string/husband"/>
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextFatherHusband"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/father_name_husband_nameStar"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupFatherHusbandRadioGroup"
+                android:layout_marginTop="0dp"
+                android:maxLength="25"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMotherTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextFatherHusband"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/mother_nameStar"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextMother"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/mother_nameStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textMotherTxt"
+                tools:layout_editor_absoluteX="13dp"
+                android:maxLength="25"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textGenderTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMother"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/genderStar"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextGender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                style="@style/PrimaryEditText"
+                android:hint="@string/genderStar"
+                android:text=""
+                android:focusable="false"
+                app:layout_constraintTop_toBottomOf="@+id/textGenderTxt"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                android:layout_marginTop="@dimen/_5sdp"
+                />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearAgeHeightWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextGender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/_1sdp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textAgeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_2C2C2C"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_medium"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/ageStar"
+                    android:visibility="visible"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/ageStar"
+                    android:text=""
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="0dp"
+                    android:maxLength="3"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/_1sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textHeightTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_2C2C2C"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_medium"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/heightStar"
+                    android:visibility="visible"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/heightStar"
+                    android:text=""
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="0dp"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_1sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWeightTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_2C2C2C"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="MissingConstraints"
+                    app:fontFamily="@font/roboto_medium"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/weightStar"
+                    android:visibility="visible"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    style="@style/PrimaryEditText"
+                    android:hint="@string/weightStar"
+                    android:text=""
+                    android:inputType="number"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="0dp"
+                    android:maxLength="3"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textNumberOfMembersTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/linearAgeHeightWeight"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/number_of_membersStar"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextNumberOfMembers"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/number_of_membersStar"
+                android:text=""
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@+id/textNumberOfMembersTxt"
+                tools:layout_editor_absoluteX="13dp"
+                android:maxLength="3"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textNumberOfChildrensTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumberOfMembers"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/number_of_childrensStar"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextNumberOfChildrens"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/number_of_childrensStar"
+                android:text=""
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@+id/textNumberOfChildrensTxt"
+                android:maxLength="3"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textAddressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumberOfChildrens"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/address"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextAddress"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="top"
+                android:hint="@string/address"
+                android:minHeight="@dimen/_80sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:singleLine="false"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textAddressTxt"
+                android:maxLength="100"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDMCNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/DMCNameStar"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextDMCName"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/DMCNameStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textDMCNameTxt"
+                tools:layout_editor_absoluteX="13dp"
+                android:maxLength="100"/>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textBlockTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDMCName"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/blockStar"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextBlock"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/blockStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textBlockTxt"
+                android:maxLength="100"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMobileNumbarTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextBlock"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/mobileNumberStar"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextMobileNumbar"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/mobileNumberStar"
+                android:text=""
+                android:inputType="number"
+                app:layout_constraintTop_toBottomOf="@+id/textMobileNumbarTxt"
+                android:maxLength="10"/>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDistrictStateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextMobileNumbar"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:text="@string/district_StateStar"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="visible"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextDistrictState"
+                style="@style/PrimaryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:hint="@string/district_StateStar"
+                android:text=""
+                app:layout_constraintTop_toBottomOf="@+id/textDistrictStateTxt"
+                android:maxLength="100"/>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCardTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2C2C2C"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/editTextDistrictState"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/card"
+                android:visibility="visible"
+                />
+            <RadioGroup
+                android:id="@+id/radioGroupCardAPL_BPLGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textCardTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/radioButtonAPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:checked="true"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="@string/apl"/>
+                <RadioButton
+                    android:id="@+id/radioButtonBPL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="@string/bpl"/>
+
+                <RadioButton
+                        android:id="@+id/radioButtonOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="visible"
+                        android:text="@string/other"/>
+
+            </RadioGroup>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btSignIn"
+                style="@style/PrimaryButtonYellow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:text="@string/continues"
+                android:backgroundTint="@color/_E79D46"
+                android:layout_weight="1"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupCardAPL_BPLGroup"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

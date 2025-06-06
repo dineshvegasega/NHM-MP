@@ -1,0 +1,34 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "Profile",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "NBPA",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "All Distributors",
+      "headlines": [
+
+      ]
+    },
+    {
+      "name": "Settings",
+      "headlines": [
+
+      ]
+    }
+  ]
+}
