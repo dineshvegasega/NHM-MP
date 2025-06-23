@@ -46,6 +46,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.GravityCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -201,6 +202,7 @@ class MainActivity : AppCompatActivity() {
 //        StrictMode.setThreadPolicy(old)
 
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         _binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
