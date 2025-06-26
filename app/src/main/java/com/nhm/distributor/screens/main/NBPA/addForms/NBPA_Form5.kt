@@ -39,6 +39,7 @@ import com.nhm.distributor.utils.mainThread
 import com.nhm.distributor.utils.showDropDownDialog
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
+import com.nhm.distributor.utils.singleClick2Sec
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -191,6 +192,10 @@ class NBPA_Form5 : Fragment(), CallBackListener {
                 viewModel.assistanceProjectManagerSignature = ""
             }
 
+
+            viewModel.isButtonEnable.observe(viewLifecycleOwner) {
+                btSignIn.setEnabled(it)
+            }
 
 
 
@@ -536,7 +541,7 @@ class NBPA_Form5 : Fragment(), CallBackListener {
                     }
 
 
-
+                    viewModel.isButtonEnable.value = false
                     if (viewModel.scheme_id.isEmpty()){
                         if (networkFailed) {
                             viewModel.registerWithFiles(
@@ -547,13 +552,13 @@ class NBPA_Form5 : Fragment(), CallBackListener {
                                     "TAG",
                                     "this.scheme_id.toString()" + this.scheme_id.toString()
                                 )
-                                setFinalData(this.scheme_id.toString(), isButton)
+                                setFinalData(this.scheme_id.toString(), ""+dataId, isButton)
                             }
                         } else {
                             requireContext().callNetworkDialog()
                         }
                     } else {
-                        setFinalData(viewModel.scheme_id.toString(), isButton)
+                        setFinalData(viewModel.scheme_id.toString(), ""+dataId, isButton)
                     }
 
                 }
@@ -566,12 +571,13 @@ class NBPA_Form5 : Fragment(), CallBackListener {
     }
 
 
-    fun setFinalData(_string: String, isButton: Boolean) {
+    fun setFinalData(_string: String, userId: String, isButton: Boolean) {
         val requestBody: MultipartBody.Builder = MultipartBody.Builder()
             .setType(MultipartBody.FORM)
 
         if (_string != "") {
             requestBody.addFormDataPart("schemeId", _string)
+            requestBody.addFormDataPart(user_id, "" + userId)
         }
         if (viewModel.foodMonth != null) {
             requestBody.addFormDataPart(foodMonth, viewModel.foodMonth)

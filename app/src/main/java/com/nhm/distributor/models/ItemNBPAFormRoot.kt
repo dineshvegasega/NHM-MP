@@ -188,7 +188,7 @@ data class FoodIdentityImageTwo(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as FoodIdentityImage
+        other as FoodIdentityImageTwo
 
         if (name != other.name) return false
         if (url != other.url) return false

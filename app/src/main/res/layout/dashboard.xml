@@ -53,6 +53,7 @@
             android:layout_marginHorizontal="@dimen/_15sdp"
             android:background="@color/white"
             android:orientation="horizontal"
+        android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView"
@@ -157,56 +158,56 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-
-
     <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linearForms"
+        android:id="@+id/linearForms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:background="@color/white"
+        android:visibility="gone"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearDistributors"
-            android:layout_marginTop="@dimen/_20sdp"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/linearDistributors">
 
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linearNBPA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
             android:background="@color/white"
+            android:gravity="center"
             android:orientation="vertical"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:visibility="visible"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
-        <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_5sdp"
                 android:gravity="center"
+                android:lines="2"
                 android:text="@string/nbpa_forms_added_in_last_7_days"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
                 app:fontFamily="@font/roboto_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:lines="2"
                 tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textNumberOfNBPA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@color/black"
@@ -214,46 +215,45 @@
                 app:fontFamily="@font/roboto_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="@dimen/_10sdp"
                 tools:ignore="HardcodedText" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linearNBPATotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="1"
             android:background="@color/white"
+            android:gravity="center"
             android:orientation="vertical"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:visibility="visible"
-            >
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
-        <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_5sdp"
                 android:gravity="center"
+                android:lines="2"
                 android:text="@string/nbpa_forms_added"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
                 app:fontFamily="@font/roboto_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:lines="2"
                 tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textTotalNumberOfNBPA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@color/black"
@@ -261,14 +261,12 @@
                 app:fontFamily="@font/roboto_bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="@dimen/_10sdp"
                 tools:ignore="HardcodedText" />
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -107,6 +107,8 @@ class MemberList : Fragment() {
 
                     radioButtonDate.visibility = View.GONE
                     linearDate.visibility = View.GONE
+                    radioButtonDistributorNumber.visibility = View.GONE
+                    editTextDistributorNumber.visibility = View.GONE
 
                     editTextStartDate.singleClick {
                         requireActivity().showDropDownDialog(type = 20) {

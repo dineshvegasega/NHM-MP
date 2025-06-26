@@ -976,6 +976,7 @@
     <string name="selectDate">Select Date</string>
     <string name="check_detail">Check Detail</string>
     <string name="enter_valid_aadhaar_number">Enter Valid Aadhaar Number</string>
+    <string name="enter_valid_nikshay_id">Enter Valid Nikshay id</string>
     <string name="enter_aadhaar_number_to_verify_the_patient_new">Select Aadhaar number/Nikshay id to verify the patient.</string>
     <string name="please_fill_required_entries">Please fill required* entries!</string>
     <string name="already_exists_aadhaar">The entered Aadhaar number already exists with another distributor.</string>
@@ -988,6 +989,9 @@
     <string name="please_enter_valid_latitude_longitude">Please enter valid latitude and longitude</string>
     <string name="location_saved_successfully">Location saved successfully</string>
     <string name="nakshay_id">Nikshay Id</string>
+    <string name="distributorNumber">Distributor</string>
+    <string name="distributorMobile">Enter Distributor Mobile Number</string>
+
     <string name="aadhaar_number_without_star">Aadhaar Number</string>
     <string name="enter_nakshay_id">Enter Nikshay Id</string>
     <string name="food_already_taken">The patient is not eligible for food services this month. Please try again next month.</string>

@@ -24,6 +24,7 @@ import com.nhm.distributor.models.ItemLiveScheme
 import com.nhm.distributor.models.ItemNBPAForm
 import com.nhm.distributor.models.ItemNBPAFormRoot
 import com.nhm.distributor.models.ItemFormListDetail
+import com.nhm.distributor.models.ItemMemberRoot
 import com.nhm.distributor.models.SchemeDetail
 import com.nhm.distributor.networking.ApiInterface
 import com.nhm.distributor.networking.CallHandler
@@ -123,8 +124,7 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
     var assistanceProjectManagerSignature = ""
 
 
-
-
+    internal var isButtonEnable = MutableLiveData<Boolean>(true)
     fun registerWithFiles(
         view: View,
         hashMap: RequestBody,  callBack: BaseResponseDC<Any>.() -> Unit
@@ -146,6 +146,8 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                     } else {
                         showSnackBar(response.body()?.message.orEmpty())
                     }
+
+                    isButtonEnable.value = true
                 }
 
                 override fun error(message: String) {
@@ -156,6 +158,7 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                     } else {
                         showSnackBar(error)
                     }
+                    isButtonEnable.value = true
                 }
 
                 override fun loading() {
@@ -189,11 +192,14 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                     } else {
                         showSnackBar(response.body()?.message.orEmpty())
                     }
+
+                    isButtonEnable.value = true
                 }
 
                 override fun error(message: String) {
                     super.error(message)
                     showSnackBar(view.resources.getString(R.string.something_went_wrong))
+                    isButtonEnable.value = true
                 }
 
                 override fun loading() {
@@ -676,12 +682,16 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
     var filterNameBoolean = false
     var filterMobileBoolean = false
     var filterAadhaarBoolean = false
+    var filterNikshayIdBoolean = false
+    var filterDistributorNumberBoolean = false
     var filterStartDateBoolean = false
     var filterEndDateBoolean = false
 
     var filterName = ""
     var filterMobile= ""
     var filterAadhaar = ""
+    var filterNikshayId = ""
+    var filterDistributorNumber = ""
     var filterStartDate = ""
     var filterEndDate = ""
 
@@ -740,7 +750,6 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                                     } catch (e: Exception) {
                                     }
                                 }
-
                             }
                         }
 
@@ -754,8 +763,6 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                     }
                 )
             }
-
-
         }
 
 

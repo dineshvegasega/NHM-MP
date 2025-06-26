@@ -12,6 +12,7 @@ import android.app.Activity
 import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -35,6 +36,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -45,8 +47,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
+import androidx.core.graphics.Insets
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
@@ -200,11 +205,24 @@ class MainActivity : AppCompatActivity() {
 //        )
 ////        doCorrectStuffThatWritesToDisk()
 //        StrictMode.setThreadPolicy(old)
-
+//        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         _binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        ViewCompat.setOnApplyWindowInsetsListener(
+//            findViewById<View>(R.id.layoutRoot)
+//        ) { v: View, insets: WindowInsetsCompat ->
+//            val systemBars: Insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            v.setBackgroundColor(Color.BLACK)
+//            insets
+//        }
+//        val windowInsetController = WindowCompat.getInsetsController(window,window.decorView)
+//        windowInsetController.isAppearanceLightStatusBars = false
+//
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT)
 
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -965,7 +983,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-//            loadBanner()
+            loadBanner()
         }
     }
 

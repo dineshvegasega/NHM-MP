@@ -542,6 +542,18 @@ fun View.singleClick(throttleTime: Long = 600L, action: () -> Unit) {
 }
 
 
+fun View.singleClick2Sec(throttleTime: Long = 2000L, action: () -> Unit) {
+    this.setOnClickListener(object : View.OnClickListener {
+        private var lastClickTime: Long = 0
+        override fun onClick(v: View) {
+            if (SystemClock.elapsedRealtime() - lastClickTime < throttleTime) return
+            else action()
+            lastClickTime = SystemClock.elapsedRealtime()
+        }
+    })
+}
+
+
 fun Context.isAppIsInBackground(): Boolean {
     var isInBackground = true
     try {
@@ -2042,34 +2054,35 @@ fun getAbbreviatedFromDateTime(dateTime: Calendar, field: String): String? {
 }
 
 fun String.getMonthFromHindi() : String{
+    var name : String = ""
     if (this == "जन"){
-        return "Jan"
+        name = "Jan"
     } else if (this == "फ़र"){
-        return "Feb"
+        name = "Feb"
     } else if (this == "मार्च"){
-        return "Mar"
+        name = "Mar"
     } else if (this == "अप्रै"){
-        return "Apr"
+        name = "Apr"
     } else if (this == "मई"){
-        return "May"
+        name = "May"
     } else if (this == "जून"){
-        return "Jun"
+        name = "Jun"
     } else if (this == "जुला"){
-        return "Jul"
+        name = "Jul"
     } else if (this == "अग"){
-        return "Aug"
+        name = "Aug"
     } else if (this == "सितं"){
-        return "Sep"
+        name = "Sep"
     } else if (this == "अक्टू"){
-        return "Oct"
+        name = "Oct"
     } else if (this == "नवं"){
-        return "Nov"
+        name = "Nov"
     } else if (this == "दिसं"){
-        return "Dec"
+        name = "Dec"
     } else {
-        return this
+        name = this
     }
-    return ""
+    return name
 }
 
 fun isLocationEnabled(context: Context): Boolean {
@@ -2102,6 +2115,9 @@ fun Activity.callPermissionDialogGPS(callBack: Intent.() -> Unit) {
             callBack(Intent().apply {
                 action = Settings.ACTION_LOCATION_SOURCE_SETTINGS
             })
+        }
+        .setNegativeButton(resources.getString(R.string.cancel)) { dialog, _ ->
+            dialog.dismiss()
         }
         .setCancelable(false)
         .show()

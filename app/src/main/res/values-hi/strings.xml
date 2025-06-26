@@ -770,6 +770,7 @@
     <string name="selectDate">तारीख़ चुनें</string>
     <string name="check_detail">विवरण जांचें</string>
     <string name="enter_valid_aadhaar_number">वैध आधार संख्या दर्ज करें</string>
+    <string name="enter_valid_nikshay_id">वैध निक्षय आईडी दर्ज करें</string>
     <string name="enter_aadhaar_number_to_verify_the_patient_new">मरीज को सत्यापित करने के लिए आधार संख्या/नक्शय आईडी का चयन करें।</string>
     <string name="please_fill_required_entries">कृपया आवश्यक* प्रविष्टियाँ भरें!</string>
     <string name="already_exists_aadhaar">दर्ज किया गया आधार संख्या किसी अन्य वितरक के साथ पहले से मौजूद है।</string>
@@ -781,6 +782,9 @@
     <string name="please_enter_valid_latitude_longitude">कृपया मान्य अक्षांश और देशांतर दर्ज करें</string>
     <string name="location_saved_successfully">स्थान सफलतापूर्वक सहेजा गया</string>
     <string name="nakshay_id">नक्षय आईडी</string>
+    <string name="distributorNumber">वितरक</string>
+    <string name="distributorMobile">वितरक का मोबाइल नंबर दर्ज करें</string>
+
     <string name="aadhaar_number_without_star">आधार संख्या</string>
     <string name="enter_nakshay_id">नक्षय आईडी दर्ज करें</string>
     <string name="food_already_taken">मरीज़ इस महीने खाद्य सेवाओं के लिए पात्र नहीं है। कृपया अगले महीने पुनः प्रयास करें।</string>

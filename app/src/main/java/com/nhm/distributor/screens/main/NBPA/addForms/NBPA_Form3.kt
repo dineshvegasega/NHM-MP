@@ -247,46 +247,51 @@ class NBPA_Form3 : Fragment() , CallBackListener {
 
 
     private fun callMediaPermissionsWithLocation() {
-        if (isLocationEnabled(requireActivity()) == true) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-                Log.e("TAG", "AAAAAAAAAAA")
-                activityResultLauncherWithLocation.launch(
-                    arrayOf(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_MEDIA_IMAGES,
-                        Manifest.permission.READ_MEDIA_VIDEO,
-                        Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
+        try {
+            if (isLocationEnabled(requireActivity()) == true) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                    Log.e("TAG", "AAAAAAAAAAA")
+                    activityResultLauncherWithLocation.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_MEDIA_IMAGES,
+                            Manifest.permission.READ_MEDIA_VIDEO,
+                            Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
                     )
-                )
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                Log.e("TAG", "BBBBBBBBB")
-                activityResultLauncherWithLocation.launch(
-                    arrayOf(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_MEDIA_IMAGES,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
+                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    Log.e("TAG", "BBBBBBBBB")
+                    activityResultLauncherWithLocation.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_MEDIA_IMAGES,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
                     )
-                )
+                } else {
+                    Log.e("TAG", "CCCCCCCCC")
+                    activityResultLauncherWithLocation.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
+                    )
+                }
             } else {
-                Log.e("TAG", "CCCCCCCCC")
-                activityResultLauncherWithLocation.launch(
-                    arrayOf(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION
-                    )
-                )
+                requireActivity().callPermissionDialogGPS {
+                    someActivityResultLauncherWithLocationGPS.launch(this)
+                }
             }
-        } else {
-            requireActivity().callPermissionDialogGPS {
-                someActivityResultLauncherWithLocationGPS.launch(this)
-            }
+        } catch (e : Exception){
+
         }
+
     }
 
 
@@ -295,17 +300,21 @@ class NBPA_Form3 : Fragment() , CallBackListener {
             ActivityResultContracts.RequestMultiplePermissions()
         )
         { permissions ->
-            if (!permissions.entries.toString().contains("false")) {
-                requireActivity().showOptions {
-                    when (this) {
-                        1 -> forCamera()
-                        2 -> forGallery()
+            try {
+                if (!permissions.entries.toString().contains("false")) {
+                    requireActivity().showOptions {
+                        when (this) {
+                            1 -> forCamera()
+                            2 -> forGallery()
+                        }
+                    }
+                } else {
+                    requireActivity().callPermissionDialog {
+                        someActivityResultLauncherWithLocation.launch(this)
                     }
                 }
-            } else {
-                requireActivity().callPermissionDialog {
-                    someActivityResultLauncherWithLocation.launch(this)
-                }
+            } catch (e : Exception){
+
             }
         }
 
@@ -313,27 +322,43 @@ class NBPA_Form3 : Fragment() , CallBackListener {
     var someActivityResultLauncherWithLocation = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        callMediaPermissionsWithLocation()
+        try {
+            callMediaPermissionsWithLocation()
+        } catch (e : Exception){
+
+        }
     }
 
     var someActivityResultLauncherWithLocationGPS = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        Log.e("TAG", "result.resultCode "+result.resultCode)
-        callMediaPermissionsWithLocation()
+        try {
+            Log.e("TAG", "result.resultCode "+result.resultCode)
+            callMediaPermissionsWithLocation()
+        } catch (e : Exception){
+
+        }
     }
 
 
     private fun forCamera() {
-        requireActivity().getCameraPath {
-            uriReal = this
-            captureMedia.launch(uriReal)
+        try {
+            requireActivity().getCameraPath {
+                uriReal = this
+                captureMedia.launch(uriReal)
+            }
+        } catch (e : Exception){
+
         }
     }
 
     private fun forGallery() {
-        requireActivity().runOnUiThread() {
-            pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        try {
+            requireActivity().runOnUiThread() {
+                pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+            }
+        } catch (e : Exception){
+
         }
     }
 
@@ -344,18 +369,19 @@ class NBPA_Form3 : Fragment() , CallBackListener {
     @SuppressLint("MissingPermission", "SuspiciousIndentation")
     private var pickMedia =
         registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
-            lifecycleScope.launch @androidx.annotation.RequiresPermission(allOf = [android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION]) {
-                if (uri != null) {
-                    when (imagePosition) {
-                        1 -> {
-                            val compressedImageFile = Compressor.compress(
-                                requireContext(),
-                                File(requireContext().getMediaFilePathFor(uri))
-                            )
-                            mainThread {
+            try {
+                lifecycleScope.launch @androidx.annotation.RequiresPermission(allOf = [android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION]) {
+                    if (uri != null) {
+                        when (imagePosition) {
+                            1 -> {
+                                val compressedImageFile = Compressor.compress(
+                                    requireContext(),
+                                    File(requireContext().getMediaFilePathFor(uri))
+                                )
+                                mainThread {
 //                                binding.progressBarFoodItem.visibility = View.VISIBLE
-                                binding.ivImagePassportsizeImage.loadImageForms(type = 1, url = { "" })
-                            }
+                                    binding.ivImagePassportsizeImage.loadImageForms(type = 1, url = { "" })
+                                }
                                 var isLocation = false
                                 val locationRequest = LocationRequest().setInterval(1000).setFastestInterval(1000)
                                     .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -418,17 +444,17 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                                     },
                                     Looper.myLooper()
                                 )
-                        }
-
-                        2 -> {
-                            val compressedImageFile = Compressor.compress(
-                                requireContext(),
-                                File(requireContext().getMediaFilePathFor(uri))
-                            )
-                            mainThread {
-//                                binding.progressBarIdentity.visibility = View.VISIBLE
-                                binding.ivImageIdentityImage.loadImageForms(type = 1, url = { "" })
                             }
+
+                            2 -> {
+                                val compressedImageFile = Compressor.compress(
+                                    requireContext(),
+                                    File(requireContext().getMediaFilePathFor(uri))
+                                )
+                                mainThread {
+//                                binding.progressBarIdentity.visibility = View.VISIBLE
+                                    binding.ivImageIdentityImage.loadImageForms(type = 1, url = { "" })
+                                }
                                 var isLocation = false
                                 val locationRequest = LocationRequest().setInterval(1000).setFastestInterval(1000)
                                     .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -490,9 +516,12 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                                     },
                                     Looper.myLooper()
                                 )
+                            }
                         }
                     }
                 }
+            } catch (e : Exception){
+
             }
         }
 
@@ -500,19 +529,19 @@ class NBPA_Form3 : Fragment() , CallBackListener {
     var uriReal: Uri? = null
     @SuppressLint("MissingPermission", "SuspiciousIndentation")
     val captureMedia = registerForActivityResult(ActivityResultContracts.TakePicture()) { uri ->
-        lifecycleScope.launch @androidx.annotation.RequiresPermission(allOf = [android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION]) {
-            if (uri == true) {
-
-                when (imagePosition) {
-                    1 -> {
-                        val compressedImageFile = Compressor.compress(
-                            requireContext(),
-                            File(requireContext().getMediaFilePathFor(uriReal!!))
-                        )
-                        mainThread {
+        try {
+            lifecycleScope.launch @androidx.annotation.RequiresPermission(allOf = [android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION]) {
+                if (uri == true) {
+                    when (imagePosition) {
+                        1 -> {
+                            val compressedImageFile = Compressor.compress(
+                                requireContext(),
+                                File(requireContext().getMediaFilePathFor(uriReal!!))
+                            )
+                            mainThread {
 //                            binding.progressBarFoodItem.visibility = View.VISIBLE
-                            binding.ivImagePassportsizeImage.loadImageForms(type = 1, url = { "" })
-                        }
+                                binding.ivImagePassportsizeImage.loadImageForms(type = 1, url = { "" })
+                            }
                             var isLocation = false
                             val locationRequest = LocationRequest().setInterval(1000).setFastestInterval(1000)
                                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -575,17 +604,17 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                                 },
                                 Looper.myLooper()
                             )
-                    }
-
-                    2 -> {
-                        val compressedImageFile = Compressor.compress(
-                            requireContext(),
-                            File(requireContext().getMediaFilePathFor(uriReal!!))
-                        )
-                        mainThread {
-//                            binding.progressBarIdentity.visibility = View.VISIBLE
-                            binding.ivImageIdentityImage.loadImageForms(type = 1, url = { "" })
                         }
+
+                        2 -> {
+                            val compressedImageFile = Compressor.compress(
+                                requireContext(),
+                                File(requireContext().getMediaFilePathFor(uriReal!!))
+                            )
+                            mainThread {
+//                            binding.progressBarIdentity.visibility = View.VISIBLE
+                                binding.ivImageIdentityImage.loadImageForms(type = 1, url = { "" })
+                            }
                             var isLocation = false
                             val locationRequest = LocationRequest().setInterval(1000).setFastestInterval(1000)
                                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -648,9 +677,12 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                                 },
                                 Looper.myLooper()
                             )
+                        }
                     }
                 }
             }
+        } catch (e : Exception){
+
         }
     }
 
@@ -661,24 +693,28 @@ class NBPA_Form3 : Fragment() , CallBackListener {
 
 
     private fun callMediaPermissions() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE){
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.READ_MEDIA_VIDEO,
-                    Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
-            )
-        }else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_MEDIA_IMAGES)
-            )
-        } else{
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            )
+        try {
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE){
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_MEDIA_IMAGES,
+                        Manifest.permission.READ_MEDIA_VIDEO,
+                        Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
+                )
+            }else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_MEDIA_IMAGES)
+                )
+            } else{
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                )
+            }
+        } catch (e : Exception){
+
         }
     }
 
@@ -686,25 +722,34 @@ class NBPA_Form3 : Fragment() , CallBackListener {
         registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions())
         { permissions ->
-            if(!permissions.entries.toString().contains("false")){
-                mainThread {
-                    dispatchTakePictureIntent(binding.ivSignature){
-                        viewModel.foodSignatureImage = this
-                        Log.e("TAG", "viewModel.foodSignature "+viewModel.foodSignatureImage)
+            try {
+                if(!permissions.entries.toString().contains("false")){
+                    mainThread {
+                        dispatchTakePictureIntent(binding.ivSignature){
+                            viewModel.foodSignatureImage = this
+                            Log.e("TAG", "viewModel.foodSignature "+viewModel.foodSignatureImage)
+                        }
+                    }
+                } else {
+                    requireActivity().callPermissionDialog{
+                        someActivityResultLauncher.launch(this)
                     }
                 }
-            } else {
-                requireActivity().callPermissionDialog{
-                    someActivityResultLauncher.launch(this)
-                }
+            } catch (e : Exception){
+
             }
+
         }
 
 
     var someActivityResultLauncher = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        callMediaPermissions()
+        try {
+            callMediaPermissions()
+        } catch (e : Exception){
+
+        }
     }
 
 
@@ -738,7 +783,6 @@ class NBPA_Form3 : Fragment() , CallBackListener {
         val bitmap = Bitmap.createBitmap(
             view.width, view.height, Bitmap.Config.ARGB_8888
         )
-
         val canvas = Canvas(bitmap)
         view.draw(canvas)
         return bitmap
@@ -754,14 +798,13 @@ class NBPA_Form3 : Fragment() , CallBackListener {
 
 
     private fun getData(isButton: Boolean) {
-//        var bool: Boolean = false
-//        if (viewModel.editDataNew != null){
-//            var list = viewModel.editDataNew!!.schemeDetail
-//            var isArray = list.filter { it.foodMonth == viewModel.foodMonth }
-//            bool = if (isArray.size == 0) false else true
-//
-//            Log.e("TAG", "getDatabool "+isArray.size)
-//        }
+        var bool: Boolean = false
+        if (viewModel.editDataNew != null){
+            val list = viewModel.editDataNew!!.schemeDetail
+            val isArray = list.filter { it.foodMonth == viewModel.foodMonth }
+            bool = if (isArray.size == 0) false else true
+            Log.e("TAG", "getDatabool "+isArray.size)
+        }
 
 
         binding.apply {
@@ -785,25 +828,24 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                 formFill3 = false
             }  else {
 //                if (viewModel.start == "no"){
-                    viewModel.foodHeight = editTextHeight.text.toString()
-                    if (isButton){
-                        formFill3 = true
-                        NBPA.callBackListener!!.onCallBack(1003)
-                    } else {
-                    }
+//                    viewModel.foodHeight = editTextHeight.text.toString()
+//                    if (isButton){
+//                        formFill3 = true
+//                        NBPA.callBackListener!!.onCallBack(1003)
+//                    } else {
+//                    }
 //                }
 //                if (viewModel.start == "yes"){
-//                    if (bool == true) {
-//                        showSnackBar(requireView().resources.getString(R.string.food_already_taken))
-//                        formFill3 = false
-//                    } else {
-//                        viewModel.foodHeight = editTextHeight.text.toString()
-//                        formFill3 = true
-//                        if (isButton){
-//                            NBPA.callBackListener!!.onCallBack(1003)
-//                        } else {
-//                        }
-//                    }
+                    if (bool == true) {
+                        showSnackBar(requireView().resources.getString(R.string.food_already_taken))
+                        formFill3 = false
+                    } else {
+                        viewModel.foodHeight = editTextHeight.text.toString()
+                        formFill3 = true
+                        if (isButton){
+                            NBPA.callBackListener!!.onCallBack(1003)
+                        }
+                    }
 //                }
             }
         }

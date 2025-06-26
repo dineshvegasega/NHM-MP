@@ -229,13 +229,16 @@ class Dashboard : Fragment() {
                         }
                     }
                     "unverified" -> {
-
+                        binding.linearDistributors.visibility = View.GONE
+                        binding.linearForms.visibility = View.GONE
                     }
                     "pending" -> {
-
+                        binding.linearDistributors.visibility = View.GONE
+                        binding.linearForms.visibility = View.GONE
                     }
                     "rejected" -> {
-
+                        binding.linearDistributors.visibility = View.GONE
+                        binding.linearForms.visibility = View.GONE
                     }
                 }
 

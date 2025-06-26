@@ -44,57 +44,56 @@ class CheckDetails  : Fragment() {
         MainActivity.Companion.mainActivity.get()?.callFragment(4)
         binding.apply {
 
-
-//            var _idSelect : Int = 2
-//            radioGroupSelect.setOnCheckedChangeListener(object :
-//                RadioGroup.OnCheckedChangeListener {
-//                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-//                    when (checkedId) {
-//                        radioButtonNakshayId.id -> {
-//                            _idSelect = 1
-//                            editTextAadhaarNumber.hint = getString(R.string.nakshay_id)
-//                        }
-//                        radioButtonAadhaarNumber.id -> {
-//                            _idSelect = 2
-//                            editTextAadhaarNumber.hint = getString(R.string.aadhaar_number_without_star)
-//                        }
-//                    }
-//                }
-//            })
+            var _idSelect : Int = 1
+            radioGroupSelect.setOnCheckedChangeListener(object :
+                RadioGroup.OnCheckedChangeListener {
+                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
+                    when (checkedId) {
+                        radioButtonNakshayId.id -> {
+                            _idSelect = 1
+                            editTextAadhaarNumber.hint = getString(R.string.nakshay_id)
+                        }
+                        radioButtonAadhaarNumber.id -> {
+                            _idSelect = 2
+                            editTextAadhaarNumber.hint = getString(R.string.aadhaar_number_without_star)
+                        }
+                    }
+                }
+            })
 
 
             btSignIn.singleClick {
-//                if (_idSelect == 1){
-//                    if (editTextAadhaarNumber.text.toString().isEmpty()
-//                    ) {
-//                        showSnackBar(getString(R.string.enter_nakshay_id))
-//                    } else {
-//                        var obj: JSONObject = JSONObject()
-//                        obj = JSONObject().apply {
-//                            put(nakshayID, editTextAadhaarNumber.text.toString())
-//                        }
-//                        viewModel.checkAadhaarNo(obj){
-//                            var itemProducts = this.data
-//                            Log.e("TAG", "checkAadhaarNo: "+this.toString())
-//                            if (itemProducts.size == 0){
-//                                findNavController().navigate(R.id.action_checkDetails_to_nbpa, Bundle().apply {
-//                                    putString("isExist", "no")
-//                                    putString("isAadhaar", "no")
-//                                    putString("aadhaarNumber", ""+editTextAadhaarNumber.text.toString())
-//                                })
-//                            } else {
+                if (_idSelect == 1){
+                    if (editTextAadhaarNumber.text.toString().isEmpty()
+                    ) {
+                        showSnackBar(getString(R.string.enter_nakshay_id))
+                    } else {
+                        var obj: JSONObject = JSONObject()
+                        obj = JSONObject().apply {
+                            put(nakshayID, editTextAadhaarNumber.text.toString())
+                        }
+                        viewModel.checkAadhaarNo(obj){
+                            var itemProducts = this.data
+                            Log.e("TAG", "checkAadhaarNo: "+this.toString())
+                            if (itemProducts.size == 0){
+                                findNavController().navigate(R.id.action_checkDetails_to_nbpa, Bundle().apply {
+                                    putString("isExist", "no")
+                                    putString("isAadhaar", "no")
+                                    putString("aadhaarNumber", ""+editTextAadhaarNumber.text.toString())
+                                })
+                            } else {
 //                                if(userIdForGlobal == ""+itemProducts[0].user_id){
-//                                    findNavController().navigate(R.id.action_checkDetails_to_nbpa, Bundle().apply {
-//                                        putString("isExist", "yes")
-//                                        putString("_id", ""+itemProducts[0].id)
-//                                    })
+                                    findNavController().navigate(R.id.action_checkDetails_to_nbpa, Bundle().apply {
+                                        putString("isExist", "yes")
+                                        putString("_id", ""+itemProducts[0].id)
+                                    })
 //                                } else {
 //                                    showSnackBar(view.resources.getString(R.string.already_exists_nakshay_id))
 //                                }
-//                            }
-//                        }
-//                    }
-//                } else if (_idSelect == 2){
+                            }
+                        }
+                    }
+                } else if (_idSelect == 2){
                     if (editTextAadhaarNumber.text.toString()
                             .isEmpty() || editTextAadhaarNumber.text.toString().length != 12
                     ) {
@@ -115,19 +114,19 @@ class CheckDetails  : Fragment() {
                                     putString("aadhaarNumber", ""+editTextAadhaarNumber.text.toString())
                                 })
                             } else {
-                                if(userIdForGlobal == ""+itemProducts[0].user_id){
+//                                if(userIdForGlobal == ""+itemProducts[0].user_id){
                                     formFill3 = false
                                     findNavController().navigate(R.id.action_checkDetails_to_nbpa, Bundle().apply {
                                         putString("isExist", "yes")
                                         putString("_id", ""+itemProducts[0].id)
                                     })
-                                } else {
-                                    showSnackBar(view.resources.getString(R.string.already_exists_aadhaar))
-                                }
+//                                } else {
+//                                    showSnackBar(view.resources.getString(R.string.already_exists_aadhaar))
+//                                }
                             }
                         }
                     }
-//                }
+                }
 
 
             }

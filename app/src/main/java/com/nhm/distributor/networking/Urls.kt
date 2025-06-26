@@ -259,9 +259,10 @@ var foodHeight = "foodHeight"
 var filterByName = "name"
 var filterByMobile= "mobileNumber"
 var filterByAadhaar = "aadhaarNumber"
+var filterByNikshayId = "nakshayID"
 var filterByStartDate = "created_at_from"
 var filterByEndDate = "created_at_to"
-
+var filterByDistributorNumber = "distributorNumber"
 var from_date = "from_date"
 var to_date = "to_date"
 

@@ -65,6 +65,7 @@
         tools:replace="android:icon, android:label, android:theme, android:name,android:allowBackup"
         tools:ignore="all"
         tools:targetApi="tiramisu">
+<!--        <property android:name="android.window.PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY" android:value="true" />-->
 
 
         <activity
@@ -72,6 +73,7 @@
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
+            android:resizeableActivity="false"
             android:theme="@style/Theme.FoodBucket"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
             tools:ignore="DiscouragedApi,LockedOrientationActivity">

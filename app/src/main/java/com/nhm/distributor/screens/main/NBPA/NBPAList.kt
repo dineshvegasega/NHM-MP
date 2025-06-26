@@ -32,9 +32,13 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.gson.Gson
 import com.nhm.distributor.R
 import com.nhm.distributor.databinding.DialogFilterBinding
 import com.nhm.distributor.databinding.NbpaListBinding
+import com.nhm.distributor.datastore.DataStoreKeys.LOGIN_DATA
+import com.nhm.distributor.datastore.DataStoreUtil.readData
+import com.nhm.distributor.models.Login
 import com.nhm.distributor.networking.Main
 import com.nhm.distributor.networking.Screen
 import com.nhm.distributor.networking.USER_TYPE
@@ -43,7 +47,9 @@ import com.nhm.distributor.networking.filterByAadhaar
 import com.nhm.distributor.networking.filterByEndDate
 import com.nhm.distributor.networking.filterByMobile
 import com.nhm.distributor.networking.filterByName
+import com.nhm.distributor.networking.filterByNikshayId
 import com.nhm.distributor.networking.filterByStartDate
+import com.nhm.distributor.networking.filterByDistributorNumber
 import com.nhm.distributor.networking.user_id
 import com.nhm.distributor.networking.user_type
 import com.nhm.distributor.screens.mainActivity.MainActivity
@@ -127,10 +133,26 @@ class NBPAList : Fragment() {
                     radioButtonName.text = getString(R.string.enterName)
                     editTextName.setHint(getString(R.string.enterName))
 
+                    readData(LOGIN_DATA) { loginUser ->
+                        if (loginUser != null) {
+                            val user = Gson().fromJson(loginUser, Login::class.java)
+                            if (user.user_role == USER_TYPE_ADMIN) {
+                                radioButtonDistributorNumber.visibility = View.VISIBLE
+                                editTextDistributorNumber.visibility = View.VISIBLE
+                            } else {
+                                radioButtonDistributorNumber.visibility = View.GONE
+                                editTextDistributorNumber.visibility = View.GONE
+                            }
+                        }
+                    }
+
+
                     radioButtonName.singleClick {
                         radioButtonName.isChecked = true
                         radioButtonMobile.isChecked = false
                         radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = false
                         radioButtonDate.isChecked = false
                     }
 
@@ -138,6 +160,8 @@ class NBPAList : Fragment() {
                         radioButtonName.isChecked = false
                         radioButtonMobile.isChecked = true
                         radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = false
                         radioButtonDate.isChecked = false
                     }
 
@@ -145,6 +169,26 @@ class NBPAList : Fragment() {
                         radioButtonName.isChecked = false
                         radioButtonMobile.isChecked = false
                         radioButtonAadhaar.isChecked = true
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = false
+                        radioButtonDate.isChecked = false
+                    }
+
+                    radioButtonNikshayId.singleClick {
+                        radioButtonName.isChecked = false
+                        radioButtonMobile.isChecked = false
+                        radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = true
+                        radioButtonDistributorNumber.isChecked = false
+                        radioButtonDate.isChecked = false
+                    }
+
+                    radioButtonDistributorNumber.singleClick {
+                        radioButtonName.isChecked = false
+                        radioButtonMobile.isChecked = false
+                        radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = true
                         radioButtonDate.isChecked = false
                     }
 
@@ -152,6 +196,8 @@ class NBPAList : Fragment() {
                         radioButtonName.isChecked = false
                         radioButtonMobile.isChecked = false
                         radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = false
                         radioButtonDate.isChecked = true
                     }
 
@@ -169,6 +215,8 @@ class NBPAList : Fragment() {
                     radioButtonName.isChecked = viewModel.filterNameBoolean
                     radioButtonMobile.isChecked = viewModel.filterMobileBoolean
                     radioButtonAadhaar.isChecked = viewModel.filterAadhaarBoolean
+                    radioButtonNikshayId.isChecked = viewModel.filterNikshayIdBoolean
+                    radioButtonDistributorNumber.isChecked = viewModel.filterDistributorNumberBoolean
                     radioButtonDate.isChecked =
                         if (viewModel.filterStartDateBoolean || viewModel.filterEndDateBoolean) {
                             true
@@ -179,6 +227,8 @@ class NBPAList : Fragment() {
                     editTextName.setText(viewModel.filterName)
                     editTextMobile.setText(viewModel.filterMobile)
                     editTextAadhaar.setText(viewModel.filterAadhaar)
+                    editTextNikshayId.setText(viewModel.filterNikshayId)
+                    editTextDistributorNumber.setText(viewModel.filterDistributorNumber)
                     editTextStartDate.setText(viewModel.filterStartDate)
                     editTextEndDate.setText(viewModel.filterEndDate)
 
@@ -186,16 +236,22 @@ class NBPAList : Fragment() {
                         editTextName.setText("")
                         editTextMobile.setText("")
                         editTextAadhaar.setText("")
+                        editTextNikshayId.setText("")
+                        editTextDistributorNumber.setText("")
                         editTextStartDate.setText("")
                         editTextEndDate.setText("")
                         viewModel.filterName = ""
                         viewModel.filterMobile = ""
                         viewModel.filterAadhaar = ""
+                        viewModel.filterNikshayId = ""
+                        viewModel.filterDistributorNumber = ""
                         viewModel.filterStartDate = ""
                         viewModel.filterEndDate = ""
                         viewModel.filterNameBoolean = false
                         viewModel.filterMobileBoolean = false
                         viewModel.filterAadhaarBoolean = false
+                        viewModel.filterNikshayIdBoolean = false
+                        viewModel.filterDistributorNumberBoolean = false
                         viewModel.filterStartDateBoolean = false
                         viewModel.filterEndDateBoolean = false
 //                        dialog.dismiss()
@@ -203,6 +259,8 @@ class NBPAList : Fragment() {
                         radioButtonName.isChecked = false
                         radioButtonMobile.isChecked = false
                         radioButtonAadhaar.isChecked = false
+                        radioButtonNikshayId.isChecked = false
+                        radioButtonDistributorNumber.isChecked = false
                         radioButtonDate.isChecked = false
                     }
 
@@ -211,12 +269,16 @@ class NBPAList : Fragment() {
                         viewModel.filterName = editTextName.text.toString()
                         viewModel.filterMobile = editTextMobile.text.toString()
                         viewModel.filterAadhaar = editTextAadhaar.text.toString()
+                        viewModel.filterNikshayId = editTextNikshayId.text.toString()
+                        viewModel.filterDistributorNumber = editTextDistributorNumber.text.toString()
                         viewModel.filterStartDate = editTextStartDate.text.toString()
                         viewModel.filterEndDate = editTextEndDate.text.toString()
 
                         viewModel.filterNameBoolean = radioButtonName.isChecked
                         viewModel.filterMobileBoolean = radioButtonMobile.isChecked
                         viewModel.filterAadhaarBoolean = radioButtonAadhaar.isChecked
+                        viewModel.filterNikshayIdBoolean = radioButtonNikshayId.isChecked
+                        viewModel.filterDistributorNumberBoolean = radioButtonDistributorNumber.isChecked
                         viewModel.filterStartDateBoolean = radioButtonDate.isChecked
                         viewModel.filterEndDateBoolean = radioButtonDate.isChecked
 
@@ -245,11 +307,15 @@ class NBPAList : Fragment() {
                                         showSnackBar(resources.getString(R.string.enterMobileNumberForm))
                                     } else if (radioButtonAadhaar.isChecked && viewModel.filterAadhaar.isEmpty()) {
                                         showSnackBar(resources.getString(R.string.enter_valid_aadhaar_number))
+                                    } else if (radioButtonNikshayId.isChecked && viewModel.filterNikshayId.isEmpty()) {
+                                        showSnackBar(resources.getString(R.string.enter_valid_nikshay_id))
                                     } else {
                                         filters(
                                             if (radioButtonName.isChecked) viewModel.filterName else "",
                                             if (radioButtonMobile.isChecked) viewModel.filterMobile else "",
                                             if (radioButtonAadhaar.isChecked) viewModel.filterAadhaar else "",
+                                            if (radioButtonNikshayId.isChecked) viewModel.filterNikshayId else "",
+                                            if (radioButtonDistributorNumber.isChecked) viewModel.filterDistributorNumber else "",
                                             if (radioButtonDate.isChecked) viewModel.filterStartDate + " 00:00:00" else "",
                                             if (radioButtonDate.isChecked) viewModel.filterEndDate + " 23:59:59" else "",
                                         )
@@ -276,13 +342,19 @@ class NBPAList : Fragment() {
                                 showSnackBar(resources.getString(R.string.enterMobileNumberForm))
                             } else if (radioButtonAadhaar.isChecked && viewModel.filterAadhaar.isEmpty()) {
                                 showSnackBar(resources.getString(R.string.enter_valid_aadhaar_number))
+                            } else if (radioButtonNikshayId.isChecked && viewModel.filterNikshayId.isEmpty()) {
+                                showSnackBar(resources.getString(R.string.enter_valid_nikshay_id))
+                            } else if (radioButtonDistributorNumber.isChecked && viewModel.filterDistributorNumber.isEmpty()) {
+                                showSnackBar(resources.getString(R.string.distributorMobile))
                             } else {
                                 filters(
                                     if (radioButtonName.isChecked) viewModel.filterName else "",
                                     if (radioButtonMobile.isChecked) viewModel.filterMobile else "",
                                     if (radioButtonAadhaar.isChecked) viewModel.filterAadhaar else "",
+                                    if (radioButtonNikshayId.isChecked) viewModel.filterNikshayId else "",
+                                    if (radioButtonDistributorNumber.isChecked) viewModel.filterDistributorNumber else "",
                                     if (radioButtonDate.isChecked) viewModel.filterStartDate + " 00:00:00" else "",
-                                    if (radioButtonDate.isChecked) viewModel.filterEndDate + " 23:59:59" else "",
+                                    if (radioButtonDate.isChecked) viewModel.filterEndDate + " 23:59:59" else ""
                                 )
                             }
 
@@ -324,6 +396,8 @@ class NBPAList : Fragment() {
                 "",
                 "",
                 "",
+                "",
+                "",
                 ""
             )
 
@@ -346,6 +420,8 @@ class NBPAList : Fragment() {
                         if (viewModel.filterNameBoolean) viewModel.filterName else "",
                         if (viewModel.filterMobileBoolean) viewModel.filterMobile else "",
                         if (viewModel.filterAadhaarBoolean) viewModel.filterAadhaar else "",
+                        if (viewModel.filterNikshayIdBoolean) viewModel.filterNikshayId else "",
+                        if (viewModel.filterDistributorNumberBoolean) viewModel.filterDistributorNumber else "",
                         if (viewModel.filterStartDateBoolean) viewModel.filterStartDate + " 00:00:00" else "",
                         if (viewModel.filterEndDateBoolean) viewModel.filterEndDate + " 23:59:59" else "",
                     )
@@ -377,10 +453,7 @@ class NBPAList : Fragment() {
                 adapter2.submitData(viewModel.itemsProduct)
                 adapter2.notifyDataSetChanged()
 
-
             }
-
-
         }
     }
 
@@ -390,6 +463,8 @@ class NBPAList : Fragment() {
         filterName: String,
         filterMobile: String,
         filterAadhaar: String,
+        filterNikshayId: String,
+        filterDistributorNumber: String,
         filterStartDate: String,
         filterEndDate: String
     ) {
@@ -401,10 +476,11 @@ class NBPAList : Fragment() {
             obj = JSONObject().apply {
                 put(com.nhm.distributor.networking.page, "" + page)
                 put(user_type, USER_TYPE)
-                put(user_id, userIdForGlobal)
+//                put(user_id, userIdForGlobal)
                 put(filterByName, filterName)
                 put(filterByMobile, filterMobile)
                 put(filterByAadhaar, filterAadhaar)
+                put(filterByNikshayId, filterNikshayId)
                 put(filterByStartDate, filterStartDate)
                 put(filterByEndDate, filterEndDate)
             }
@@ -417,6 +493,8 @@ class NBPAList : Fragment() {
                 put(filterByName, filterName)
                 put(filterByMobile, filterMobile)
                 put(filterByAadhaar, filterAadhaar)
+                put(filterByNikshayId, filterNikshayId)
+                put(filterByDistributorNumber, filterDistributorNumber)
                 put(filterByStartDate, filterStartDate)
                 put(filterByEndDate, filterEndDate)
             }

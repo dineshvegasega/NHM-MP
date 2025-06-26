@@ -39,7 +39,7 @@
                         tools:ignore="MissingConstraints"
                         app:fontFamily="@font/roboto_medium"
                         android:gravity="center_horizontal"
-                        android:text="@string/enter_aadhaar_number_to_verify_the_patient"
+                        android:text="@string/enter_aadhaar_number_to_verify_the_patient_new"
                         android:visibility="visible"
                         />
 
@@ -51,7 +51,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         android:paddingHorizontal="@dimen/_10sdp"
                         android:layout_marginTop="@dimen/_50sdp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:orientation="horizontal">
                     <RadioButton
                             android:id="@+id/radioButtonNakshayId"
@@ -76,7 +76,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         style="@style/PrimaryEditText"
-                        android:hint="@string/aadhaar_number_without_star"
+                        android:hint="@string/nakshay_id"
                         android:inputType="number"
                         android:digits="0123456789"
                         android:maxLength="12"
@@ -84,7 +84,7 @@
                         android:imeOptions="flagNoExtractUi"
                         app:layout_constraintTop_toBottomOf="@+id/radioGroupSelect"
                         app:layout_constraintBottom_toTopOf="@+id/btSignIn"
-                        android:layout_marginTop="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         />
 
 

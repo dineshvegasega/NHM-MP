@@ -20,8 +20,8 @@ android {
         minSdk = 26
         //noinspection EditedTargetSdkVersion
         targetSdk = 35
-        versionCode = 5
-        versionName = "1.0.5"
+        versionCode = 6
+        versionName = "1.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -145,7 +145,7 @@ dependencies {
     debugImplementation (libs.chucker)
     releaseImplementation (libs.chucker.no.op)
 
-//    implementation ("com.google.android.play:core-ktx:1.8.1")
+//    implementation (libs.androidPlayCore)
     implementation (platform(libs.firebase.bom))
     implementation (libs.firebase.auth.ktx)
     implementation (libs.firebase.database.ktx)
