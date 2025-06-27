@@ -198,7 +198,9 @@ class NBPA_Form4 : Fragment() , CallBackListener {
 
     private fun dispatchTakePictureIntent(imageView: View, callBack: String.() -> Unit) {
         val bitmap: Bitmap = getBitmapFromView(imageView)
-        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+        val path = requireActivity().externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+
         // val filename = System.currentTimeMillis().toString() + "." + "png" // change png/pdf
         val file = File(path, getImageName())
         try {

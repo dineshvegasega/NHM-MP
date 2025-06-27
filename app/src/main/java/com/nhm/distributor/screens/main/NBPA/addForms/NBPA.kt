@@ -41,6 +41,7 @@ class NBPA : Fragment(), CallBackListener {
         return binding.root
     }
 
+//    http://167.71.235.192:8080/#/term-condition
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -125,12 +126,11 @@ class NBPA : Fragment(), CallBackListener {
             adapter.notifyDataSetChanged()
 
 
-
-            var start = "" + arguments?.getString("isExist")
+            val start = "" + arguments?.getString("isExist")
             viewModel.start = start
             if (start == "yes") {
                 introViewPager.isUserInputEnabled = true
-                var _id = "" + arguments?.getString("_id")
+                val _id = "" + arguments?.getString("_id")
                 viewModel.scheme_id = _id
                 viewModel.formListDetail(
                     view = requireView(),
@@ -179,17 +179,18 @@ class NBPA : Fragment(), CallBackListener {
                     })
                 }
             } else {
+                viewModel.editDataNew = null
                 introViewPager.isUserInputEnabled = false
                 viewModel.isAadhaar = start
-                var isAadhaar = "" + arguments?.getString("isAadhaar")
+                val isAadhaar = "" + arguments?.getString("isAadhaar")
                 viewModel.isAadhaar = isAadhaar
                 if (isAadhaar == "yes"){
-                    var aadhaarNumber = "" + arguments?.getString("aadhaarNumber")
+                    val aadhaarNumber = "" + arguments?.getString("aadhaarNumber")
                     Log.e("TAG", "aadhaarNumber "+aadhaarNumber)
                     viewModel.aadhaarNumber = aadhaarNumber
                 }
                 if (isAadhaar == "no"){
-                    var aadhaarNumber = "" + arguments?.getString("aadhaarNumber")
+                    val aadhaarNumber = "" + arguments?.getString("aadhaarNumber")
                     Log.e("TAG", "aadhaarNumber "+aadhaarNumber)
                     viewModel.nakshayID = aadhaarNumber
                 }
@@ -252,9 +253,7 @@ class NBPA : Fragment(), CallBackListener {
                     }
                 })
             }
-
         }
-
     }
 
     override fun onCallBack(pos: Int) {

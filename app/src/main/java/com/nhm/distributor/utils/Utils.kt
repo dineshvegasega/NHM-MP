@@ -2143,3 +2143,12 @@ fun Activity.callPermissionDialogGPS(callBack: Intent.() -> Unit) {
 //    }
 
 //Nikshay Patra - Hypro
+
+
+
+//getExternalFilesDir() Android/data/data/your_package/
+//getExternalStorageDirectory() mnt/sdcard/
+//getExternalCacheDir()
+//getExternalStoragePublicDirectory  Environment.DIRECTORY_DOWNLOADS
+//getExternalMediaDirs()
+

@@ -360,8 +360,10 @@ class MembershipDetails  : Fragment() {
 
     private fun dispatchTakePictureIntent() {
         val bitmap: Bitmap = getBitmapFromView(binding.layoutMain)
-        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-       // val filename = System.currentTimeMillis().toString() + "." + "png" // change png/pdf
+//        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+        val path = requireActivity().externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+
+        // val filename = System.currentTimeMillis().toString() + "." + "png" // change png/pdf
         val file = File(path, getImageName())
         try {
             if (!path.exists()) path.mkdirs()

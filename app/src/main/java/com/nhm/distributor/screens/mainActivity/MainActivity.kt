@@ -55,6 +55,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -103,7 +104,9 @@ import com.nhm.distributor.utils.mainThread
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
 import java.io.File
 import java.io.FileOutputStream
@@ -223,6 +226,9 @@ class MainActivity : AppCompatActivity() {
 //        windowInsetController.isAppearanceLightStatusBars = false
 //
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT)
+
+
+
 
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment

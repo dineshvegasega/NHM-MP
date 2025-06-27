@@ -573,7 +573,9 @@ class Register : Fragment(), CallBackListener {
 
     private fun dispatchTakePictureIntent() {
         val bitmap: Bitmap = getBitmapFromView(binding.layoutMainCapture)
-        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+        val path = requireActivity().externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+
         // val filename = System.currentTimeMillis().toString() + "." + "png" // change png/pdf
         val file = File(path, getImageName())
         try {

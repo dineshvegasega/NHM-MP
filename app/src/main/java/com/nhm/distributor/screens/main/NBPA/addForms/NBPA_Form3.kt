@@ -2,12 +2,10 @@ package com.nhm.distributor.screens.main.NBPA.addForms
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.graphics.Canvas
-import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -17,7 +15,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -35,12 +32,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.gson.Gson
 import com.nhm.distributor.R
 import com.nhm.distributor.databinding.Form3Binding
-import com.nhm.distributor.datastore.DataStoreKeys.GEO_LAT_LONG
-import com.nhm.distributor.datastore.DataStoreKeys.GEO_LOCATION
 import com.nhm.distributor.datastore.DataStoreKeys.LOGIN_DATA
 import com.nhm.distributor.datastore.DataStoreUtil.readData
 import com.nhm.distributor.models.Login
-import com.nhm.distributor.models.SchemeDetail
 import com.nhm.distributor.screens.interfaces.CallBackListener
 import com.nhm.distributor.screens.main.NBPA.NBPAViewModel
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.isProductLoad
@@ -57,7 +51,6 @@ import com.nhm.distributor.utils.loadImage
 import com.nhm.distributor.utils.loadImageForms
 import com.nhm.distributor.utils.mainThread
 import com.nhm.distributor.utils.showDropDownDialog
-import com.nhm.distributor.utils.showGPSNotEnabledDialog
 import com.nhm.distributor.utils.showOptions
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
@@ -347,6 +340,19 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                 uriReal = this
                 captureMedia.launch(uriReal)
             }
+//
+//            Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
+//                putExtra("android.intent.extras.CAMERA_FACING", CameraCharacteristics.LENS_FACING_BACK);
+//                putExtra("android.intent.extra.USE_FRONT_CAMERA", false)
+//            }.also { takePictureIntent ->
+//                takePictureIntent.resolveActivity(requireContext().packageManager)?.also {
+//                    // Camera app is available: launch it
+//                    takePictureLauncher.launch(takePictureIntent)
+//                } ?: run {
+//                    // No camera app available: inform the user
+//                    Toast.makeText(requireActivity(), "No camera app available", Toast.LENGTH_SHORT).show()
+//                }
+//            }
         } catch (e : Exception){
 
         }
@@ -362,8 +368,23 @@ class NBPA_Form3 : Fragment() , CallBackListener {
         }
     }
 
-
-
+//    @SuppressLint("MissingPermission", "SuspiciousIndentation")
+//    private val takePictureLauncher: ActivityResultLauncher<Intent> =
+//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//
+//            lifecycleScope.launch{
+//                            val compressedImageFile = Compressor.compress(
+//                                requireContext(),
+//                                File(requireContext().getMediaFilePathFor(result.data?.data!!))
+//                            )
+//                imagePath = compressedImageFile.path
+//                binding.ivImagePassportsizeImage.loadImage(type = 1, url = { imagePath })
+//            }
+//
+//
+//
+//            Toast.makeText(requireActivity(), "Photo taken "+result.toString(), Toast.LENGTH_SHORT).show()
+//        }
 
     var imagePosition = 0
     @SuppressLint("MissingPermission", "SuspiciousIndentation")
@@ -756,8 +777,9 @@ class NBPA_Form3 : Fragment() , CallBackListener {
 
     private fun dispatchTakePictureIntent(imageView: View, callBack: String.() -> Unit) {
         val bitmap: Bitmap = getBitmapFromView(imageView)
-        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//        val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         // val filename = System.currentTimeMillis().toString() + "." + "png" // change png/pdf
+        val path = requireActivity().externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         val file = File(path, getImageName())
         try {
             if (!path.exists()) path.mkdirs()

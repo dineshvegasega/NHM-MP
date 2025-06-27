@@ -47,26 +47,20 @@ class NBPA_Form1 : Fragment() , CallBackListener {
         callBackListener = this
 
         binding.apply {
-            radioGroupFatherHusbandRadioGroup.setOnCheckedChangeListener(object :
-                RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonFather.id -> viewModel.fatherHusbandType = 1
-                        radioButtonHusband.id -> viewModel.fatherHusbandType = 2
-                    }
+            radioGroupFatherHusbandRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonFather.id -> viewModel.fatherHusbandType = 1
+                    radioButtonHusband.id -> viewModel.fatherHusbandType = 2
                 }
-            })
+            }
 
-            radioGroupCardAPLBPLGroup.setOnCheckedChangeListener(object :
-                RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonAPL.id -> viewModel.cardTypeAPLBPL = 1
-                        radioButtonBPL.id -> viewModel.cardTypeAPLBPL = 2
-                        radioButtonOther.id -> viewModel.cardTypeAPLBPL = 3
-                    }
+            radioGroupCardAPLBPLGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonAPL.id -> viewModel.cardTypeAPLBPL = 1
+                    radioButtonBPL.id -> viewModel.cardTypeAPLBPL = 2
+                    radioButtonOther.id -> viewModel.cardTypeAPLBPL = 3
                 }
-            })
+            }
 
             editTextGender.singleClick {
                 requireActivity().showDropDownDialog(type = 1) {
