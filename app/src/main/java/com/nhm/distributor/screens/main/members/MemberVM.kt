@@ -50,21 +50,21 @@ class MemberVM @Inject constructor(private val repository: Repository) : ViewMod
 
                         @SuppressLint("SuspiciousIndentation")
                         override fun success(response: Response<ItemMemberRoot>) {
+//                            Log.e("TAG", "successAAB: ${response.body().toString()}")
                             if (response.isSuccessful) {
                                 mainThread {
                                     try {
                                         Log.e("TAG", "successAA: ${response.body().toString()}")
-                                        var mMineUserEntity = response.body()!!
+                                        val mMineUserEntity = response.body()!!
                                         itemProducstResult.value = mMineUserEntity
                                     } catch (e: Exception) {
                                     }
                                 }
-
                             }
                         }
 
                         override fun error(message: String) {
-
+                            Log.e("TAG", "messageAA: ${message}")
                         }
 
                         override fun loading() {
@@ -94,7 +94,7 @@ class MemberVM @Inject constructor(private val repository: Repository) : ViewMod
                         }
 
                         override fun error(message: String) {
-
+                            Log.e("TAG", "messageBB: ${message}")
                         }
 
                         override fun loading() {
@@ -106,5 +106,39 @@ class MemberVM @Inject constructor(private val repository: Repository) : ViewMod
         }
 
 
+
+//
+//    fun getProducts(emptyMap: JSONObject, pageNumber: Int) =
+//        viewModelScope.launch {
+//                repository.callApi(
+//                    callHandler = object : CallHandler<Response<ItemMemberRoot>> {
+//                        override suspend fun sendRequest(apiInterface: ApiInterface) =
+//                            apiInterface.getPopularMoviesListMember(emptyMap.getJsonRequestBody())
+//
+//                        @SuppressLint("SuspiciousIndentation")
+//                        override fun success(response: Response<ItemMemberRoot>) {
+//                            Log.e("TAG", "successAAB: ${response.body().toString()}")
+////                            if (response.isSuccessful) {
+////                                mainThread {
+////                                    try {
+////                                        Log.e("TAG", "successAA: ${response.body().toString()}")
+////                                        val mMineUserEntity = response.body()!!
+////                                        itemProducstResult.value = mMineUserEntity
+////                                    } catch (e: Exception) {
+////                                    }
+////                                }
+////                            }
+//                        }
+//
+//                        override fun error(message: String) {
+//                            Log.e("TAG", "messageAA: ${message}")
+//                        }
+//
+//                        override fun loading() {
+//                            super.loading()
+//                        }
+//                    }
+//                )
+//        }
 
 }

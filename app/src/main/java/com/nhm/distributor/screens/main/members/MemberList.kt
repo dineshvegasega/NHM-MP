@@ -321,10 +321,7 @@ class MemberList : Fragment() {
                 adapter2.submitData(viewModel.itemsProduct)
                 adapter2.notifyDataSetChanged()
 
-
             }
-
-
         }
     }
 

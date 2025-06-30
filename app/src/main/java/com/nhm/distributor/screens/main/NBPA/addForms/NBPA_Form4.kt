@@ -148,24 +148,28 @@ class NBPA_Form4 : Fragment() , CallBackListener {
 
 
     private fun callMediaPermissions() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE){
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.READ_MEDIA_VIDEO,
-                    Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
-            )
-        }else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_MEDIA_IMAGES)
-            )
-        } else{
-            activityResultLauncher.launch(
-                arrayOf(
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE)
-            )
+        try {
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE){
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_MEDIA_IMAGES,
+                        Manifest.permission.READ_MEDIA_VIDEO,
+                        Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED)
+                )
+            }else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_MEDIA_IMAGES)
+                )
+            } else{
+                activityResultLauncher.launch(
+                    arrayOf(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                )
+            }
+        } catch (e : Exception){
+
         }
     }
 
@@ -173,17 +177,21 @@ class NBPA_Form4 : Fragment() , CallBackListener {
         registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions())
         { permissions ->
-            if(!permissions.entries.toString().contains("false")){
-                mainThread {
-                    dispatchTakePictureIntent(binding.ivSignature){
-                        viewModel.homeVisitSignature = this
-                        Log.e("TAG", "viewModel.foodSignature "+viewModel.homeVisitSignature)
+            try {
+                if(!permissions.entries.toString().contains("false")){
+                    mainThread {
+                        dispatchTakePictureIntent(binding.ivSignature){
+                            viewModel.homeVisitSignature = this
+                            Log.e("TAG", "viewModel.foodSignature "+viewModel.homeVisitSignature)
+                        }
+                    }
+                } else {
+                    requireActivity().callPermissionDialog{
+                        someActivityResultLauncher.launch(this)
                     }
                 }
-            } else {
-                requireActivity().callPermissionDialog{
-                    someActivityResultLauncher.launch(this)
-                }
+            } catch (e : Exception){
+
             }
         }
 
@@ -191,7 +199,11 @@ class NBPA_Form4 : Fragment() , CallBackListener {
     var someActivityResultLauncher = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        callMediaPermissions()
+        try {
+            callMediaPermissions()
+        } catch (e : Exception){
+
+        }
     }
 
 
