@@ -54,16 +54,13 @@ class NBPA_Form2 : Fragment(), CallBackListener {
         viewModel = ViewModelProvider(requireActivity()).get(NBPAViewModel::class.java)
         callBackListener = this
         binding.apply {
-            radioGroupPulmonaryRadioGroup.setOnCheckedChangeListener(object :
-                RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonPulmonary.id -> viewModel.typeOfPatient = 1
-                        radioButtonExtraPulmonary.id -> viewModel.typeOfPatient = 2
-                        radioButtonOther.id -> viewModel.typeOfPatient = 3
-                    }
+            radioGroupPulmonaryRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonPulmonary.id -> viewModel.typeOfPatient = 1
+                    radioButtonExtraPulmonary.id -> viewModel.typeOfPatient = 2
+                    radioButtonOther.id -> viewModel.typeOfPatient = 3
                 }
-            })
+            }
 
             ivMenu.singleClick {
                 NBPA.callBackListener!!.onCallBack(1000)

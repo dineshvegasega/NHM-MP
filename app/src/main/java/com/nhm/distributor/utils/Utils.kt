@@ -1510,6 +1510,17 @@ fun Activity.showDropDownDialog(
                 )
             dialog.show()
         }
+
+
+            23 -> {
+                val list = resources.getStringArray(R.array.dmc_array)
+                MaterialAlertDialogBuilder(this, R.style.DropdownDialogTheme)
+                    .setTitle(resources.getString(R.string.dmc_name))
+                    .setItems(list) { _, which ->
+                        callBack(ItemReturn(which, list[which]))
+                    }.show()
+            }
+
     }
 }
 

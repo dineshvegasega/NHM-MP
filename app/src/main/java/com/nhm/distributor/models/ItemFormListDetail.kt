@@ -3,7 +3,7 @@ package com.nhm.distributor.models
 data class ItemFormListDetail(
     val `data`: ListData,
     val message: String,
-    val schemeDetail: List<SchemeDetail>,
+    val schemeDetail: List<SchemeDetail> = ArrayList(),
     val status_code: Int,
     val success: Boolean,
     val total_applied: Int

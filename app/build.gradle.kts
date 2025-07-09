@@ -13,15 +13,15 @@ plugins {
 
 android {
     namespace = "com.nhm.distributor"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.nhm.distributor"
         minSdk = 26
         //noinspection EditedTargetSdkVersion
-        targetSdk = 35
-        versionCode = 6
-        versionName = "1.0.6"
+        targetSdk = 36
+        versionCode = 7
+        versionName = "1.0.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

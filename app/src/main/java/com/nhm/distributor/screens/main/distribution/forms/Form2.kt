@@ -35,15 +35,13 @@ class Form2 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            radioGroupPulmonaryRadioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonPulmonary.id ->  viewModel.typeOfPatient = "Pulmonary"
-                        radioButtonExtraPulmonary.id ->  viewModel.typeOfPatient = "Extra Pulmonary"
-                        radioButtonOther.id ->  viewModel.typeOfPatient = "Other"
-                    }
+            radioGroupPulmonaryRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonPulmonary.id -> viewModel.typeOfPatient = "Pulmonary"
+                    radioButtonExtraPulmonary.id -> viewModel.typeOfPatient = "Extra Pulmonary"
+                    radioButtonOther.id -> viewModel.typeOfPatient = "Other"
                 }
-            })
+            }
 
             editTextPatientCheckupDate.singleClick {
                 requireActivity().showDropDownDialog(type = 20){

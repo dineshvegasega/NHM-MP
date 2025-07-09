@@ -199,6 +199,16 @@
         <item>Other</item>
     </string-array>
 
+    <string name="dmc_name">DMC Name</string>
+
+    <string-array name="dmc_array">
+        <item>Dtc Singrauli</item>
+        <item>Khutar</item>
+        <item>Sarai</item>
+        <item>Deosar</item>
+        <item>Chitrangi</item>
+    </string-array>
+
     <string name="maleGender">Male</string>
     <string name="femaleGender">Female</string>
     <string name="otherGender">Other</string>
@@ -883,13 +893,13 @@
     <string name="enterHusbandName">Enter Husband Name</string>
     <string name="enterMotherName">Enter Mother Name</string>
     <string name="selectGender">Select Gender</string>
-    <string name="enterAge">Select Age</string>
+    <string name="enterAge">Enter Age</string>
     <string name="enterHeight">Enter Height</string>
     <string name="enterWeight">Enter Weight</string>
     <string name="enterNumbersOfMembers">Enter Total Family Members</string>
     <string name="enterNumbersOfChildrens">Enter Number Of Childrens(Age 0 - 6)</string>
     <string name="enterAddress">Enter Address</string>
-    <string name="enterDMCName">Enter DMC Name</string>
+    <string name="enterDMCName">Select DMC Name</string>
     <string name="enterBlock">Enter Block</string>
     <string name="enterMobileNumberForm">Enter Mobile Number</string>
     <string name="enterDistrictState">Enter District / State</string>
@@ -1003,6 +1013,6 @@
     <string name="required_for_this_app">Required for this app</string>
     <string name="enable_now">Enable Now</string>
     <string name="location_permission_not_granted">Location Permission not granted</string>
-
+    <string name="food_more_than_6">You have exceeded the maximum food packet limit.</string>
 
 </resources>

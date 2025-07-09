@@ -715,7 +715,7 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                                 mainThread {
                                     try {
                                         Log.e("TAG", "successAA: ${response.body().toString()}")
-                                        var mMineUserEntity = response.body()!!
+                                        val mMineUserEntity = response.body()!!
                                         itemProducstResult.value = mMineUserEntity
                                     } catch (e: Exception) {
                                     }
@@ -725,7 +725,7 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                         }
 
                         override fun error(message: String) {
-
+                            Log.e("TAG", "messageAA: ${message.toString()}")
                         }
 
                         override fun loading() {

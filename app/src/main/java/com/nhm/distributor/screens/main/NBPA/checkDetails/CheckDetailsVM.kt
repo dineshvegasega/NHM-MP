@@ -1,13 +1,16 @@
 package com.nhm.distributor.screens.main.NBPA.checkDetails
 
 import android.annotation.SuppressLint
+import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.nhm.distributor.models.ItemFormListDetail
 import com.nhm.distributor.models.ItemNBPAFormRoot
 import com.nhm.distributor.networking.ApiInterface
 import com.nhm.distributor.networking.CallHandler
 import com.nhm.distributor.networking.Repository
 import com.nhm.distributor.networking.getJsonRequestBody
+import com.nhm.distributor.utils.showSnackBar
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.json.JSONObject
@@ -84,4 +87,41 @@ class CheckDetailsVM @Inject constructor(private val repository: Repository): Vi
                     }
                 )
         }
+
+
+
+    fun formListDetail(
+        view: View,
+        _id: String,  callBack: ItemFormListDetail.() -> Unit
+    ) = viewModelScope.launch {
+        repository.callApi(
+            callHandler = object : CallHandler<Response<ItemFormListDetail>> {
+                override suspend fun sendRequest(apiInterface: ApiInterface) =
+                    apiInterface.formListDetail(_id)
+
+                override fun success(response: Response<ItemFormListDetail>) {
+                    if (response.isSuccessful) {
+//                        isProductLoad = true
+//                        isProductLoadMember = true
+//                        showSnackBar(view.resources.getString(R.string.forms_added_successfully))
+                        callBack(response.body()!!)
+
+//                        view.findNavController()
+//                            .navigate(R.id.action_nbpa_to_nbpaList)
+                    } else {
+                        showSnackBar(response.body()?.message.orEmpty())
+                    }
+                }
+
+                override fun error(message: String) {
+                    super.error(message)
+                    showSnackBar(message)
+                }
+
+                override fun loading() {
+                    super.loading()
+                }
+            }
+        )
+    }
 }

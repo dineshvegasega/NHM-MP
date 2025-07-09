@@ -36,23 +36,19 @@ class Form1 : Fragment() {
 
         binding.apply {
 
-            radioGroupFatherHusbandRadioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonFather.id ->  viewModel.fatherHusbandType = 1
-                        radioButtonHusband.id ->  viewModel.fatherHusbandType = 2
-                    }
+            radioGroupFatherHusbandRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonFather.id -> viewModel.fatherHusbandType = 1
+                    radioButtonHusband.id -> viewModel.fatherHusbandType = 2
                 }
-            })
+            }
 
-            radioGroupCardAPLBPLGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
-                override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
-                    when (checkedId) {
-                        radioButtonAPL.id ->  viewModel.cardTypeAPLBPL = "APL"
-                        radioButtonBPL.id ->  viewModel.cardTypeAPLBPL = "BPL"
-                    }
+            radioGroupCardAPLBPLGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    radioButtonAPL.id -> viewModel.cardTypeAPLBPL = "APL"
+                    radioButtonBPL.id -> viewModel.cardTypeAPLBPL = "BPL"
                 }
-            })
+            }
 
             editTextGender.singleClick {
                 requireActivity().showDropDownDialog(type = 1) {

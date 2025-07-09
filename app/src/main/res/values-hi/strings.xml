@@ -156,6 +156,16 @@
         <item>अन्य</item>
     </string-array>
 
+    <string name="dmc_name">डीएमसी नाम</string>
+
+    <string-array name="dmc_array">
+        <item>डीटीसी सिंगरौली</item>
+        <item>खुटार</item>
+        <item>सराय</item>
+        <item>देवसर</item>
+        <item>चित्रांगी</item>
+    </string-array>
+
     <string name="maleGender">पुरुष</string>
     <string name="femaleGender">महिला</string>
     <string name="otherGender">अन्य</string>
@@ -682,13 +692,13 @@
     <string name="enterHusbandName">पति का नाम दर्ज करें</string>
     <string name="enterMotherName">माता का नाम दर्ज करें</string>
     <string name="selectGender">लिंग चुनें</string>
-    <string name="enterAge">आयु चुनें</string>
+    <string name="enterAge">आयु दर्ज करें</string>
     <string name="enterHeight">ऊंचाई दर्ज करें</string>
     <string name="enterWeight">वजन दर्ज करें</string>
     <string name="enterNumbersOfMembers">परिवार के कुल सदस्य दर्ज करें</string>
     <string name="enterNumbersOfChildrens">बच्चों की संख्या दर्ज करें (आयु 0 - 6)</string>
     <string name="enterAddress">पता दर्ज करें</string>
-    <string name="enterDMCName">डी एम सी नाम दर्ज करें</string>
+    <string name="enterDMCName">डीएमसी नाम चुनें</string>
     <string name="enterBlock">ब्लॉक दर्ज करें</string>
     <string name="enterMobileNumberForm">मोबाइल नंबर दर्ज करें</string>
     <string name="enterDistrictState">जिला/राज्य दर्ज करें</string>
@@ -796,4 +806,6 @@
     <string name="required_for_this_app">इस ऐप के लिए आवश्यक</string>
     <string name="enable_now">अभी सक्षम करें</string>
     <string name="location_permission_not_granted">स्थान की अनुमति नहीं दी गई</string>
+
+    <string name="food_more_than_6">आपने अधिकतम भोजन पैकेट की सीमा पार कर ली है।</string>
 </resources>

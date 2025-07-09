@@ -412,8 +412,8 @@
                 android:hint="@string/DMCNameStar"
                 android:text=""
                 app:layout_constraintTop_toBottomOf="@+id/textDMCNameTxt"
-                tools:layout_editor_absoluteX="13dp"
-                android:maxLength="100"/>
+                android:drawableEnd="@drawable/ic_down_arrow"
+                android:focusable="false"/>
 
 
 

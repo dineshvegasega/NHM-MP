@@ -73,11 +73,25 @@ class NBPA_Form1 : Fragment() , CallBackListener {
                 }
             }
 
+            editTextDMCName.singleClick {
+                requireActivity().showDropDownDialog(type = 23) {
+                    editTextDMCName.setText(name)
+
+                    viewModel.dmcName = name
+
+//                    when (position) {
+//                        0 -> viewModel.gender = getString(R.string.maleGender)
+//                        1 -> viewModel.gender = getString(R.string.femaleGender)
+//                        2 -> viewModel.gender = getString(R.string.otherGender)
+//                    }
+                }
+            }
+
 
             if (viewModel.start == "no") {
                 btSignIn.visibility = View.VISIBLE
             } else {
-                var model = viewModel.editDataNew!!.data
+                val model = viewModel.editDataNew!!.data
 
                 editTextName.setText("" + model.name)
                 if (model.fatherHusbandType == 1) {
@@ -225,7 +239,7 @@ class NBPA_Form1 : Fragment() , CallBackListener {
                 viewModel.numberOfMembers = editTextNumberOfMembers.text.toString()
                 viewModel.numberOfChildren = editTextNumberOfChildrens.text.toString()
                 viewModel.address = editTextAddress.text.toString()
-                viewModel.dmcName = editTextDMCName.text.toString()
+//                viewModel.dmcName = editTextDMCName.text.toString()
                 viewModel.block = editTextBlock.text.toString()
                 viewModel.mobileNumber = editTextMobileNumbar.text.toString()
                 viewModel.districtState = editTextDistrictState.text.toString()
