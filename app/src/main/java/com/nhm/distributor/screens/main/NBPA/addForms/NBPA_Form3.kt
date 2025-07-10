@@ -100,6 +100,11 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                 NBPA.callBackListener!!.onCallBack(1001)
             }
 
+            viewModel.editDataNew?.let{
+                textFoodOwnerName.text =
+                    (resources.getString(R.string.name_filter) + ": " + viewModel.editDataNew?.data?.name)
+            }
+
             signaturePad.setOnSignedListener(object : SignaturePad.OnSignedListener {
                 override fun onStartSigning() {
                     //Event triggered when the pad is touched

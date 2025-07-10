@@ -184,6 +184,25 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textFoodOwnerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_E2861d"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMenu"
+                android:gravity="center_horizontal"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/roboto_bold"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_7sdp"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textdescription_of_food_itemsTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
