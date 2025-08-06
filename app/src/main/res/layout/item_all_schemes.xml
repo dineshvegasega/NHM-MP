@@ -143,10 +143,54 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/textMobile"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="horizontal"
+                    android:visibility="gone"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textFoodDateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+                    android:text="@string/food_date_"
+                    android:textColor="@color/_79747E"
+                    app:fontFamily="@font/roboto_regular"
+                    tools:ignore="HardcodedText"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_10"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"
+                    android:gravity="center_vertical"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textFoodDateValue"
+                    android:layout_width="@dimen/_57sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:text="12 Sept"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    app:fontFamily="@font/roboto_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textDesc"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizePresetSizes="@array/autosize_4_5_10"
+                    android:autoSizeStepGranularity="@dimen/_1sdp"/>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textMobile"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:orientation="horizontal"
-                    android:visibility="visible"
+                android:visibility="visible"
                 android:gravity="center_vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -179,23 +223,24 @@
                     android:autoSizeStepGranularity="@dimen/_1sdp"/>
 
                 <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btEdit"
-                        style="@style/PrimaryButtonYellow"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:insetTop="0dp"
-                        android:insetBottom="0dp"
-                        android:text="@string/edit"
-                        android:backgroundTint="@color/_B3261E"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        app:cornerRadius="@dimen/_4sdp"
-                        android:textSize="@dimen/_10sdp"
-                        android:visibility="gone"
-                        />
+                    android:id="@+id/btEdit"
+                    style="@style/PrimaryButtonYellow"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/edit"
+                    android:backgroundTint="@color/_B3261E"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:cornerRadius="@dimen/_4sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

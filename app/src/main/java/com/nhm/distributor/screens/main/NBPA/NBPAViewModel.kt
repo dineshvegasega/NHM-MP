@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -47,6 +48,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NBPAViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+//    var uriRealM: Uri ?= null
 
     var isAadhaar = ""
     var start = ""
@@ -89,6 +91,7 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
     var treatmentSupporterEndDate = ""
     var treatmentSupporterResult = ""
 
+    var foodYear = ""
     var foodMonth = ""
     var foodDate = ""
     var foodHeight = ""
@@ -788,6 +791,11 @@ class NBPAViewModel @Inject constructor(private val repository: Repository) : Vi
                 btnImagePassportsize.visibility = View.GONE
                 btnIdentityImage.visibility = View.GONE
 
+                if (model.foodYear.isNullOrEmpty()) {
+                    editTextYear.setText("2025")
+                } else {
+                    editTextYear.setText("" + model.foodYear)
+                }
                 editTextMonth.setText(""+model.foodMonth)
                 editTextDate.setText(""+model.foodDate)
                 editTextHeight.setText(""+model.foodHeight)

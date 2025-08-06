@@ -581,6 +581,11 @@ class NBPA_Form5 : Fragment(), CallBackListener {
             requestBody.addFormDataPart("schemeId", _string)
             requestBody.addFormDataPart(user_id, "" + userId)
         }
+
+        if (viewModel.foodYear != null) {
+            Log.e("TAG", "viewModel.foodYear "+viewModel.foodYear)
+            requestBody.addFormDataPart(foodYear, viewModel.foodYear)
+        }
         if (viewModel.foodMonth != null) {
             requestBody.addFormDataPart(foodMonth, viewModel.foodMonth)
         }
@@ -742,7 +747,6 @@ class NBPA_Form5 : Fragment(), CallBackListener {
             } else {
 
             }
-
         }
     }
 }

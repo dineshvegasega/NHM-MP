@@ -43,6 +43,67 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     />
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textdescription_of_food_itemsTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                >
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textyearTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/_2C2C2C"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/roboto_medium"
+                        android:text="@string/yearStar"
+                        android:visibility="visible"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:layout_weight=".4"
+                    android:layout_marginHorizontal="@dimen/_1sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/yearStar"
+                        android:layout_marginTop="0dp"
+                        android:text=""
+                        android:focusable="false"
+                        app:layout_constraintTop_toBottomOf="@+id/textPulmonaryRadioGroup"
+                        android:drawableEnd="@drawable/ic_calender"
+                        android:drawableTint="@color/_272727"
+                        android:layout_marginEnd="0dp"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -51,10 +112,10 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingHorizontal="@dimen/_10sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/textdescription_of_food_itemsTxt"
+                    app:layout_constraintTop_toBottomOf="@+id/linearYear"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     >
                 <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"

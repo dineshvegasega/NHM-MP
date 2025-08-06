@@ -263,7 +263,7 @@
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:hint="@string/nakshayID"
-                        android:maxLength="15"
+                        android:maxLength="12"
                         android:inputType="number"
                         android:text="" />
 

@@ -164,7 +164,7 @@ class QuickRegistration1 : Fragment(), CallBackListener , OtpTimer.SendOtpTimerD
                         task.addOnSuccessListener {
                             VerifyBroadcastReceiver.initSMSListener(object : SMSListener {
                                 override fun onSuccess(intent: Intent?) {
-                                    someActivityResultLauncher.launch(intent)
+                                    someActivityResultLauncher.launch(intent!!)
                                 }
                             })
                         }

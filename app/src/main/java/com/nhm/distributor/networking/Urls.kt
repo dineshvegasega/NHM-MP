@@ -251,6 +251,7 @@ var treatmentSupporterMobileNumber = "treatmentSupporterMobileNumber"
 var treatmentSupporterEndDate = "treatmentSupporterEndDate"
 var treatmentSupporterResult = "treatmentSupporterResult"
 
+var foodYear = "foodYear"
 var foodMonth = "foodMonth"
 var foodDate = "foodDate"
 var foodHeight = "foodHeight"

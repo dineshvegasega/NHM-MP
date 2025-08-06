@@ -2,36 +2,28 @@ package com.nhm.distributor.screens.main.NBPA.checkDetails
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioGroup
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.gson.Gson
 import com.nhm.distributor.R
 import com.nhm.distributor.databinding.CheckDetailsBinding
-import com.nhm.distributor.datastore.DataStoreKeys.LOGIN_DATA
-import com.nhm.distributor.datastore.DataStoreUtil.readData
-import com.nhm.distributor.models.Login
+import com.nhm.distributor.datastore.DataStoreKeys
+import com.nhm.distributor.datastore.DataStoreUtil
 import com.nhm.distributor.networking.filterByAadhaar
-import com.nhm.distributor.networking.mobile_number
 import com.nhm.distributor.networking.nakshayID
 import com.nhm.distributor.screens.main.NBPA.addForms.NBPA_Form3.Companion.formFill3
 import com.nhm.distributor.screens.mainActivity.MainActivity
-import com.nhm.distributor.screens.mainActivity.MainActivity.Companion.networkFailed
-import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.userIdForGlobal
-import com.nhm.distributor.utils.callNetworkDialog
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
 import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.MultipartBody
 import org.json.JSONObject
+import java.io.File
 
 @AndroidEntryPoint
 class CheckDetails  : Fragment() {
@@ -54,6 +46,31 @@ class CheckDetails  : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(CheckDetailsVM::class.java)
         MainActivity.Companion.mainActivity.get()?.callFragment(4)
         binding.apply {
+
+
+//            val directory = File(requireActivity().filesDir, "camera_images")
+//            if (!directory.exists()) {
+//                directory.mkdirs()
+//            }
+//            val uriReal = FileProvider.getUriForFile(
+//                requireContext(),
+//                requireActivity().packageName + ".provider",
+//                File(directory, "FoodItem.png")
+//            )
+//
+//
+//            val fdelete: File = File(uriReal.getPath())
+//            fdelete.delete();
+//            if(fdelete.exists()){
+//                fdelete.getCanonicalFile().delete();
+//                if(fdelete.exists()){
+//                    requireActivity().deleteFile(fdelete.getName());
+//                }
+//            }
+
+
+            DataStoreUtil.removeKey(DataStoreKeys.SELECT) {}
+
 
             var _idSelect : Int = 1
             radioGroupSelect.setOnCheckedChangeListener { group, checkedId ->

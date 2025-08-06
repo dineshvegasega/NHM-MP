@@ -60,6 +60,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textFatherHusbandTxt"
                 app:layout_constraintStart_toStartOf="parent"
                 android:paddingHorizontal="@dimen/_10sdp"
+            android:gravity="center_vertical"
                 android:orientation="horizontal">
             <RadioButton
                     android:id="@+id/radioButtonFather"
@@ -67,6 +68,7 @@
                     android:layout_height="@dimen/_30sdp"
                     android:checked="true"
                     android:textSize="@dimen/_10sdp"
+                android:lines="1"
                     android:text="@string/father"/>
             <RadioButton
                     android:id="@+id/radioButtonHusband"
@@ -74,6 +76,7 @@
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:textSize="@dimen/_10sdp"
+                android:lines="1"
                     android:text="@string/husband"/>
         </RadioGroup>
 
@@ -507,41 +510,46 @@
                 android:text="@string/card"
                 android:visibility="visible"
                 />
-        <RadioGroup
-                android:id="@+id/radioGroupCardAPL_BPLGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/textCardTxt"
-                app:layout_constraintStart_toStartOf="parent"
-                android:paddingHorizontal="@dimen/_10sdp"
-                android:orientation="horizontal">
-            <RadioButton
-                    android:id="@+id/radioButtonAPL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"
-                    android:checked="true"
-                    android:textSize="@dimen/_10sdp"
-                    android:text="@string/apl"/>
+    <RadioGroup
+        android:id="@+id/radioGroupCardAPL_BPLGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textCardTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioButtonAPL"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:checked="true"
+            android:textSize="@dimen/_10sdp"
+            android:lines="1"
+            android:text="@string/apl"/>
+        <RadioButton
+            android:id="@+id/radioButtonBPL"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textSize="@dimen/_10sdp"
+            android:lines="1"
+            android:text="@string/bpl"/>
 
-            <RadioButton
-                    android:id="@+id/radioButtonBPL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:textSize="@dimen/_10sdp"
-                    android:text="@string/bpl" />
+        <RadioButton
+            android:id="@+id/radioButtonOther"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="visible"
+            android:lines="1"
+            android:text="@string/other"/>
 
-            <RadioButton
-                    android:id="@+id/radioButtonOther"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_30sdp"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:textSize="@dimen/_10sdp"
-                    android:visibility="visible"
-                    android:text="@string/other"/>
-        </RadioGroup>
+    </RadioGroup>
 
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

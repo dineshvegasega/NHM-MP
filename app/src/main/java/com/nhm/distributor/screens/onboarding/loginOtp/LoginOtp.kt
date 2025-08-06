@@ -117,7 +117,7 @@ class LoginOtp : Fragment() , OtpTimer.SendOtpTimerData {
                         task.addOnSuccessListener {
                             VerifyBroadcastReceiver.initSMSListener(object : SMSListener {
                                 override fun onSuccess(intent: Intent?) {
-                                    someActivityResultLauncher.launch(intent)
+                                    someActivityResultLauncher.launch(intent!!)
                                 }
                             })
                         }

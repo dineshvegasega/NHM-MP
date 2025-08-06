@@ -161,6 +161,15 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                 isSignature = false
             }
 
+            editTextYear.singleClick {
+                requireActivity().showDropDownDialog(type = 24){
+                    Log.e("TAG", "getMonthFromYear "+title)
+                    editTextYear.setText(title)
+                    viewModel.foodYear = title
+                }
+            }
+
+
             editTextMonth.singleClick {
                 requireActivity().showDropDownDialog(type = 21){
                     Log.e("TAG", "getMonthFromHindi "+title)
@@ -252,8 +261,8 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                     activityResultLauncherWithLocation.launch(
                         arrayOf(
                             Manifest.permission.CAMERA,
-                            Manifest.permission.READ_MEDIA_IMAGES,
-                            Manifest.permission.READ_MEDIA_VIDEO,
+//                            Manifest.permission.READ_MEDIA_IMAGES,
+//                            Manifest.permission.READ_MEDIA_VIDEO,
                             Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
                             Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.ACCESS_COARSE_LOCATION
@@ -265,6 +274,7 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                         arrayOf(
                             Manifest.permission.CAMERA,
                             Manifest.permission.READ_MEDIA_IMAGES,
+//                            Manifest.permission.READ_MEDIA_VIDEO,
                             Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.ACCESS_COARSE_LOCATION
                         )
@@ -272,6 +282,55 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                 } else {
                     Log.e("TAG", "CCCCCCCCC")
                     activityResultLauncherWithLocation.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
+                    )
+                }
+            } else {
+                    requireActivity().callPermissionDialogGPS {
+                        someActivityResultLauncherWithLocationGPS.launch(this)
+                    }
+            }
+        } catch (e : Exception){
+
+        }
+
+    }
+
+    private fun callMediaPermissionsWithLocation2() {
+        try {
+            if (isLocationEnabled(requireActivity()) == true) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                    Log.e("TAG", "AAAAAAAAAAA")
+                    activityResultLauncherWithLocation2.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_MEDIA_IMAGES,
+                            Manifest.permission.READ_MEDIA_VIDEO,
+                            Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
+                    )
+                } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    Log.e("TAG", "BBBBBBBBB")
+                    activityResultLauncherWithLocation2.launch(
+                        arrayOf(
+                            Manifest.permission.CAMERA,
+                            Manifest.permission.READ_MEDIA_IMAGES,
+//                            Manifest.permission.READ_MEDIA_VIDEO,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.ACCESS_COARSE_LOCATION
+                        )
+                    )
+                } else {
+                    Log.e("TAG", "CCCCCCCCC")
+                    activityResultLauncherWithLocation2.launch(
                         arrayOf(
                             Manifest.permission.CAMERA,
                             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -293,12 +352,44 @@ class NBPA_Form3 : Fragment() , CallBackListener {
     }
 
 
+
     private val activityResultLauncherWithLocation =
         registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         )
         { permissions ->
             try {
+//                for (permission in permissions.entries) {
+//                    Log.e("TAG", "permissions.entries "+permission)
+//                }
+
+                if (!permissions.entries.toString().contains("false")) {
+                    requireActivity().showOptions {
+                        when (this) {
+                            1 -> forCamera()
+                            2 -> forGallery()
+                        }
+                    }
+                } else {
+                    callMediaPermissionsWithLocation2()
+
+                }
+            } catch (e : Exception){
+
+            }
+        }
+
+
+    private val activityResultLauncherWithLocation2 =
+        registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        )
+        { permissions ->
+            try {
+//                for (permission in permissions.entries) {
+//                    Log.e("TAG", "permissions.entries "+permission)
+//                }
+
                 if (!permissions.entries.toString().contains("false")) {
                     requireActivity().showOptions {
                         when (this) {
@@ -310,6 +401,7 @@ class NBPA_Form3 : Fragment() , CallBackListener {
                     requireActivity().callPermissionDialog {
                         someActivityResultLauncherWithLocation.launch(this)
                     }
+
                 }
             } catch (e : Exception){
 
@@ -317,11 +409,22 @@ class NBPA_Form3 : Fragment() , CallBackListener {
         }
 
 
+
     var someActivityResultLauncherWithLocation = registerForActivityResult<Intent, ActivityResult>(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         try {
-            callMediaPermissionsWithLocation()
+            callMediaPermissionsWithLocation2()
+        } catch (e : Exception){
+
+        }
+    }
+
+    var someActivityResultLauncherWithLocation2 = registerForActivityResult<Intent, ActivityResult>(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        try {
+            callMediaPermissionsWithLocation2()
         } catch (e : Exception){
 
         }
@@ -828,14 +931,29 @@ class NBPA_Form3 : Fragment() , CallBackListener {
         var bool: Boolean = false
         if (viewModel.editDataNew != null){
             val list = viewModel.editDataNew!!.schemeDetail
-            val isArray = list.filter { it.foodMonth == viewModel.foodMonth }
-            bool = if (isArray.size == 0) false else true
-            Log.e("TAG", "getDatabool "+isArray.size)
-        }
+//            val isArray = list.filter { it.foodMonth == viewModel.foodMonth }
+//            bool = if (isArray.size == 0) false else true
 
+            for (i in list.indices) {
+                val isFoodNull = list[i].foodMonth+""+(list[i].foodYear ?: "2025")
+                Log.e("TAG", "isFoodNull "+isFoodNull)
+
+                val isFoodMatch = viewModel.foodMonth+viewModel.foodYear
+                Log.e("TAG", "isFoodMatch "+isFoodMatch)
+
+                if (isFoodNull == isFoodMatch) {
+                    bool = true
+                }
+            }
+
+        }
+        Log.e("TAG", "boolData "+bool)
 
         binding.apply {
-            if (editTextMonth.text.toString() == "") {
+            if (editTextYear.text.toString() == "") {
+                showSnackBar(getString(R.string.select_year))
+                formFill3 = false
+            } else if (editTextMonth.text.toString() == "") {
                 showSnackBar(getString(R.string.select_month))
                 formFill3 = false
             } else if (editTextDate.text.toString() == "") {
@@ -863,16 +981,16 @@ class NBPA_Form3 : Fragment() , CallBackListener {
 //                    }
 //                }
 //                if (viewModel.start == "yes"){
-                    if (bool == true) {
-                        showSnackBar(requireView().resources.getString(R.string.food_already_taken))
-                        formFill3 = false
-                    } else {
-                        viewModel.foodHeight = editTextHeight.text.toString()
-                        formFill3 = true
-                        if (isButton){
-                            NBPA.callBackListener!!.onCallBack(1003)
-                        }
+                if (bool == true) {
+                    showSnackBar(requireView().resources.getString(R.string.food_already_taken))
+                    formFill3 = false
+                } else {
+                    viewModel.foodHeight = editTextHeight.text.toString()
+                    formFill3 = true
+                    if (isButton){
+                        NBPA.callBackListener!!.onCallBack(1003)
                     }
+                }
 //                }
             }
         }

@@ -91,70 +91,73 @@ class NBPA_Form1 : Fragment() , CallBackListener {
             if (viewModel.start == "no") {
                 btSignIn.visibility = View.VISIBLE
             } else {
-                val model = viewModel.editDataNew!!.data
+                val model = viewModel?.editDataNew?.data ?: null
 
-                editTextName.setText("" + model.name)
-                if (model.fatherHusbandType == 1) {
-                    radioButtonFather.isChecked = true
-                } else {
-                    radioButtonHusband.isChecked = true
-                }
-                for (i in 0..<radioGroupFatherHusbandRadioGroup.getChildCount()) {
-                    radioGroupFatherHusbandRadioGroup.getChildAt(i).setEnabled(false)
-                }
+                if (model != null) {
 
-                editTextFatherHusband.setText("" + model.fatherHusband)
-                if (model.mother.isNullOrEmpty()) {
-                    editTextMother.setText("")
-                } else {
-                    editTextMother.setText("" + model.mother)
-                }
+                    editTextName.setText("" + model.name)
+                    if (model.fatherHusbandType == 1) {
+                        radioButtonFather.isChecked = true
+                    } else {
+                        radioButtonHusband.isChecked = true
+                    }
+                    for (i in 0..<radioGroupFatherHusbandRadioGroup.getChildCount()) {
+                        radioGroupFatherHusbandRadioGroup.getChildAt(i).setEnabled(false)
+                    }
+
+                    editTextFatherHusband.setText("" + model.fatherHusband)
+                    if (model.mother.isNullOrEmpty()) {
+                        editTextMother.setText("")
+                    } else {
+                        editTextMother.setText("" + model.mother)
+                    }
 //                editTextMother.setText(model.mother.getNotNullData())
-                editTextGender.setText("" + model.gender)
-                editTextAge.setText("" + model.age)
-                editTextHeight.setText("" + model.height)
-                editTextWeight.setText("" + model.weight)
-                editTextNumberOfMembers.setText("" + model.numberOfMembers)
-                editTextNumberOfChildrens.setText("" + model.numberOfChildren)
-                editTextAddress.setText("" + model.address)
-                editTextDMCName.setText("" + model.dmcName)
-                editTextBlock.setText("" + model.block)
-                editTextMobileNumbar.setText("" + model.mobileNumber)
-                editTextDistrictState.setText("" + model.districtState)
-                if (model.cardTypeAPLBPL == 1) {
-                    radioButtonAPL.isChecked = true
-                } else if (model.cardTypeAPLBPL == 2) {
-                    radioButtonBPL.isChecked = true
-                } else {
-                    radioButtonOther.isChecked = true
-                }
-                for (i in 0..<radioGroupCardAPLBPLGroup.getChildCount()) {
-                    radioGroupCardAPLBPLGroup.getChildAt(i).setEnabled(false)
+                    editTextGender.setText("" + model.gender)
+                    editTextAge.setText("" + model.age)
+                    editTextHeight.setText("" + model.height)
+                    editTextWeight.setText("" + model.weight)
+                    editTextNumberOfMembers.setText("" + model.numberOfMembers)
+                    editTextNumberOfChildrens.setText("" + model.numberOfChildren)
+                    editTextAddress.setText("" + model.address)
+                    editTextDMCName.setText("" + model.dmcName)
+                    editTextBlock.setText("" + model.block)
+                    editTextMobileNumbar.setText("" + model.mobileNumber)
+                    editTextDistrictState.setText("" + model.districtState)
+                    if (model.cardTypeAPLBPL == 1) {
+                        radioButtonAPL.isChecked = true
+                    } else if (model.cardTypeAPLBPL == 2) {
+                        radioButtonBPL.isChecked = true
+                    } else {
+                        radioButtonOther.isChecked = true
+                    }
+                    for (i in 0..<radioGroupCardAPLBPLGroup.getChildCount()) {
+                        radioGroupCardAPLBPLGroup.getChildAt(i).setEnabled(false)
+                    }
+
+                    btSignIn.visibility = View.GONE
+                    editTextName.isEnabled = false
+                    editTextFatherHusband.isEnabled = false
+                    editTextMother.isEnabled = false
+                    editTextGender.isEnabled = false
+                    editTextAge.isEnabled = false
+                    editTextHeight.isEnabled = false
+                    editTextWeight.isEnabled = false
+                    editTextNumberOfMembers.isEnabled = false
+                    editTextNumberOfChildrens.isEnabled = false
+                    editTextAddress.isEnabled = false
+                    editTextDMCName.isEnabled = false
+                    editTextBlock.isEnabled = false
+                    editTextMobileNumbar.isEnabled = false
+                    editTextDistrictState.isEnabled = false
+                    for (i in 0..<radioGroupFatherHusbandRadioGroup.getChildCount()) {
+                        radioGroupFatherHusbandRadioGroup.getChildAt(i).setEnabled(false)
+                    }
+                    for (i in 0..<radioGroupCardAPLBPLGroup.getChildCount()) {
+                        radioGroupCardAPLBPLGroup.getChildAt(i).setEnabled(false)
+                    }
                 }
 
-                btSignIn.visibility = View.GONE
-                editTextName.isEnabled = false
-                editTextFatherHusband.isEnabled = false
-                editTextMother.isEnabled = false
-                editTextGender.isEnabled = false
-                editTextAge.isEnabled = false
-                editTextHeight.isEnabled = false
-                editTextWeight.isEnabled = false
-                editTextNumberOfMembers.isEnabled = false
-                editTextNumberOfChildrens.isEnabled = false
-                editTextAddress.isEnabled = false
-                editTextDMCName.isEnabled = false
-                editTextBlock.isEnabled = false
-                editTextMobileNumbar.isEnabled = false
-                editTextDistrictState.isEnabled = false
-                for (i in 0..<radioGroupFatherHusbandRadioGroup.getChildCount()) {
-                    radioGroupFatherHusbandRadioGroup.getChildAt(i).setEnabled(false)
-                }
-                for (i in 0..<radioGroupCardAPLBPLGroup.getChildCount()) {
-                    radioGroupCardAPLBPLGroup.getChildAt(i).setEnabled(false)
-                }
             }
-
             btSignIn.singleClick {
                 getData(true)
             }

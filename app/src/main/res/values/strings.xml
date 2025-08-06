@@ -804,6 +804,7 @@
     <string name="_paise">Paise</string>
     <string name="_only">Only</string>
 
+    <string name="yearStar">Year*</string>
     <string name="_year">Year</string>
     <string name="_years">Years</string>
     <string name="_month">Month</string>
@@ -921,7 +922,7 @@
     <string name="profiler_image">Profile Image*</string>">
     <string name="aadhaar_image">Aadhaar Image*</string>
 
-
+    <string name="select_year">Select Year</string>
     <string name="select_month">Select Month</string>
     <string name="select_date">Select Date</string>
     <string name="add_signature">Add Signature</string>
@@ -934,6 +935,7 @@
     <string name="are_your_sure_want_to_exit">Are you want to Exit?</string>
     <string name="mobile_no">Mobile No</string>
     <string name="address_">Address: </string>
+    <string name="food_date_">Food Date:</string>
     <string name="date_">Date:</string>
     <string name="mobile_no_per">Mobile No: </string>
     <string name="password_changed_successfully">Your password has been changed successfully</string>

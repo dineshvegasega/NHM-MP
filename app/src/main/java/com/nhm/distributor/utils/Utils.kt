@@ -16,6 +16,7 @@ import android.content.pm.Signature
 import android.content.res.Configuration
 import android.database.Cursor
 import android.graphics.Bitmap
+import android.graphics.Bitmap.CompressFormat
 import android.graphics.Canvas
 import android.location.Address
 import android.location.Geocoder
@@ -37,7 +38,11 @@ import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.DatePicker
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.TimePicker
 import androidx.annotation.DimenRes
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -65,17 +70,20 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.messaging.FirebaseMessaging
-import com.stfalcon.imageviewer.StfalconImageViewer
+import com.nhm.distributor.BuildConfig
 import com.nhm.distributor.R
 import com.nhm.distributor.models.ItemReturn
 import com.nhm.distributor.screens.mainActivity.MainActivity
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.locale
+import com.stfalcon.imageviewer.StfalconImageViewer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
+import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
 import java.math.RoundingMode
@@ -89,7 +97,10 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Period
 import java.time.format.DateTimeFormatter
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
+import java.util.Random
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 import kotlin.coroutines.resume
@@ -290,6 +301,30 @@ fun Context.getMediaFilePathFor(uri: Uri): String {
         }
     } ?: ""
 }
+
+
+
+@SuppressLint("CheckResult")
+fun ImageView.loadImageNoImage(
+    type: Int,
+    url: () -> String,
+    errorPlaceHolder: () -> Int = { if (type == 1) R.drawable.user_icon else R.drawable.no_image_modified },
+) = try {
+    val circularProgressDrawable = CircularProgressDrawable(this.context).apply {
+        strokeWidth = 5f
+        centerRadius = 30f
+        start()
+    }
+    load(if (url().startsWith("http")) url() else File(url())) {
+        placeholder(circularProgressDrawable)
+        crossfade(true)
+        error(errorPlaceHolder())
+    }
+} catch (e: Exception) {
+    e.printStackTrace()
+}
+
+
 
 
 @SuppressLint("CheckResult")
@@ -1097,6 +1132,71 @@ fun Double.roundOffDecimal(): String { //here, 1.45678 = 1.46
 //    return df.format(number).toDouble()
 //}
 
+
+fun Activity.getImageUriFromBitmap(context: Context, bitmap: Bitmap): Uri{
+    val bytes = ByteArrayOutputStream()
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+    val path = MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "Title", null)
+    return Uri.parse(path.toString())
+}
+
+
+@Throws(IOException::class)
+fun savebitmap(bmp: Bitmap): File {
+    val bytes = ByteArrayOutputStream()
+    bmp.compress(CompressFormat.JPEG, 60, bytes)
+    val f = File(
+        (Environment.getExternalStorageDirectory()
+            .toString() + File.separator + "testimage.jpg")
+    )
+    f.createNewFile()
+    val fo = FileOutputStream(f)
+    fo.write(bytes.toByteArray())
+    fo.close()
+    return f
+}
+
+fun getUri(context: Context, bitmap: Bitmap): Uri? {
+    val bytes = ByteArrayOutputStream()
+    bitmap.compress(CompressFormat.JPEG, 50, bytes)
+    val path = MediaStore.Images.Media.insertImage(
+        context.getContentResolver(),
+        bitmap,
+        "Title",
+        null
+    ) //returning null in some devices
+    Log.d("TAG", "getUri: " + path)
+    return Uri.parse(path) //this is returning null which cause the app crash
+}
+
+
+
+fun Activity.getBitmapToPath(bitmap : Bitmap, callBack: String.() -> Unit) {
+    val path = externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+    val file = File(path, getImageName())
+    try {
+        if (!path.exists()) path.mkdirs()
+        if (!file.exists()) file.createNewFile()
+        val ostream: FileOutputStream = FileOutputStream(file)
+        bitmap!!.compress(Bitmap.CompressFormat.PNG, 100, ostream)
+        ostream.flush()
+        ostream.close()
+//        val data = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//            FileProvider.getUriForFile(this, applicationContext.packageName + ".provider", file)
+//        }else{
+//            val imagePath: File = File(file.absolutePath)
+//            FileProvider.getUriForFile(this, applicationContext.packageName + ".provider", imagePath)
+//        }
+        callBack(file.toString())
+
+    } catch (e: IOException) {
+        Log.w("ExternalStorage", "Error writing $file", e)
+    }
+
+}
+
+
+
 fun Activity.getCameraPath(callBack: Uri.() -> Unit) {
     runOnUiThread() {
         val directory = File(filesDir, "camera_images")
@@ -1113,6 +1213,146 @@ fun Activity.getCameraPath(callBack: Uri.() -> Unit) {
 }
 
 
+fun Activity.getCameraPathFoodItemCreate(callBack: Uri.() -> Unit) {
+    runOnUiThread() {
+        val directory = File(filesDir, "camera_images")
+        if (!directory.exists()) {
+            directory.mkdirs()
+        }
+        val uriReal = FileProvider.getUriForFile(
+            this,
+            packageName + ".provider",
+            File(directory, "FoodItem.png")
+        )
+        callBack(uriReal)
+    }
+}
+
+fun Activity.getCameraPathFoodItem(callBack: Uri.() -> Unit) {
+    runOnUiThread() {
+        val directory = File(filesDir, "camera_images")
+        if (!directory.exists()) {
+            directory.mkdirs()
+        }
+        val uriReal = FileProvider.getUriForFile(
+            this,
+            packageName + ".provider",
+            File(directory, "FoodItem.png")
+        )
+        callBack(uriReal)
+    }
+}
+
+
+
+fun Activity.getCameraPathIdentityCreate(callBack: Uri.() -> Unit) {
+    runOnUiThread() {
+        val directory = File(filesDir, "camera_images")
+        if (!directory.exists()) {
+            directory.mkdirs()
+        }
+        val uriReal = FileProvider.getUriForFile(
+            this,
+            packageName + ".provider",
+            File(directory, "Identity.png")
+        )
+        callBack(uriReal)
+    }
+}
+
+fun Activity.getCameraPathIdentity(callBack: Uri.() -> Unit) {
+    runOnUiThread() {
+        val directory = File(filesDir, "camera_images")
+        if (!directory.exists()) {
+            directory.mkdirs()
+        }
+        val uriReal = FileProvider.getUriForFile(
+            this,
+            packageName + ".provider",
+            File(directory, "Identity.png")
+        )
+        callBack(uriReal)
+    }
+}
+
+
+
+//fun Activity.getCameraPath(callBack: Uri.() -> Unit) {
+//    runOnUiThread() {
+//        val directory = File(externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "camera_images")
+////        val directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//
+//        if (!directory.exists()) {
+//            directory.mkdirs()
+//        }
+//        val fileName = File(directory, "${Calendar.getInstance().timeInMillis}.png")
+//        if (!fileName.exists()) fileName.createNewFile()
+//
+//        val uriReal = FileProvider.getUriForFile(
+//            this,
+//            packageName + ".provider",
+//            fileName
+//        )
+//        callBack(uriReal)
+//    }
+//}
+
+fun Activity.getCameraPathB(callBack: Uri.() -> Unit) {
+    runOnUiThread() {
+//        val directory = File(filesDir, "camera_images")
+//        val directory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "camera_images")
+//        val path = externalCacheDir ?: Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+////        val file = File(path, getImageName())
+//
+////        if (!path.exists()) path.mkdirs()
+////        if (!file.exists()) file.createNewFile()
+//
+//
+//        if (!directory.exists()) {
+//            directory.mkdirs()
+//        }
+
+        try {
+//            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+//            val imageFileName = "JPEG_" + timeStamp + "_"
+//            val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+//            val image = File.createTempFile(
+//                imageFileName, /* prefix */
+//                ".jpg", /* suffix */
+//                storageDir      /* directory */
+//            )
+//
+//
+//           val  directory = image.absolutePath
+
+
+            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+            val imageFileName = "JPEG_" + timeStamp + "_"
+            val storageDir =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+            val image = File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir
+            )
+
+            if (!image.exists()) image.createNewFile()
+
+            val uriReal = FileProvider.getUriForFile(
+                this,
+                "$packageName.provider",
+                image
+            )
+            callBack(uriReal)
+        }catch (e:Exception) {
+
+        }
+
+
+    }
+}
+
+
 fun getImageName(): String {
     return "${"NBPA_" + SimpleDateFormat("HHmmss").format(Date())}.png"
 }
@@ -1123,6 +1363,20 @@ fun getPdfName(): String {
     return "${"NBPA_" + SimpleDateFormat("HHmmss").format(Date())}.pdf"
 }
 
+
+fun Context.createTempPictureUri(
+    provider: String = "${BuildConfig.APPLICATION_ID}.provider",
+    fileName: String = "picture_${System.currentTimeMillis()}",
+    fileExtension: String = ".png",
+): Uri {
+    val tempFile = File.createTempFile(
+        fileName, fileExtension, cacheDir
+    ).apply {
+        createNewFile()
+    }
+
+    return FileProvider.getUriForFile(applicationContext, provider, tempFile)
+}
 
 fun Activity.showOptions(callBack: Int.() -> Unit) = try {
     val dialogView = layoutInflater.inflate(R.layout.dialog_choose_image_option, null)
@@ -1520,6 +1774,49 @@ fun Activity.showDropDownDialog(
                         callBack(ItemReturn(which, list[which]))
                     }.show()
             }
+
+
+
+        24 -> {
+            val calendar = Calendar.getInstance()
+            val mYear = calendar.get(Calendar.YEAR)
+            val mMonth = calendar.get(Calendar.MONTH)
+            val mDay = calendar.get(Calendar.DAY_OF_MONTH)
+            val dialog = DatePickerDialog(
+                this,
+                R.style.monthDialogStyle,
+                object : OnDateSetListener {
+                    override fun onDateSet(
+                        view: DatePicker?,
+                        year: Int,
+                        monthOfYear: Int,
+                        dayOfMonth: Int,
+                    ) {
+                        val sdf: SimpleDateFormat = SimpleDateFormat("yyyy")
+                        calendar.set(year, monthOfYear, dayOfMonth);
+                        val dateString: String? = sdf.format(calendar.getTime())
+                        callBack(ItemReturn(0, "$dateString", "$dateString"))
+                    }
+                },
+                mYear,
+                mMonth,
+                mDay
+            )
+
+            dialog.getDatePicker()
+                .findViewById<View?>(getResources().getIdentifier("day", "id", "android"))
+                .setVisibility(
+                    View.GONE
+                )
+            dialog.getDatePicker()
+                .findViewById<View?>(getResources().getIdentifier("month", "id", "android"))
+                .setVisibility(
+                    View.GONE
+                )
+            dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+            dialog.show()
+        }
 
     }
 }

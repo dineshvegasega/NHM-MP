@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutMainCapture"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -20,12 +20,12 @@
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivIcon"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/no_image"
+                app:srcCompat="@drawable/as"
                 android:background="@color/white"
                 android:adjustViewBounds="true"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
                     android:id="@+id/textAddressTxt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Address: 3JC9+JQH, Waidhan, Madhya Pradesh 486886, India"
+                    android:text="Address: sasan, Dtc Singrauli, Waidhan, Madhya Pradesh 486886, India"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_7sdp"
                     app:fontFamily="@font/roboto_light"
@@ -116,7 +116,7 @@
                     android:id="@+id/textTimeTxt"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Date Time: 09/6/2025 01:20:27"
+                    android:text="Date Time: 14/07/2025 05:16:27"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_6sdp"
                     app:fontFamily="@font/roboto_light"
@@ -148,6 +148,7 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -219,9 +220,8 @@
                 />
 
 
-
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/linearMonth"
+                android:id="@+id/linearYear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -230,6 +230,69 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_20sdp"
+                >
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:layout_weight=".6"
+                    android:layout_marginEnd="@dimen/_1sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textyearTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/_2C2C2C"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/roboto_medium"
+                        android:text="@string/yearStar"
+                        android:visibility="visible"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:layout_weight=".4"
+                    android:layout_marginHorizontal="@dimen/_1sdp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editTextYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        style="@style/PrimaryEditText"
+                        android:hint="@string/yearStar"
+                        android:layout_marginTop="0dp"
+                        android:text=""
+                        android:focusable="false"
+                        app:layout_constraintTop_toBottomOf="@+id/textPulmonaryRadioGroup"
+                        android:drawableEnd="@drawable/ic_calender"
+                        android:drawableTint="@color/_272727"
+                        android:layout_marginEnd="0dp"
+                        />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/linearYear"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
                 >
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"

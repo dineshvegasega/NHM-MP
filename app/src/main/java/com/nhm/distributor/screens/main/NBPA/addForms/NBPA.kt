@@ -1,6 +1,8 @@
 package com.nhm.distributor.screens.main.NBPA.addForms
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +10,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
@@ -17,6 +20,9 @@ import com.nhm.distributor.databinding.NbpaBinding
 import com.nhm.distributor.screens.interfaces.CallBackListener
 import com.nhm.distributor.screens.main.NBPA.NBPAViewModel
 import com.nhm.distributor.screens.mainActivity.MainActivity
+import com.nhm.distributor.utils.getCameraPathFoodItemCreate
+import com.nhm.distributor.utils.mainThread
+import com.nhm.distributor.utils.parcelable
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,12 +36,13 @@ class NBPA : Fragment(), CallBackListener {
     companion object {
         var callBackListener: CallBackListener? = null
         var tabPosition = 0
+        var bitmapM : Bitmap ?= null
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = NbpaBinding.inflate(inflater, container, false)
         return binding.root
@@ -85,6 +92,7 @@ class NBPA : Fragment(), CallBackListener {
         viewModel.treatmentSupporterEndDate = ""
         viewModel.treatmentSupporterResult = ""
 
+        viewModel.foodYear = ""
         viewModel.foodMonth = ""
         viewModel.foodDate = ""
         viewModel.foodHeight = ""
@@ -163,7 +171,7 @@ class NBPA : Fragment(), CallBackListener {
                         override fun onPageScrolled(
                             position: Int,
                             positionOffset: Float,
-                            positionOffsetPixels: Int
+                            positionOffsetPixels: Int,
                         ) {
                             super.onPageScrolled(position, positionOffset, positionOffsetPixels)
                         }
@@ -222,7 +230,7 @@ class NBPA : Fragment(), CallBackListener {
                     override fun onPageScrolled(
                         position: Int,
                         positionOffset: Float,
-                        positionOffsetPixels: Int
+                        positionOffsetPixels: Int,
                     ) {
                         super.onPageScrolled(position, positionOffset, positionOffsetPixels)
                     }
@@ -268,9 +276,45 @@ class NBPA : Fragment(), CallBackListener {
                 introViewPager.setCurrentItem(3, false)
             } else if (pos == 1004) {
                 introViewPager.setCurrentItem(4, false)
+            } else if (pos == 1005) {
+//                val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//                resultLauncher.launch(takePictureIntent)
+
+                   requireActivity().getCameraPathFoodItemCreate {
+                    val uriReal = this
+                    captureMediaA.launch(uriReal)
+                }
             }
         }
     }
+
+        val captureMediaA = registerForActivityResult(ActivityResultContracts.TakePicture()) { uri ->
+            Log.e("TAG", "uriuri " + uri)
+//        Log.e("TAG", "addOnSuccessListenerBBCCcompressedImageFile " + uriReal)
+//            NBPA_Form3.callBackListener!!.onCallBack(1006)
+//            (getParentFragment() as NBPA_Form3).yourMethodName()
+
+
+        }
+
+
+
+    private var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+
+                mainThread {
+                    var bitmap = result.data?.extras?.parcelable<Bitmap>("data")
+                    Log.e("TAG", "bitmapbitmap "+bitmap)
+                    bitmapM = bitmap
+//                    binding.ivImagePassportsizeImage.setImageBitmap(bitmap)
+//                    NBPA_Form3.callBackListener!!.onCallBack(1006)
+
+                }
+
+
+            }
+        }
 
 
 //    override fun onStop() {

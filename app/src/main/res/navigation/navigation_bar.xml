@@ -5,7 +5,12 @@
     android:id="@+id/navigation_bar"
     app:startDestination="@id/splash"
     >
-
+    <fragment
+        android:name="com.nhm.distributor.screens.DemoFragment"
+        android:label="DemoFragment"
+        android:id="@+id/demoFragment"
+        tools:layout="@layout/nbpa_list">
+    </fragment>
 
     <fragment
             android:name="com.nhm.distributor.screens.main.NBPA.NBPAList"

@@ -6,13 +6,13 @@ package com.nhm.distributor.screens.mainActivity
 //import com.google.android.play.core.install.model.ActivityResult.RESULT_IN_APP_UPDATE_FAILED
 //import com.google.android.play.core.install.model.AppUpdateType
 //import com.google.android.play.core.install.model.InstallStatus
+//import android.location.LocationRequest
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -22,7 +22,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.location.Location
-//import android.location.LocationRequest
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -32,11 +31,11 @@ import android.os.Looper
 import android.os.Message
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -47,15 +46,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import androidx.core.graphics.Insets
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -64,15 +59,18 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
-import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
+import com.nhm.distributor.BuildConfig
 import com.nhm.distributor.R
 import com.nhm.distributor.databinding.MainActivityBinding
 import com.nhm.distributor.datastore.DataStoreKeys
 import com.nhm.distributor.datastore.DataStoreKeys.GEO_LAT_LONG
 import com.nhm.distributor.datastore.DataStoreKeys.GEO_LOCATION
 import com.nhm.distributor.datastore.DataStoreKeys.LOGIN_DATA
+import com.nhm.distributor.datastore.DataStoreKeys.SELECT
 import com.nhm.distributor.datastore.DataStoreUtil
 import com.nhm.distributor.datastore.DataStoreUtil.readData
 import com.nhm.distributor.datastore.DataStoreUtil.saveData
@@ -91,10 +89,12 @@ import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.locale
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.userIdForGlobal
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.userType
 import com.nhm.distributor.screens.mainActivity.menu.JsonHelper
+import com.nhm.distributor.screens.onboarding.register.Register.Companion.imagePath
 import com.nhm.distributor.utils.LocaleHelper
 import com.nhm.distributor.utils.autoScroll
 import com.nhm.distributor.utils.callNetworkDialog
 import com.nhm.distributor.utils.callPermissionDialog
+import com.nhm.distributor.utils.getAddress
 import com.nhm.distributor.utils.getDensityName
 import com.nhm.distributor.utils.getSignature
 import com.nhm.distributor.utils.imageZoom
@@ -104,14 +104,16 @@ import com.nhm.distributor.utils.mainThread
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
 import java.io.File
 import java.io.FileOutputStream
+import java.io.IOException
 import java.lang.ref.WeakReference
 import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -350,6 +352,9 @@ class MainActivity : AppCompatActivity() {
                 Log.e("TAG", "groLocationB "+groLocation)
             }
         }
+
+
+
 
 //        download("https://www.fsa.usda.gov/Internet/FSA_File/tech_assist.pdf", "SSSSS.pdf")
 
@@ -800,7 +805,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    public override fun onNewIntent(intent: Intent?) {
+    public override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         if (intent?.extras != null) {
             showData(intent?.extras!!)
@@ -1375,11 +1380,49 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
     private fun openCamera() {
-//        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
-            Log.e("TAG", "addOnSuccessListenerBB " + location.toString())
-        }
 
+//        var isLocation = false
+//        val locationRequest = LocationRequest().setInterval(1000).setFastestInterval(1000)
+//            .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+//        fusedLocationClient.requestLocationUpdates(
+//            locationRequest,
+//            object : LocationCallback() {
+//                override fun onLocationResult(locationResult: LocationResult) {
+//                    super.onLocationResult(locationResult)
+//                    for (location in locationResult.locations) {
+//                        if (!isLocation) {
+//                            isLocation = true
+//                            Log.e("TAG", "addOnSuccessListenerBB " + location.toString())
+//                            var latLong = LatLng(location!!.latitude, location.longitude)
+//
+//                        }
+//                    }
+//                }
+//            },
+//            Looper.myLooper()
+//        )
+
+
+//        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+//        fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+//            Log.e("TAG", "addOnSuccessListenerBB " + location.toString())
+//            showSnackBar("")
+//        }
+
+//        val priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+//        val cancellationTokenSource = CancellationTokenSource()
+//
+//        fusedLocationClient.getCurrentLocation(priority, cancellationTokenSource.token)
+//            .addOnSuccessListener { location ->
+//                Log.e("Location", "location is found: $location")
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.e("Location", "Oops location failed with exception: $exception")
+//            }
+
+        val manufacturerModel = Build.MANUFACTURER + " " + Build.MODEL
+
+        Log.e("Location", "location is found: $manufacturerModel")
 
 //        try {
 //            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -1763,4 +1806,106 @@ class MainActivity : AppCompatActivity() {
 
         return intent
     }
+
+
+
+
+    var imageFilePath: String? = null
+
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        val timeStamp =
+            SimpleDateFormat(
+                "yyyyMMdd_HHmmss",
+                Locale.getDefault()
+            ).format(Date())
+        val imageFileName = "IMG_" + timeStamp + "_"
+        val storageDir: File? =
+           getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)
+        val image = File.createTempFile(
+            imageFileName,  /* prefix */
+            ".jpg",  /* suffix */
+            storageDir /* directory */
+        )
+
+        imageFilePath = image.getAbsolutePath()
+        return image
+    }
+
+
+
+    public fun openCameraIntent() {
+        val pictureIntent = Intent(
+            MediaStore.ACTION_IMAGE_CAPTURE
+        )
+        if (pictureIntent.resolveActivity(getPackageManager()) != null) {
+            //Create a file to store the image
+            var photoFile: File? = null
+            try {
+                photoFile = createImageFile()
+            } catch (ex: IOException) {
+                // Error occurred while creating the File
+            }
+            if (photoFile != null) {
+                val photoURI =
+                    FileProvider.getUriForFile(this@MainActivity, BuildConfig.APPLICATION_ID.toString() + ".provider", photoFile)
+                pictureIntent.putExtra(
+                    MediaStore.EXTRA_OUTPUT,
+                    photoURI
+                )
+
+                resultLauncher.launch(pictureIntent)
+            }
+        }
+    }
+
+
+
+
+
+    private var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+//                val bitmap = result.data?.extras?.parcelable<Bitmap>("data")
+
+
+
+//                binding.ivIcon22.setImageBitmap(bitmap)
+
+
+//                dispatchTakePictureIntent(binding.ivIcon22) {
+//                    viewModel.foodItemImage = this
+//                    Log.e("TAG", "viewModel.foodItemImageAAAAAAA " + this)
+//                    binding.ivImagePassportsizeImage.loadImage(type = 1, url = { this })
+//
+//                }
+
+                Log.e("TAG", "addOnSuccessListenerBBCCcompressedImageFile " +imageFilePath)
+//            val photoURI=FileProvider.getUriForFile(
+//                requireActivity()!!,BuildConfig.APPLICATION_ID.toString() + ".provider",
+//                photoFile!!
+//            )
+//                Log.e("TAG", "addOnSuccessListenerBBCCcompressedImageFile " +photoURI)
+
+//                val bitmap = result.data?.extras?.get("data") as Bitmap
+//                bitmap?.let {
+//
+//                    val selectedImage=result?.data
+//                    try {
+//                        var fileimage=File(getRealPathFromUri(selectedImage as Uri?))
+//                    } catch (e: java.lang.Exception) {
+//                        e.printStackTrace()
+//                    }
+//
+////                    var uri = savebitmap(bitmap)
+//
+////                    var uri = getUri(requireContext(), bitmap)
+////                    requireActivity().getBitmapToPath(bitmap){
+////                        Log.e("TAG", "addOnSuccessListenerBBCCcompressedImageFile " +this)
+////                    }
+//                }
+            } else {
+                Log.e("TAG", "addOnSuccessListenerBBCCcompressedImageFileBBB ")
+            }
+        }
 }

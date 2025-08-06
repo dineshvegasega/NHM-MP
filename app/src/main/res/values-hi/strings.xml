@@ -602,6 +602,7 @@
     <string name='_paise'>Paise</string>
     <string name='_only'>केवल</string>
 
+    <string name='yearStar'>वर्ष*</string>
     <string name='_year'>वर्ष</string>
     <string name='_years'>वर्ष</string>
     <string name='_month'>महीना</string>
@@ -716,6 +717,7 @@
     <string name="enter_TreatmentResult">उपचार परिणाम दर्ज करें</string>
     <string name="profiler_image">प्रोफ़ाइल इमेज*</string>">
     <string name="aadhaar_image">आधार इमेज*</string>
+    <string name="select_year">वर्ष चुनें</string>
     <string name="select_month">महीना चुनें</string>
     <string name="select_date">तारीख चुनें</string>
     <string name="add_signature">हस्ताक्षर जोड़ें</string>
@@ -729,6 +731,7 @@
     <string name="are_your_sure_want_to_exit">क्या आप बाहर निकलना चाहते हैं?</string>
     <string name="mobile_no">मोबाइल नंबर</string>
     <string name="address_">पता: </string>
+    <string name="food_date_">भोजन तारीख:</string>
     <string name="date_">तारीख: </string>
     <string name="mobile_no_per">मोबाइल नंबर: </string>
     <string name="password_changed_successfully">आपका पासवर्ड सफलतापूर्वक बदल दिया गया है</string>

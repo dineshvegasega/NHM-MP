@@ -55,6 +55,8 @@ class MainActivityVM @Inject constructor(private val repository: Repository) : V
     val bannerAdapter by lazy { BannerViewPagerAdapter() }
 
     companion object {
+        var imagePosition = 0
+
         @JvmStatic
         var locale: Locale = Locale.getDefault()
 
@@ -66,7 +68,6 @@ class MainActivityVM @Inject constructor(private val repository: Repository) : V
 
         var isProductLoadMember = false
         var isFilterLoadMember = false
-
     }
 
     var itemMain: List<ItemMenuModel>? = ArrayList()

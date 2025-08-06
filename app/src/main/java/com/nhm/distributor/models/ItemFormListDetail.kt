@@ -26,6 +26,7 @@ data class SchemeDetail(
     val foodHeight: String,
     val foodIdentityImage: FoodIdentityImage,
     val foodItemImage: FoodItemImage,
+    val foodYear: String,
     val foodMonth: String,
     val foodSignatureImage: FoodSignatureImage,
     val helpDetails: String,

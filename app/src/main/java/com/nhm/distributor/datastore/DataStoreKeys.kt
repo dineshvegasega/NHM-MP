@@ -16,6 +16,6 @@ object DataStoreKeys {
     val LIVE_TRAINING_DATA by lazy { stringPreferencesKey("LIVE_TRAINING_DATA") }
     val Complaint_Feedback_DATA by lazy { stringPreferencesKey("Complaint_Feedback_DATA") }
     val Information_Center_DATA by lazy { stringPreferencesKey("Information_Center_DATA") }
-
+    val SELECT by lazy { stringPreferencesKey("SELECT") }
     val Context.dataStore by preferencesDataStore(DATA_STORE_NAME)
 }

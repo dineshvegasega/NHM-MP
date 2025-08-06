@@ -139,7 +139,7 @@
                     android:singleLine="false"
                     android:text=""
                     app:layout_constraintTop_toBottomOf="@+id/textDiet_chart_mulyakanTxt"
-                    android:maxLength="100"
+                    android:maxLength="200"
                     />
 
 
@@ -172,7 +172,7 @@
                     android:singleLine="false"
                     android:text=""
                     app:layout_constraintTop_toBottomOf="@+id/textSuggestionTxt"
-                    android:maxLength="100"
+                    android:maxLength="200"
                     />
 
 
@@ -203,7 +203,7 @@
                     android:inputType="number"
                     app:layout_constraintTop_toBottomOf="@+id/textService_providerTxt"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:maxLength="10"
+                    android:maxLength="50"
                     />
 
 
@@ -542,7 +542,7 @@
                     android:singleLine="false"
                     android:text=""
                     app:layout_constraintTop_toBottomOf="@+id/textCommentTxt"
-                    android:maxLength="100"
+                    android:maxLength="200"
                     />
 
 

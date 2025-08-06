@@ -24,11 +24,13 @@ import com.nhm.distributor.databinding.ItemLoadingBinding
 import com.nhm.distributor.models.ItemNBPAForm
 import com.nhm.distributor.utils.changeDateFormat
 import com.nhm.distributor.utils.loadImage
+import com.nhm.distributor.utils.mainThread
+import kotlinx.coroutines.runBlocking
 import java.lang.Exception
 
 
-class NBPAAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
+class NBPAAdapter(viewModel1: NBPAViewModel) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    var viewModel = viewModel1
     var counter = 0
 
     var itemModels: MutableList<ItemNBPAForm> = ArrayList()
@@ -117,6 +119,20 @@ class NBPAAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 model.created_at?.let {
                     textValidDateValue.text = "${model.created_at.changeDateFormat("yyyy-MM-dd", "dd MMM, yyyy")}"
                 }
+
+//
+//                mainThread {
+//                    runBlocking {
+//                        viewModel.formListDetail(
+//                            view = itemRowBinding.root,
+//                            ""+model!!.id
+//                        ) {
+//                            val details = this
+//                            val date = details.schemeDetail[details.schemeDetail.size - 1]
+//                            textFoodDateValue.text = date.foodDate + " " + date.foodMonth
+//                        }
+//                    }
+//                }
 
                 itemRowBinding.root.setOnClickListener {
                     itemRowBinding.root.findNavController().navigate(R.id.action_nbpaList_to_nbpaView, Bundle().apply {

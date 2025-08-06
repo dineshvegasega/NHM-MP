@@ -47,6 +47,9 @@ glide = "4.16.0"
 
 signature = "1.3.1"
 rackMonthPicker = "1.6.1"
+koinCore = "4.1.0"
+koinAndroid = "4.1.0"
+koinAndroidxCompose = "4.0.2"
 
 #androidPlayCore = "1.8.1"
 
@@ -148,6 +151,9 @@ glideksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 glideokhttp3 = { module = "com.github.bumptech.glide:okhttp3-integration", version.ref = "glide" }
 signature = { module = "com.github.gcacace:signature-pad", version.ref = "signature" }
 rackMonthPicker = { module = "com.github.kal72:RackMonthPicker", version.ref = "rackMonthPicker" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koinAndroid" }
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinAndroidxCompose" }
 
 
 [plugins]

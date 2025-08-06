@@ -18,7 +18,6 @@ import android.os.Environment
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import android.os.StrictMode
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,8 +38,6 @@ import com.nhm.distributor.databinding.NbpaListBinding
 import com.nhm.distributor.datastore.DataStoreKeys.LOGIN_DATA
 import com.nhm.distributor.datastore.DataStoreUtil.readData
 import com.nhm.distributor.models.Login
-import com.nhm.distributor.networking.Main
-import com.nhm.distributor.networking.Screen
 import com.nhm.distributor.networking.USER_TYPE
 import com.nhm.distributor.networking.USER_TYPE_ADMIN
 import com.nhm.distributor.networking.filterByAadhaar
@@ -50,14 +47,12 @@ import com.nhm.distributor.networking.filterByName
 import com.nhm.distributor.networking.filterByNikshayId
 import com.nhm.distributor.networking.filterByStartDate
 import com.nhm.distributor.networking.filterByDistributorNumber
-import com.nhm.distributor.networking.user_id
 import com.nhm.distributor.networking.user_type
 import com.nhm.distributor.screens.mainActivity.MainActivity
 //import com.nhm.distributor.screens.main.products.ProductsVM.Companion.isFilterLoad
 //import com.nhm.distributor.screens.main.products.ProductsVM.Companion.isProductLoad
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.isFilterLoad
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.isProductLoad
-import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.userIdForGlobal
 import com.nhm.distributor.utils.showDropDownDialog
 import com.nhm.distributor.utils.showSnackBar
 import com.nhm.distributor.utils.singleClick
@@ -66,9 +61,6 @@ import org.json.JSONObject
 import java.text.SimpleDateFormat
 import com.nhm.distributor.screens.mainActivity.MainActivityVM.Companion.userType
 import com.nhm.distributor.utils.callPermissionDialog
-import com.nhm.distributor.utils.getChannelName
-import com.nhm.distributor.utils.getTitle
-import com.nhm.distributor.utils.mainThread
 import java.io.File
 import java.io.FileOutputStream
 import java.net.URL
@@ -377,7 +369,7 @@ class NBPAList : Fragment() {
 
 
 
-            adapter2 = NBPAAdapter()
+            adapter2 = NBPAAdapter(viewModel)
             binding.rvList2.adapter = adapter2
 
 
